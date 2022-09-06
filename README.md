@@ -1,9 +1,9 @@
 # koi-screen
 
 ## 介绍
-###1、亲测自适应15.6寸至72寸大屏。
-###2、采用Vue2.0、ElementUI、Axios、ECharts、DataV和Flex布局等进行构建。
-###3、希望各位兄台在白嫖的时候，记得star和fork。当然大佬们可以提出bug和建议，以及完善项目
+### 1、亲测自适应15.6寸至72寸大屏。
+### 2、采用Vue2.0、ElementUI、Axios、ECharts、DataV和Flex布局等进行构建。
+### 3、希望各位兄台在白嫖的时候，记得star和fork。当然大佬们可以提出bug和建议，以及完善项目
 
 #### 软件架构
 软件架构说明
