@@ -4,6 +4,9 @@
 ## http://www.koi-screen.online/#/ems
 ## http://www.koi-screen.online/#/pcs
 
+# 项目目录
+![输入图片说明](https://koi-fish.oss-cn-beijing.aliyuncs.com/koi/screen/images/koi2.jpg)
+
 ##  :tw-1f4a1: 1、项目介绍
 
 - 1、亲测自适应15.6寸至55寸大屏。
