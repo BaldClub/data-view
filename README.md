@@ -960,3 +960,6 @@ http {
 } 
 ```
 ## 13、欢迎各位兄台积极优化，剔除BUG进行修复以及开源贡献自适应组件模板代码。
+- 每一份开源来之不易，欢迎兄台们喜欢的捧个场，让作者更有每天持之以恒的动力。
+![输入图片说明](https://koi-fish.oss-cn-beijing.aliyuncs.com/koi/screen/images/wx.png)
+![输入图片说明](https://koi-fish.oss-cn-beijing.aliyuncs.com/koi/screen/images/zfb.jpg)
