@@ -387,6 +387,7 @@ export default {
 ##  :tw-1f60e: 11、组件展示代码
 ### 目的：为了快速开发，直接复制粘贴改下高度即可。
 ### 1、饼形图自适应
+![输入图片说明](https://koi-fish.oss-cn-beijing.aliyuncs.com/koi/screen/images/bxt.jpg)
 ```
 <!-- left1 -->
 <template>      
@@ -612,6 +613,7 @@ export default {
 </style>
 ```
 ### 2、折线图自适应
+![输入图片说明](https://koi-fish.oss-cn-beijing.aliyuncs.com/koi/screen/images/zxt.jpg)
 ```
 <!-- echarts模板，有局部刷新需要在mounted自行开启 -->
 <template>      
