@@ -3,15 +3,10 @@
 ## Gitee：https://gitee.com/BigCatHome/koi-screen
 ## Github：https://github.com/yuxintao6/koi
 ## CSDN：https://blog.csdn.net/qq_46856619?type=blog
-# 项目访问地址（仅支持PC端）
+# 项目访问地址（仅支持PC端），想看效果可以用来测试尺寸大小是否自适应
 ## http://www.koi-screen.online/#/
 ## http://www.koi-screen.online/#/ems
 ## http://www.koi-screen.online/#/pcs
-# 域名正在备案，请先使用IP访问
-## 想看效果用来测试尺寸大小是否适应的话，先用IP访问吧，域名备案还未通过。
-## http://43.143.57.101/#/
-## http://43.143.57.101/#/ems
-## http://43.143.57.101/#/pcs
 
 # 项目特点： koi-screen
 - 1、亲测自适应15.6寸至55寸大屏自适应，不是这个尺寸区间的并未进行测试，预测70寸屏幕也可以自适应。
