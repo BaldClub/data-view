@@ -2,7 +2,7 @@
 ![输入图片说明](https://koi-fish.oss-cn-beijing.aliyuncs.com/koi/screen/images/koi.jpg)
 ## Gitee：https://gitee.com/BigCatHome/koi-screen
 ## Github：https://github.com/yuxintao6/koi
-## CSDN：https://blog.csdn.net/qq_46856619/article/details/126733171?spm=1001.2014.3001.5501
+## CSDN：https://blog.csdn.net/qq_46856619?type=blog
 # 项目访问地址（仅支持PC端）
 ## http://www.koi-screen.online/#/
 ## http://www.koi-screen.online/#/ems
