@@ -3,6 +3,11 @@
 ## http://www.koi-screen.online/#/
 ## http://www.koi-screen.online/#/ems
 ## http://www.koi-screen.online/#/pcs
+# 域名正在备案，请先使用IP访问
+## 想看效果用来测试尺寸大小是否适应的话，先用IP访问吧，域名备案还未通过。
+## http://43.143.57.101/#/
+## http://43.143.57.101/#/ems
+## http://43.143.57.101/#/pcs
 
 # 项目特点： koi-screen
 - 1、亲测自适应15.6寸至55寸大屏自适应，不是这个尺寸区间的并未进行测试，预测70寸屏幕也可以自适应。
@@ -382,6 +387,7 @@ export default {
 ##  :tw-1f60e: 11、组件展示代码
 ### 目的：为了快速开发，直接复制粘贴改下高度即可。
 ### 1、饼形图自适应
+![输入图片说明](https://koi-fish.oss-cn-beijing.aliyuncs.com/koi/screen/images/bxt.jpg)
 ```
 <!-- left1 -->
 <template>      
@@ -607,6 +613,7 @@ export default {
 </style>
 ```
 ### 2、折线图自适应
+![输入图片说明](https://koi-fish.oss-cn-beijing.aliyuncs.com/koi/screen/images/zxt.jpg)
 ```
 <!-- echarts模板，有局部刷新需要在mounted自行开启 -->
 <template>      
@@ -960,3 +967,5 @@ http {
 } 
 ```
 ## 13、欢迎各位兄台积极优化，剔除BUG进行修复以及开源贡献自适应组件模板代码。
+- 每一份开源来之不易，欢迎兄台们喜欢的捧个场，让作者更有每天持之以恒的动力。
+![输入图片说明](https://koi-fish.oss-cn-beijing.aliyuncs.com/koi/screen/images/wx.png)![输入图片说明](https://koi-fish.oss-cn-beijing.aliyuncs.com/koi/screen/images/zfb.jpg)
