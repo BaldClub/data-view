@@ -117,73 +117,73 @@ export default {
       allData: {
         row1: [
           {
-            name: "PCS模块",
+            name: "koi1模块",
             value: "正常",
           },
           {
-            name: "DC储能模块",
+            name: "koi2模块",
             value: "正常",
           },
           {
-            name: "DC光伏模块",
+            name: "koi3模块",
             value: "正常",
           },
           {
-            name: "DCAC模块",
+            name: "koi4模块",
             value: "正常",
           },
           {
-            name: "电池故障",
+            name: "koi5故障",
             value: "正常",
           },
         ],
         row3: [
           {
-            name: "DC1通讯",
+            name: "koi6通讯",
             value: "･ᴗ･",
           },
           {
-            name: "DC2通讯",
+            name: "koi7通讯",
             value: "･ᴗ･",
           },
           {
-            name: "电池通讯",
+            name: "koi8通讯",
             value: "･ᴗ･",
           },
           {
-            name: "DCAC通讯",
+            name: "koi9通讯",
             value: "･ᴗ･",
           },
           {
-            name: "充电桩通讯",
+            name: "koi10通讯",
             value: "･ᴗ･",
           },
         ],
         row2: [
           {
-            name: "自动模式开机",
+            name: "koi11开机",
             value: "･ᴗ･",
           },
           {
-            name: "系统VS电压",
+            name: "koi12电压",
             value: "･ᴗ･",
           },
           {
-            name: "母线VDC电压",
+            name: "koi13电压",
             value: "･ᴗ･",
           },
           {
-            name: "整体通讯",
+            name: "koi14通讯",
             value: "･ᴗ･",
           },
           {
-            name: "PCS通讯",
+            name: "koi15通讯",
             value: "･ᴗ･",
           },
         ],
         row4: [
           {
-            name: "自动模式开机状态",
+            name: "koi16状态",
             value: "关机",
           },
           {
@@ -219,11 +219,11 @@ export default {
         },
         {
           name: "IGBT最高温度",
-          value: "0°C",
+          value: "100°C",
         },
         {
           name: "环境温度",
-          value: "7°C",
+          value: "36°C",
         },
       ],
       koiTime: null,

@@ -2,7 +2,7 @@
       <div>
         <div>
           <!-- <span class="colorDeepskyblue" style="position: absolute; left: 10px;font-size: 10px;">时间：2022/07/01-2022/07/31</span>           -->
-          <div class="colorGrass font-bold" :style="{'font-size': kFOne + 'px'}">🌈近30日异常次数排行榜</div>
+          <div class="colorGrass font-bold" :style="{'font-size': kFOne + 'px'}">🌈手游上线次数排行榜</div>
         </div>
       <div>
         <dv-capsule-chart :config="config" :style="{ width: kWOne + 'px',height: kHOne + 'px'}" />
@@ -37,43 +37,43 @@ export default {
       unit: "次",
       data: [
         {
-          name: '自动模式开机',
+          name: '王者荣耀',
           value: 32
         },
         {
-          name: '系统VS电压',
+          name: '和平精英',
           value: 30
         },
         {
-          name: '母线VDC电压',
+          name: 'QQ飞车',
           value: 28
         },
         {
-          name: '整体通讯',
+          name: '植物VS僵尸',
           value: 26
         },
         {
-          name: 'PCS通讯',
+          name: '天天酷跑',
           value: 24
         },
         {
-          name: 'DC1通讯',
+          name: '崩坏3',
           value: 22
         },
         {
-          name: 'DC2通讯',
+          name: '我的世界',
           value: 20
         },
         {
-          name: '电池通讯',
+          name: '第三人格',
           value: 18
         },
         {
-          name: 'DCAC通讯',
+          name: '穿越火线',
           value: 16
         },
         {
-          name: '充电桩通讯',
+          name: '逆战',
           value: 14
         }
       ]

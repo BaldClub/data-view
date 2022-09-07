@@ -17,13 +17,7 @@ export default {
     screenHeight: window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight,
     screenWidth: window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
     chartInstance: null,
-    allData: [
-                { value: 5, name: 'PCS模块故障' },
-                { value: 6, name: 'DC储能模块故障' },
-                { value: 7, name: 'DC光伏模块故障' },
-                { value: 8, name: 'DCAC模块故障' },
-                { value: 9, name: '电池故障' }
-    ],
+    allData: [],
     kHOne: null,
     koiTime: null,
     // 局部刷新定时器    
@@ -153,16 +147,16 @@ export default {
         series: [
             {
               data: [
-                // { value: this.allData.pcsSum, name: 'PCS模块故障' },
-                // { value: this.allData.dcsSum, name: 'DC储能模块故障' },
-                // { value: this.allData.dcpvSum, name: 'DC光伏模块故障' },
-                // { value: this.allData.dcacSum, name: 'DCAC模块故障' },
-                // { value: this.allData.batterySum, name: '电池故障' }
-                { value: 5, name: 'PCS模块故障' },
-                { value: 6, name: 'DC储能模块故障' },
-                { value: 7, name: 'DC光伏模块故障' },
-                { value: 8, name: 'DCAC模块故障' },
-                { value: 9, name: '电池故障' }
+                // { value: this.allData.pcsSum, name: 'AABB故障' },
+                // { value: this.allData.dcsSum, name: 'CCDD故障' },
+                // { value: this.allData.dcpvSum, name: 'YYXX故障' },
+                // { value: this.allData.dcacSum, name: 'XXTT故障' },
+                // { value: this.allData.batterySum, name: 'PPQQ故障' }
+                { value: 5, name: 'AABB故障' },
+                { value: 6, name: 'CCDD故障' },
+                { value: 7, name: 'YYXX故障' },
+                { value: 8, name: 'XXTT故障' },
+                { value: 9, name: 'PPQQ故障' }
               ]
             }
           ]          
