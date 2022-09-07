@@ -1,4 +1,4 @@
-# :cn: koi-screen （自适应可视化大屏）
+# :cn: koi-screen （响应式可视化大屏）
 # 项目访问地址（仅支持PC端）
 ## http://www.koi-screen.online/#/
 ## http://www.koi-screen.online/#/ems
