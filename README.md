@@ -1,5 +1,8 @@
 # :cn: koi-screen （响应式可视化大屏）
 ![输入图片说明](https://koi-fish.oss-cn-beijing.aliyuncs.com/koi/screen/images/koi.jpg)
+## Gitee：https://gitee.com/BigCatHome/koi-screen
+## Github：https://github.com/yuxintao6/koi
+## CSDN：https://blog.csdn.net/qq_46856619?type=blog
 # 项目访问地址（仅支持PC端）
 ## http://www.koi-screen.online/#/
 ## http://www.koi-screen.online/#/ems
@@ -896,7 +899,7 @@ export default {
 
 - 1、购买服务器，阿里云或者腾讯云等，这里不在进行步骤展示。
 - 2、打包命令：npm run build ，会生成一个dist包。
-- 3、域名购买，域名解析映射购买的服务器IP和SSL证书申请三步。不在进行演示，阔以直接面向百度
+- 3、域名购买，域名解析映射购买的服务器IP、SSL证书申请以及域名备案等三步。不再进行演示，不清楚阔以直接面向百度
 - 4、开放防火墙80端口和443端口，一般情况都会默认开放。
 - 5、nginx配置，阿里云域名上面有帮助文档，也可以进行参考。
 
