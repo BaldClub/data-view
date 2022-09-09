@@ -7,11 +7,16 @@
 ## http://www.koi-screen.online/#/
 ## http://www.koi-screen.online/#/ems
 ## http://www.koi-screen.online/#/pcs
+# IP地址暂时访问，域名未备案成功
+## http://43.143.57.101/#/
+## http://43.143.57.101/#/ems
+## http://43.143.57.101/#/pcs
 
 # 项目特点： koi-screen
 - 1、亲测自适应15.6寸至55寸大屏自适应，不是这个尺寸区间的并未进行测试，预测70寸屏幕也可以自适应。
-- 2、采用Vue2.0、ElementUI、Axios、ECharts、DataV和Flex布局等技术进行构建。
-- 3、根据适应浏览器大小而进行自适应，自适应Echarts图表，字体和图标。
+- 2、自动适应支持电脑不同分辨率，例如：1920x1080，2k，1680x1050等。
+- 3、采用Vue2.0、ElementUI、Axios、ECharts、DataV和Flex布局等技术进行构建。
+- 4、根据适应浏览器大小而进行自适应，自适应Echarts图表，字体和图标。
 
 # 项目目录
 ![输入图片说明](https://koi-fish.oss-cn-beijing.aliyuncs.com/koi/screen/images/koi2.jpg)
