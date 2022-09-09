@@ -1,10 +1,10 @@
-<!-- left1 -->
+<!-- left1 动态刷新饼形图数据 -->
 <template>      
     <div ref="refChart" :style="{ height: kHOne + 'px'}"></div>
 </template>
 
 <script>
-import { getModuleData } from "../../../api/ems/index";
+// import { getModuleData } from "../../../api/ems/index";
 require("../../../assets/theme/shine")
 export default {
   name: '',
@@ -42,7 +42,7 @@ export default {
     window.addEventListener("resize", this.screenAdapter);
     this.screenAdapter();
     // 局部刷新定时器
-    //this.getDataTimer();
+    this.getDataTimer();
   },
   beforeDestroy () {
     // 销毁Echarts图表
@@ -85,7 +85,7 @@ export default {
       this.chartInstance = this.$echarts.init(this.$refs.refChart,'shine');
       const initOption = {
         title: {
-          text: "🌼近30天模块故障",
+          text: "🌼近7天模块故障",
           left: 'center'
         },      
         tooltip: {
@@ -111,12 +111,13 @@ export default {
               },
               label: {
                 show: false,
-                position: 'center'
+                position: 'center',
+                formatter: '{d}%' // 当前百分比
               },
               emphasis: {
                 label: {
                   show: true,
-                  fontSize: '14',
+                  fontSize: '16',
                   fontWeight: 'bold'
                 }
               },
@@ -128,6 +129,16 @@ export default {
       };
       // 图表初始化配置
       this.chartInstance.setOption(initOption);
+
+      // 鼠标移入停止定时器
+      this.chartInstance.on("mouseover", () => {
+        clearInterval(this.koiTimer);
+      });
+
+      // 鼠标移入启动定时器
+      this.chartInstance.on("mouseout", () => {
+        this.getDataTimer();
+      });      
     },
     getData() {
       // getModuleData().then(res => {
@@ -142,22 +153,23 @@ export default {
       this.updateChart();
     },
     updateChart() {
+      let num1 = this.randomNum(100,201);
+      let num2 = this.randomNum(50,201);
+      let num3 = this.randomNum(60,201);
+      let num4 = this.randomNum(70,201);
+      let num5 = this.randomNum(85,201);
+      this.allData = [];
+      this.allData.push({ value: num1, name: 'AABB故障' })
+      this.allData.push({ value: num2, name: 'CCDD故障' })
+      this.allData.push({ value: num3, name: 'TTZZ故障' })
+      this.allData.push({ value: num4, name: 'GGHH故障' })
+      this.allData.push({ value: num5, name: 'YYXX故障' })
+      
       // 处理图表需要的数据
       const dataOption = {
         series: [
             {
-              data: [
-                // { value: this.allData.pcsSum, name: 'AABB故障' },
-                // { value: this.allData.dcsSum, name: 'CCDD故障' },
-                // { value: this.allData.dcpvSum, name: 'YYXX故障' },
-                // { value: this.allData.dcacSum, name: 'XXTT故障' },
-                // { value: this.allData.batterySum, name: 'PPQQ故障' }
-                { value: 5, name: 'AABB故障' },
-                { value: 6, name: 'CCDD故障' },
-                { value: 7, name: 'YYXX故障' },
-                { value: 8, name: 'XXTT故障' },
-                { value: 9, name: 'PPQQ故障' }
-              ]
+              data: this.allData
             }
           ]          
       };
@@ -177,23 +189,7 @@ export default {
           textStyle: {
             fontSize: Math.round(this.titleFontSize * 1.2),
           },
-        },
-        // xAxis: {
-        //   //  改变x轴字体颜色和大小
-        //   axisLabel: {
-        //     textStyle: {
-        //       fontSize: this.titleFontSize,
-        //     },
-        //   },
-        // },
-        // yAxis: {
-        //   //  改变y轴字体颜色和大小
-        //   axisLabel: {
-        //     textStyle: {
-        //       fontSize: this.titleFontSize,
-        //     },
-        //   },
-        // },
+        }
       };
       // 图标自适应变化配置
       this.chartInstance.setOption(adapterOption);
@@ -205,7 +201,7 @@ export default {
         // 执行刷新数据的方法
         this.getData();
         //console.log("Hello World")
-      }, 60000 * 10)
+      }, 3000)
     },     
   
   }
