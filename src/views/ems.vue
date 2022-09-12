@@ -16,7 +16,7 @@
               <!-- 装饰8 -->
               <dv-decoration-8 class="dv-dec-8-left" :color="decorationColor"/>
               <!-- 标题 -->
-              <span class="title font-bold colorText" :style="{'font-size': Math.round(this.screenWidth/100) + 'px'}">分布式储能平台</span>
+              <span class="title font-bold colorText" :style="{'font-size': Math.round(this.screenWidth/100) + 'px'}">EMS可视化平台</span>
               <!-- 装饰8 -->
               <dv-decoration-8 class="dv-dec-8-right" :reverse="true" :color="decorationColor" />
               <!-- 装饰10 -->
