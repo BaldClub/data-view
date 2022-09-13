@@ -980,4 +980,10 @@ http {
 </table>
 
 ## 14、QQ群交流
-![输入图片说明](https://koi-fish.oss-cn-beijing.aliyuncs.com/koi/screen/images/QQ.JPG)
+<table>
+    <tr>
+        <td><img src="https://koi-fish.oss-cn-beijing.aliyuncs.com/koi/screen/images/QQ.JPG"/></td>
+        <td><img src="https://koi-fish.oss-cn-beijing.aliyuncs.com/koi/screen/images/QQ.JPG"/></td>
+    </tr>
+</table>
+
