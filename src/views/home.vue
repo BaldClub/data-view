@@ -8,7 +8,7 @@
           <!-- 第一部分-头部-start -->
             <div class="header">
               <!-- 首页 -->
-              <span class="koiPage font-bold colorDeepskyblue" @click="handleSkip()" :style="{'font-size': Math.round(this.screenWidth/100) + 'px'}" >首页</span>
+              <span class="homePage font-bold colorDeepskyblue" @click="handleSkip()" :style="{'font-size': Math.round(this.screenWidth/100) + 'px'}" >首页</span>
               <!-- 时间 -->
               <div class="localTime colorPink" :style="{'font-size': Math.round(this.screenWidth/100) + 'px'}">{{ dateYear }} {{ dateWeek }} {{ dateDay }}</div>
               <!-- 装饰10 -->
