@@ -8,7 +8,7 @@
           <!-- 第一部分-头部-start -->
             <div class="header">
               <!-- 首页 -->
-              <span class="homePage font-bold colorDeepskyblue" @click="handleSkip()" :style="{'font-size': Math.round(this.screenWidth/100) + 'px'}" >首页</span>
+              <a class="homePage font-bold colorDeepskyblue" :style="{'font-size': Math.round(this.screenWidth/100) + 'px'}" href="https://gitee.com/BigCatHome/koi-screen" target="_self">Gitee</a>
               <!-- 时间 -->
               <div class="localTime colorPink" :style="{'font-size': Math.round(this.screenWidth/100) + 'px'}">{{ dateYear }} {{ dateWeek }} {{ dateDay }}</div>
               <!-- 装饰10 -->
@@ -248,20 +248,6 @@ export default {
     getScreenWidth(){
       this.screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
       //console.log("hh-"+this.screenWidth+"-"+this.screenHeight);
-    },
-    // 跳转页面
-    handleSkip(){
-      window.location.href = 'http://43.143.57.101/#/';
-      koi.clear();
-    },    
-    // 根据时间进行跳转
-    handleSkipTime(){  
-      const value = koi.getItem("koi");
-      if(value == "koi-screen"){
-        this.koiTimer = setInterval(() => {
-          window.location.href = 'http://43.143.57.101/#/pcs';
-        }, 6000)
-      }
     }
   }
 }

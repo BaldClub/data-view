@@ -8,7 +8,7 @@
           <!-- 第一部分-头部-start -->
             <div class="header">
               <!-- 首页 -->
-              <a class="homePage font-bold colorDeepskyblue" :style="{'font-size': Math.round(this.screenWidth/100) + 'px'}" href="https://gitee.com/BigCatHome/koi-screen" target="_self">Gitee</a>
+              <a class="homePage font-bold colorDeepskyblue" :style="{'font-size': Math.round(this.screenWidth/100) + 'px'}" href="http://localhost:8017/#/" target="_self">首页</a>
               <!-- 时间 -->
               <div class="localTime colorPink" :style="{'font-size': Math.round(this.screenWidth/100) + 'px'}">{{ dateYear }} {{ dateWeek }} {{ dateDay }}</div>
               <!-- 装饰10 -->
