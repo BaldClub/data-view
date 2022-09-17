@@ -3,6 +3,7 @@
 ## Gitee：https://gitee.com/BigCatHome/koi-screen
 ## Github：https://github.com/yuxintao6/koi
 ## CSDN：https://blog.csdn.net/qq_46856619?type=blog
+## 项目B站视频教程：https://space.bilibili.com/395991508
 # 项目访问地址（仅支持PC端），想看效果可以用来测试尺寸大小是否自适应
 ## http://www.koi-screen.online/#/
 ## http://www.koi-screen.online/#/ems
