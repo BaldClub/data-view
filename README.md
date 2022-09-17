@@ -36,7 +36,7 @@
 3. 随着社会信息化的高速增长，数据大屏已经在很多商业领域彰显价值，比如会议展厅、园区管理、城市交通调度中心、公安指挥中心、企业生产监控等重要场所。
 4. 大屏信息量的高度集中，能够多方位、多角度、全景展现各项指标，实时监控，动态一目了然。
 
-##  :sunflower: 3、平台简介
+##  :sunflower: 3、屏幕适配
 - 在此之前本来想找一款可进行快速开发的模板，但是在市面上并未见到符合心中要求的。
 - 作者采用vue2.0x、DataV、Element-UI以及Echarts进行开发，致力于打造一款可适应屏幕分辨率的可视化监控大屏。
 - 本项目适应Echarts大小以及字体大小都根据分辨率进行等比例适应。
@@ -48,10 +48,9 @@
 2. Element-UI的Layout布局：https://element.eleme.cn/#/zh-CN/component/layout
 3. Axios：访问后端接口API方式跟RuoYi项目保持一致。
 4. DataV：http://datav.jiaminghi.com/guide/borderBox.html#dv-border-box-12
-5. vue-concise-slider
-6. Flex布局：https://www.runoob.com/w3cnote/flex-grammar.html
-7. Echarts：https://echarts.apache.org/zh/index.html
-8. 等等技术。
+5. Flex布局：https://www.runoob.com/w3cnote/flex-grammar.html
+6. Echarts：https://echarts.apache.org/zh/index.html
+7. 等等技术。
 
 ##  :tw-1f60a: 5、作者：･ᴗ･
 ​                             
