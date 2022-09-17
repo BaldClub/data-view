@@ -43,7 +43,7 @@
 - 宽度：1、flex布局。2、grid网格布局。3、Element-UI的Layout布局。最终采用第三种。
 - 高度：宽度和高度使用定时器对浏览器进行监控，用来监控页面的动态变化大小，以用来计算字体和高度大小。
 - 已封装Axios,调用后端API接口的方法和ruoyi-vue前端一样，在api文件中的js里面写接口，vue页面进行调用。
-## 4、 :tw-1f380: 采用技术
+## :tw-1f380: 4、采用技术
 1. Vue/Cli：https://cn.vuejs.org/
 2. Element-UI的Layout布局：https://element.eleme.cn/#/zh-CN/component/layout
 3. Axios：访问后端接口API方式跟RuoYi项目保持一致。
