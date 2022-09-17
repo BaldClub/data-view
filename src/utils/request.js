@@ -4,8 +4,7 @@ import { Message } from 'element-ui'
 // create an axios instance
 const service = axios.create({
   //baseURL: process.env.VUE_BASE_API,
-  //baseURL: 'http://39.105.180.35:8188',
-  baseURL: 'http://127.0.0.1:8001',
+  baseURL: 'http://127.0.0.1:8688',
   timeout: 8000 // request timeout 设置请求超时时间，单位（毫秒）
 })
 

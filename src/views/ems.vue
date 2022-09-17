@@ -44,7 +44,7 @@
           <div class="six item">Six</div>
         </div> -->
 
-        <!-- Element-UI Layout布局 -->
+        <!-- Element-UI Layout布局,主要是用来配置边框自适应 -->
         <div class="layoutHome">
           <el-row>
             <el-col :span="6">

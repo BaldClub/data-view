@@ -1,9 +1,11 @@
-<!-- 初始化代码模板页面 -->
+<!-- left1 动态刷新饼形图数据 -->
 <template>      
     <div ref="refChart" :style="{ height: kHOne + 'px'}"></div>
 </template>
 
 <script>
+// import { getData1 } from "../../../api/test/index";
+require("../../../assets/theme/shine")
 export default {
   name: '',
   components: {},
@@ -14,15 +16,12 @@ export default {
     // 获取body的实际高度  (三个都是相同，兼容性不同的浏览器而设置的) document.body.clientHeight
     screenHeight: window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight,
     screenWidth: window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+    chartInstance: null,
     allData: [],
-    // 浏览器高度
     kHOne: null,
-    // 浏览器宽度
-    kWOne: null,
-    // 浏览器字体大小
-    kFOne: null,
-    // 自适应浏览器获取宽高大小定时器
-    koiTime: null 
+    koiTime: null,
+    // 局部刷新定时器    
+    koiTimer: null,
   }
   },
   created () {},
@@ -36,27 +35,34 @@ export default {
     window.addEventListener('resize',this.getScreenWidth, false);
     // 鼠标移动时触发
     //window.addEventListener('mousemove',this.getHeight, false);
-    // 自适应浏览器获取宽高大小定时器
     this.resizeScreen();
-    // 获取接口数据
+    // 图表初始化
+    this.initChart();
     this.getData();
+    window.addEventListener("resize", this.screenAdapter);
+    this.screenAdapter();
     // 局部刷新定时器
-    //this.getDataTimer();    
+    //this.getDataTimer();
   },
   beforeDestroy () {
-
+    // 销毁Echarts图表
+    this.chartInstance.dispose();
+    this.chartInstance = null;
   },
   destroyed() {
     // 清除自适应屏幕定时器
     clearInterval(this.koiTime);
     this.koiTime = null;
-    // 页面大小改变时触发销毁
+    // 清除局部刷新定时器
+    clearInterval(this.koiTimer);
+    this.koiTimer = null;
+    // 页面大小改变时触发
     window.removeEventListener('resize',this.getScreenHeight, false);
-    // 页面大小改变时触发销毁
+    // 页面大小改变时触发
     window.removeEventListener('resize',this.getScreenWidth, false);
+    window.removeEventListener("resize", this.screenAdapter);
   },
-  methods: {
-    // 自适应浏览器获取宽高大小定时器
+  methods: { 
     resizeScreen(){
       this.koiTime = setInterval(() => {
         this.getScreenHeight();
@@ -73,30 +79,63 @@ export default {
     // 字体大小根据宽度自适应
     getScreenWidth(){
       this.screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-      // 浏览器字体计算
-      this.kFOne = Math.round(this.screenWidth / 100);
-      // 浏览器宽度宽度
-      this.kWOne = this.screenWidth;      
       //console.log("宽度->"+this.screenWidth);
     },
+    initChart() {
+      this.chartInstance = this.$echarts.init(this.$refs.refChart,'shine');
+      const initOption = {
+        // title: {
+        //   text: "🌼近7天模块故障",
+        //   left: 'center'
+        // },      
+        // tooltip: {
+        //   trigger: 'item'
+        // },
+        // legend: {
+        //     orient: 'vertical',
+        //     left: 'left',
+        // },   
+      };
+      // 图表初始化配置
+      this.chartInstance.setOption(initOption);   
+    },
     getData() {
-      // 调用接口方法
-      // getModuleData().then(res => {
-      //       this.allData = res.data;
-      //       //console.log("ALLDATA->"+JSON.stringify(this.allData.pcsSum));
-      //       // echarts查不到数据，将初始化echarts的方法全部放置到接口方法中即可。  
-      // })  
+      // getData1().then(res => {
+      //     this.allData = res.data;
+      //     this.updateChart(); 
+      //     //console.log("数据left1->"+JSON.stringify(this.allData));
+      //     // echarts查不到数据，将初始化echarts的方法全部放置到接口方法中即可。  
+      // })         
       // 获取服务器的数据, 对this.allData进行赋值之后, 调用updateChart方法更新图表
       //console.log("ALLDATA->",JSON.stringify(res.data))
-      //console.log("ALLDATA->",JSON.stringify(this.allData))
-      //this.updateChart();
-      // 向data数据中set值
-      // if(this.allData.apcsFault == "正常"){
-      //     this.$set(this.titleItem1[0].number,'content',textNormal)
-      // }else {
-      //     this.$set(this.titleItem1[0].number,'content',this.allData.apcsFault)
-      //     this.$set(this.titleItem1[0].number.style,'fill',textColor)
-      // }
+      //console.log("ALLDATA->",JSON.stringify(res.allData))
+      this.updateChart();
+    },
+    updateChart() {
+      // 处理图表需要的数据
+      const dataOption = {
+      };
+      // 图表数据变化配置
+      this.chartInstance.setOption(dataOption);
+    },
+    screenAdapter() {
+      this.titleFontSize = (this.$refs.refChart.offsetWidth / 100) * 2;
+      const adapterOption = {
+        // title: {
+        //   textStyle: {
+        //     fontSize: Math.round(this.titleFontSize * 2),
+        //   },
+        // },
+        // // 圆点分类标题
+        // legend: {
+        //   textStyle: {
+        //     fontSize: Math.round(this.titleFontSize * 1.2),
+        //   },
+        // }
+      };
+      // 图标自适应变化配置
+      this.chartInstance.setOption(adapterOption);
+      this.chartInstance.resize();
     },
     // 定时器
     getDataTimer(){
@@ -105,10 +144,11 @@ export default {
         this.getData();
         //console.log("Hello World")
       }, 3000)
-    },  
+    },     
+  
   }
 }
 </script>
-<style lang='less' scoped>
+<style scoped='scss' scoped>
 
 </style>
