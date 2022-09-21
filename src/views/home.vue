@@ -1,6 +1,6 @@
 <!--  -->
 <template>
-  <div id="index">   
+  <div id="index">
        <!--  DataV-Loading加载动画 -->
        <dv-loading v-if="loading">Loading...</dv-loading>
        <!-- 总体布局-start -->
@@ -23,7 +23,7 @@
               <dv-decoration-10 class="dv-dec-10-right"/>
             </div>
           <!-- 第一部分-头部-end -->
-         
+
         <!-- 网格布局 grid -->
         <!-- <div class="wrapper">
           <div class="one item">One</div>
@@ -51,51 +51,51 @@
               <div :style="{ height: kHOne + 'px'}">
                 <dv-border-box-12 style="padding:12px">
                   <leftchart1></leftchart1>
-                </dv-border-box-12> 
+                </dv-border-box-12>
               </div>
-      
+
               <div :style="{ height: kHTwo + 'px'}">
                 <!-- style="padding:12px" -->
                 <dv-border-box-12 style="padding:12px">
                   <leftchart2></leftchart2>
-                </dv-border-box-12> 
+                </dv-border-box-12>
               </div>
             </el-col>
 
-            <el-col :span="9"> 
+            <el-col :span="9">
               <div :style="{ height: kHThree + 'px'}">
                 <dv-border-box-12 style="padding:12px">
                   <centerchart1></centerchart1>
-                </dv-border-box-12> 
+                </dv-border-box-12>
               </div>
               <div :style="{ height: kHFour + 'px'}">
                 <dv-border-box-12 style="padding:12px">
                   <centerchart2></centerchart2>
-                </dv-border-box-12> 
+                </dv-border-box-12>
               </div>
               <div :style="{ height: kHFive + 'px'}">
                 <dv-border-box-12 style="padding:12px">
                   <centerchart3></centerchart3>
-                </dv-border-box-12> 
-              </div>              
+                </dv-border-box-12>
+              </div>
             </el-col>
-            
+
             <el-col :span="9">
               <div :style="{ height: kHSix + 'px'}">
                 <dv-border-box-12 style="padding:12px">
                   <rightchart1></rightchart1>
-                </dv-border-box-12> 
+                </dv-border-box-12>
               </div>
               <div :style="{ height: kHSeven + 'px'}">
                 <dv-border-box-12 style="padding:12px">
                   <rightchart2></rightchart2>
-                </dv-border-box-12> 
+                </dv-border-box-12>
               </div>
               <div :style="{ height: kHEight + 'px'}">
                 <dv-border-box-12 style="padding:12px">
                   <rightchart3></rightchart3>
-                </dv-border-box-12> 
-              </div>              
+                </dv-border-box-12>
+              </div>
             </el-col>
 
           </el-row>
@@ -137,7 +137,7 @@ export default {
     // 适应浏览器
     koiTime: null,
     // 定时跳转页面
-    koiTimer: null,    
+    koiTimer: null,
     dateDay: null,
     dateYear: null,
     dateWeek: null,
@@ -170,8 +170,6 @@ export default {
     this.timeInterval();
     this.cancelLoading();
     this.resizeScreen();
-    // 定时轮播
-    this.handleSkipTime();    
   },
   beforeDestroy () {
     clearInterval(this.timer)
@@ -179,7 +177,7 @@ export default {
     clearInterval(this.koiTime);
     this.koiTime = null;
     clearInterval(this.koiTimer);
-    this.koiTimer = null;    
+    this.koiTimer = null;
     // 页面大小改变时触发
     window.removeEventListener('resize',this.getScreenHeight, false);
     // 页面大小改变时触发
@@ -208,7 +206,7 @@ export default {
               position: 'bottom-right',
               duration: 2000
             });
-          } 
+          }
       }
   },
   methods: {
