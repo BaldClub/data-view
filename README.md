@@ -181,6 +181,10 @@ export default service
 
 ```
 
+后端api接口放置文件夹，写过vue前后端的项目应该都知道。不再进行详细描述。
+路径：/src/api/xxx/index.js中
+
+
 vue页面调用接口方式：
 
 ```
