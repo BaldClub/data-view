@@ -1,3 +1,8 @@
+/*
+ * @Author: ･ᴗ･
+ * @CreateDate: 2022-08-26 07:26:25
+ * @Signature: 知足且上进，温柔且坚定･ᴗ･
+ */
 const { defineConfig } = require('@vue/cli-service')
 const path = require('path')
 module.exports = defineConfig({
