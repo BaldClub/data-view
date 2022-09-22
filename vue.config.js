@@ -32,6 +32,9 @@ module.exports = defineConfig({
   },
   devServer: {
     port: 8017,
+    // 解决新版本 Invalid Host header
+    historyApiFallback: true,
+    allowedHosts: 'all',
     open: false // 自动打开浏览器
   }
 

@@ -116,6 +116,7 @@ export default {
           trigger: 'axis'
         },
         grid: {
+          top: '20%',
           left: '1%',
           right: '2%',
           bottom: '3%',
@@ -132,8 +133,10 @@ export default {
           {
             type: 'value',
             name: '浓度数据',
-            max: 0.5,
-            interval: 0.1,
+            // 字体大小
+            // nameTextStyle: {
+            //    fontSize: 12
+            // },
             axisTick: { // 轴刻度线
               show: false,
             },
@@ -156,8 +159,6 @@ export default {
           {
             type: 'value',
             name: '测量原始值',
-            min: 0,
-            max: 10,
             interval: 2,
             axisTick: { // 轴刻度线
               show: false,
@@ -283,14 +284,33 @@ export default {
             },
           },
         },
-        yAxis: {
-          //  改变y轴字体颜色和大小
-          axisLabel: {
-            textStyle: {
-              fontSize: Math.round(this.titleFontSize * 0.8),
+        yAxis: [
+          {
+            // 字体大小
+            nameTextStyle: {
+              fontSize: this.titleFontSize
+            },        
+            //  改变y轴字体颜色和大小
+            axisLabel: {
+              textStyle: {
+                fontSize: Math.round(this.titleFontSize * 0.8),
+              },
             },
           },
-        }        
+          {
+            // 字体大小
+            nameTextStyle: {
+              fontSize: this.titleFontSize
+            },        
+            //  改变y轴字体颜色和大小
+            axisLabel: {
+              textStyle: {
+                fontSize: Math.round(this.titleFontSize * 0.8),
+              },
+            },
+          }              
+        ]
+      
       };
       // 图表自适应变化配置
       this.chartInstance.setOption(adapterOption);
