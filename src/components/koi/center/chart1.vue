@@ -6,8 +6,8 @@
       <div
         class="bg-color-black item"
         :style="{ height: kHOne + 'px'}"
-        v-for="item in row1"
-        :key="item.name"
+        v-for="(item,index) in row1"
+        :key="index + 100"
       >
         <p
           class="colorDarkturquoise font-bold"
@@ -25,8 +25,8 @@
       <div
         class="bg-color-black item"
         :style="{ height: kHOne + 'px'}"
-        v-for="item in row2"
-        :key="item.name"
+        v-for="(item,index) in row2"
+        :key="index + 200"
       >
         <p
           class="colorLightsteelblue font-bold"
