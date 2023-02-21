@@ -98,6 +98,9 @@ export default {
     getScreenWidth(){
       this.screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
       //console.log("hh-"+this.screenWidth+"-"+this.screenHeight);
+    },
+    log(){
+      console.log(111);
     }
   }
 }

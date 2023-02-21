@@ -14,7 +14,11 @@ const routes = [
         component: () => import('../views/index/index.vue')
       }
     ]
-  }, 
+  },
+  {
+    path: '/login',
+    component: ()=> import('../views/login/login.vue'),
+  } ,
   {
     path: '*',
     name: '/404',
