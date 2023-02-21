@@ -1,27 +1,19 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import { compileToFunctions } from 'vue-template-compiler'
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
     name: 'index',
-    component: () => import('../views/home.vue')
-  }, 
-  {
-    path: '/ems',
-    name: 'ems',
-    component: () => import('../views/ems.vue')
-  },
-  {
-    path: '/pcs',
-    name: 'pcs',
-    component: () => import('../views/pcs.vue')
-  }, 
-  {
-    path: '/home',
-    name: 'home',
-    component: () => import('../views/home.vue')
+    component: () => import('../views/home.vue'),
+    children: [
+      {
+        path: '/',
+        component: () => import('../views/index/index.vue')
+      }
+    ]
   }, 
   {
     path: '*',
