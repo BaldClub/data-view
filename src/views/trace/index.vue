@@ -4,14 +4,17 @@
     <el-col :span="7">
       <div :style="{ height: kHOne + 'px'}" class="bg-container">
         <dv-border-box-12 class="container-item" style="padding:12px">
+          <leftOne :max-height="kHOne"></leftOne>
         </dv-border-box-12>
       </div>
       <div :style="{ height: kHTwo + 'px'}">
         <dv-border-box-12 class="container-item" style="padding:12px">
+          <leftTwo :max-height="kHTwo"></leftTwo>
         </dv-border-box-12>
       </div>
       <div :style="{ height: kHThree + 'px'}">
         <dv-border-box-12 class="container-item" style="padding:12px">
+            <leftThree :max-height="kHThree"></leftThree>
         </dv-border-box-12>
       </div>
     </el-col>
@@ -31,14 +34,17 @@
     <el-col :span="7">
       <div :style="{ height: kHSix + 'px'}">
         <dv-border-box-12 class="container-item" style="padding:12px">
+            <rightOne :max-height="kHSix"></rightOne>
         </dv-border-box-12>
       </div>
       <div :style="{ height: kHSeven + 'px'}">
         <dv-border-box-12 class="container-item" style="padding:12px">
+          <rightTwo :max-height="kHSeven"></rightTwo>
         </dv-border-box-12>
       </div>
       <div :style="{ height: kHEight + 'px'}">
         <dv-border-box-12 class="container-item" style="padding:12px">
+          <rightThree :max-height="kHEight"></rightThree>
         </dv-border-box-12>
       </div>
     </el-col>
@@ -46,10 +52,18 @@
 </template>
 
 <script>
-
+import leftOne from "./components/left/left-one.vue";
+import leftTwo from "./components/left/left-two.vue";
+import leftThree from "./components/left/left-three.vue";
+import conterOne from "./components/conter/conter-one.vue";
+import rightOne from './components/right/right-one.vue'
+import rightTwo from './components/right/right-two.vue'
+import rightThree from './components/right/right-three.vue'
+import background from '@/components/background.vue'
 export default {
   name: 'index',
   components:{
+    leftOne,leftTwo,leftThree,conterOne,rightOne,rightTwo,rightThree,background
   },
   data () {
     return {
