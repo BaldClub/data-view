@@ -17,6 +17,7 @@
     </el-col>
 
     <el-col :span="10">
+<<<<<<< HEAD
       <!-- <div :style="{ height: kHFour + 'px'}">
         <dv-border-box-12 class="container-item" style="padding:12px">
             <conterOne :max-height="kHFour"></conterOne>
@@ -25,6 +26,16 @@
       <div :style="{ height: kHFive + 'px'}">
         <!-- <dv-border-box-12 class="container-item" style="padding:12px">
         </dv-border-box-12> -->
+=======
+      <div :style="{ height: kHFour + 'px'}">
+        <dv-border-box-12 class="container-item" style="padding:12px">
+            <conterOne :max-height="kHFour"></conterOne>
+        </dv-border-box-12>
+      </div>
+      <div :style="{ height: kHFive + 'px'}">
+        <dv-border-box-12 class="container-item" style="padding:12px">
+        </dv-border-box-12>
+>>>>>>> 20fa62e29f28ffc31094e75cb45c07e700405fcd
       </div>
     </el-col>
 

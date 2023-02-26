@@ -1,5 +1,9 @@
 <template>
+<<<<<<< HEAD
   <div id="your-element-selector">
+=======
+  <div id="bg-vanta">
+>>>>>>> 20fa62e29f28ffc31094e75cb45c07e700405fcd
 
   </div>
 </template>
@@ -9,7 +13,11 @@
     props:['option'],
     mounted(){
       VANTA.NET({
+<<<<<<< HEAD
         el: "#your-element-selector",
+=======
+        el: "#bg-vanta",
+>>>>>>> 20fa62e29f28ffc31094e75cb45c07e700405fcd
         mouseControls: true,
         touchControls: true,
         gyroControls: false,
@@ -28,7 +36,11 @@
 </script>
 
 <style lang="less" scoped>
+<<<<<<< HEAD
 #your-element-selector{
+=======
+#bg-vanta{
+>>>>>>> 20fa62e29f28ffc31094e75cb45c07e700405fcd
   position: absolute;
   top: 0px;
   left: 0px;
