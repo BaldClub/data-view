@@ -10,7 +10,7 @@ module.exports = defineConfig({
     config.plugin('html')
       .tap(args => {
           // 修改完浏览器网页标题需要重启项目才能生效
-          args[0].title = '小锦鲤可视化平台';
+          args[0].title = '食用菌生产全程可视化管理系统';
           return args;
         }
       )
