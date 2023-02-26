@@ -17,14 +17,14 @@
     </el-col>
 
     <el-col :span="10">
-      <!-- <div :style="{ height: kHFour + 'px'}">
+      <div :style="{ height: kHFour + 'px'}">
         <dv-border-box-12 class="container-item" style="padding:12px">
             <conterOne :max-height="kHFour"></conterOne>
-        </dv-border-box-12> -->
-      <!-- </div> -->
+        </dv-border-box-12>
+      </div>
       <div :style="{ height: kHFive + 'px'}">
-        <!-- <dv-border-box-12 class="container-item" style="padding:12px">
-        </dv-border-box-12> -->
+        <dv-border-box-12 class="container-item" style="padding:12px">
+        </dv-border-box-12>
       </div>
     </el-col>
 

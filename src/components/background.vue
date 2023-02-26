@@ -1,5 +1,5 @@
 <template>
-  <div id="your-element-selector">
+  <div id="bg-vanta">
 
   </div>
 </template>
@@ -9,7 +9,7 @@
     props:['option'],
     mounted(){
       VANTA.NET({
-        el: "#your-element-selector",
+        el: "#bg-vanta",
         mouseControls: true,
         touchControls: true,
         gyroControls: false,
@@ -28,7 +28,7 @@
 </script>
 
 <style lang="less" scoped>
-#your-element-selector{
+#bg-vanta{
   position: absolute;
   top: 0px;
   left: 0px;
