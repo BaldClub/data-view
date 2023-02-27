@@ -70,9 +70,6 @@ export default {
   },
   data () {
     return {
-      // 获取浏览器可视区域高度（包含滚动条）、
-      // 获取浏览器可视区域高度（不包含工具栏高度）、
-      // 获取body的实际高度  (三个都是相同，兼容性不同的浏览器而设置的)
       screenHeight: window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight,
       screenWidth: window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
       kHOne: 200,
@@ -102,10 +99,8 @@ export default {
     window.removeEventListener('resize',this.getScreenWidth, false);
   },
   methods: {
-    // 获取浏览器高度进行自适应
     getScreenHeight() {
         this.screenHeight = window.innerHeight || document.documentElement.innerHeight || document.body.clientHeight;
-        // 四舍五入取整数
         this.kHOne = Math.round(this.screenHeight * 0.25);
         this.kHTwo = Math.round(this.screenHeight * 0.26);
         this.kHThree = Math.round(this.screenHeight * 0.415);
@@ -114,12 +109,9 @@ export default {
         this.kHSix = Math.round(this.screenHeight * 0.28);
         this.kHSeven = Math.round(this.screenHeight * 0.32);
         this.kHEight = Math.round(this.screenHeight * 0.325);
-        //console.log(this.screenHeight +"-"+ Math.round(this.percentHThirty) +"-"+ Math.round(this.percentHForty));
     },
-    // 字体大小根据宽度自适应
     getScreenWidth(){
       this.screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-      //console.log("hh-"+this.screenWidth+"-"+this.screenHeight);
     }
   }
 }
