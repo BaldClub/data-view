@@ -73,8 +73,8 @@ import rightOne from './components/right/right-one.vue'
       getScreenHeight() {
           this.screenHeight = window.innerHeight || document.documentElement.innerHeight || document.body.clientHeight;
           // 四舍五入取整数
-          this.kHOne = Math.round(this.screenHeight * 0.25);
-          this.kHTwo = Math.round(this.screenHeight * 0.375);
+          this.kHOne = Math.round(this.screenHeight * 0.3);
+          this.kHTwo = Math.round(this.screenHeight * 0.325);
           this.kHThree = Math.round(this.screenHeight * 0.30);
           this.kHFour = Math.round(this.screenHeight * 0.925);
       },

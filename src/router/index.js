@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import { compileToFunctions } from 'vue-template-compiler'
 Vue.use(VueRouter)
 
 const routes = [

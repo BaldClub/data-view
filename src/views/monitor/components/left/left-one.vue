@@ -4,11 +4,14 @@
  * left-one.vue
 -->
 <template>
-  <div class="container">
-    <div class="item" v-for="item in config">
-        <div>
-            <dv-water-level-pond :config="item" :style="{ height: maxHeight * 0.6 + 'px',  width: maxHeight * 0.5 + 'px'}" />
-            <span :style="{color: item.colors[0]}">{{  item.name }}</span>
+  <div class="container-item">
+    <h2>设备状态</h2>
+    <div class="content">
+        <div class="item" v-for="item in config">
+            <div>
+                <dv-water-level-pond :config="item" :style="{ height: maxHeight * 0.6 + 'px',  width: maxHeight * 0.5 + 'px'}" />
+                <span :style="{color: item.colors[0]}">{{  item.name }}</span>
+            </div>
         </div>
     </div>
   </div>
@@ -45,16 +48,23 @@ export default {
 </script>
 
 <style scoped lang="less">
-.container{
-    display: grid;
-    grid-template-columns: 33.33% 33.33% 33.33%;
-    text-align: center;
-    .item{
-        display: flex;
-        justify-content: center;
-        span{
-            line-height: 2.3em;
-            font-size: 1.8rem;
+.container-item{
+    h2{
+      padding-left: 0.6em;
+      padding-bottom: 0.3em;
+      text-align: left;
+    }
+    .content{
+        display: grid;
+        grid-template-columns: 33.33% 33.33% 33.33%;
+        text-align: center;
+        .item{
+            display: flex;
+            justify-content: center;
+            span{
+                line-height: 2.3em;
+                font-size: 1.8rem;
+            }
         }
     }
 }
