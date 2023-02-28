@@ -16,6 +16,10 @@ const routes = [
       {
         path: '/trace',
         component: () => import('../views/trace')
+      },
+      {
+        path: '/monitor',
+        component: () => import('../views/monitor')
       }
     ]
   },
