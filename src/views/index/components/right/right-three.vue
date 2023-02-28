@@ -41,7 +41,6 @@
   }
   ul{
     li{
-      
       a{
         display: flex;
         margin: 7px 0px;
@@ -73,7 +72,6 @@
         .time{
             width: 160px;
         }
-        
       }
     }
   }
