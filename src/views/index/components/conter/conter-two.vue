@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-      <h2>扫码品种趋势</h2>
+      <h2>食用菌实时批发价格</h2>
       <div ref="echarts" :style="{height: maxHeight * 0.9 + 'px'}">
           
       </div>
