@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="content" :style="{height: maxHeight + 'px'}">
       <h2>扫码记录</h2>
       <table>
         <thead>
@@ -40,6 +40,7 @@
 
 <style lang="less" scoped>
 .content{
+  overflow: auto;
   h2{
     padding-left: 0.6em;
     text-align: left;
