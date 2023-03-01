@@ -23,6 +23,10 @@ const routes = [
       {
         path: '/data-statistics',
         component: () => import('../views/data-statistics')
+      },
+      {
+        path: '/fram-work',
+        component: () => import('../views/fram-work')
       }
     ]
   },
