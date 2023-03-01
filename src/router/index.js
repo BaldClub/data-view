@@ -19,6 +19,10 @@ const routes = [
       {
         path: '/monitor',
         component: () => import('../views/monitor')
+      },
+      {
+        path: '/data-statistics',
+        component: () => import('../views/data-statistics')
       }
     ]
   },
