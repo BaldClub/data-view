@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import { compileToFunctions } from 'vue-template-compiler'
 Vue.use(VueRouter)
 
 const routes = [
@@ -16,6 +15,10 @@ const routes = [
       {
         path: '/trace',
         component: () => import('../views/trace')
+      },
+      {
+        path: '/monitor',
+        component: () => import('../views/monitor')
       }
     ]
   },
