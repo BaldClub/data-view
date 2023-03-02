@@ -1,75 +1,70 @@
 <template>
-  <div class="content" :style="{height: maxHeight + 'px'}">
-      <h2>扫码记录</h2>
-      <table>
-        <thead>
-          <tr>
-              <th>产品名</th>
-              <th>产品编号</th>
-              <th>位置</th>
-              <th>时间</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="item in 4">
-              <td>产品名</td>
-              <td>产品编号产品编号产品编号产品编号</td>
-              <td>位置</td>
-              <td>时间</td>
-          </tr>
-        </tbody>
-      </table>
+  <div class="content" :style="{ height: maxHeight + 'px' }">
+    <h2>扫码记录</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>产品名</th>
+          <th>产品编号</th>
+          <th>位置</th>
+          <th>时间</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="item in 4">
+          <td>产品名</td>
+          <td>产品编号产品编号产品编号产品编号</td>
+          <td>位置</td>
+          <td>时间</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
 <script>
-  export default {
-    props: [ 'maxHeight' ],
-    data(){
-      return {
-        
-      }
-    },
-    mounted(){
-    },
-    methods:{
-      
-    }
-  }
+export default {
+  props: ["maxHeight"],
+  data() {
+    return {};
+  },
+  mounted() {},
+  methods: {},
+};
 </script>
 
 <style lang="less" scoped>
-.content{
+.content {
   overflow: auto;
-  h2{
+  h2 {
     padding-left: 0.6em;
     text-align: left;
   }
-  table{
+  table {
     width: 100%;
     margin-top: 10px;
-    thead{
+    thead {
       color: #fff;
       background-color: rgb(55, 162, 255);
-      tr{
+      tr {
         display: grid;
         grid-template-columns: 25% 25% 25% 25%;
-        th{
+        th {
           padding: 6px 0px;
         }
       }
     }
-    tbody{
+    tbody {
       color: #fff;
-      :hover{
+      :hover {
         background-color: rgba(55, 162, 255, 0.156);
       }
-      tr{
+      tr {
         display: grid;
         margin: 10px 0px;
         background-color: rgba(55, 162, 255, 0.356);
         grid-template-columns: 25% 25% 25% 25%;
-        td{
+        td {
           padding: 6px 0px;
           overflow: hidden;
           /*文本不会换行*/

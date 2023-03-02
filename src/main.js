@@ -1,7 +1,7 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store'
+import Vue from "vue";
+import App from "./App.vue";
+import router from "./router";
+import store from "./store";
 // 设置 Vue.config.productionTip = false 来关闭生产模式下给出的提示
 Vue.config.productionTip = false;
 
@@ -15,33 +15,33 @@ Vue.config.productionTip = false;
 import { randomNum } from "./utils/koi";
 Vue.prototype.randomNum = randomNum;
 // 引入DataV,将自动注册所有组件为全局组件
-import dataV from '@jiaminghi/data-view';
-Vue.use(dataV)
+import dataV from "@jiaminghi/data-view";
+Vue.use(dataV);
 
 // 引入echarts
-import * as echarts from 'echarts'
-Vue.prototype.$echarts = echarts
+import * as echarts from "echarts";
+Vue.prototype.$echarts = echarts;
 
 // 引入ElementUI
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
+import ElementUI from "element-ui";
+import "element-ui/lib/theme-chalk/index.css";
 Vue.use(ElementUI);
 
 // 引入轮播列表
-import scroll from 'vue-seamless-scroll';
-Vue.use(scroll)
+import scroll from "vue-seamless-scroll";
+Vue.use(scroll);
 // 引入axios
 //import axios from 'axios'
 // axios.defaults.baseURL = "http://127.0.0.1:8001/"
 // 将axios绑定到vue的原型上
 // 在别的组件中 this.$axios
-//Vue.prototype.$axios = axios 
+//Vue.prototype.$axios = axios
 
 // 引入全局css
-import './assets/less/style.less';
+import "./assets/less/style.less";
 
 new Vue({
   router,
   store,
-  render: h => h(App)
-}).$mount('#app')
+  render: (h) => h(App),
+}).$mount("#app");

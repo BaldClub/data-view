@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <h2>预警报警次数</h2>
+    <h2>设备总价</h2>
     <div ref="echarts" :style="{ height: maxHeight * 0.9 + 'px' }"></div>
   </div>
 </template>
@@ -46,6 +46,13 @@ export default {
             },
           },
         },
+        legend: {
+          data: ["总产量", "产值"],
+          textStyle: {
+            color: "#fff",
+            // ...
+          },
+        },
         tooltip: {
           trigger: "axis",
           axisPointer: {
@@ -59,6 +66,7 @@ export default {
         },
         series: [
           {
+            name: "总产量",
             itemStyle: {
               color: {
                 type: "linear",
@@ -72,8 +80,20 @@ export default {
                     color: "rgb(255, 0, 135)", // 0% 处的颜色
                   },
                   {
-                    offset: 1,
+                    offset: 0.1,
                     color: "rgb(135, 0, 157)", // 100% 处的颜色
+                  },
+                  {
+                    offset: 0.5,
+                    color: "rgb(55, 162, 255)", // 100% 处的颜色
+                  },
+                  {
+                    offset: 0.7,
+                    color: "rgb(0, 221, 255)", // 100% 处的颜色
+                  },
+                  {
+                    offset: 1,
+                    color: "rgb(128, 255, 165)", // 100% 处的颜色
                   },
                 ],
                 global: false, // 缺省为 false
