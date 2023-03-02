@@ -23,7 +23,7 @@
         </ul>
         <ul class="link-list right">
           <li>
-            <router-link to="/"> 农资农事 </router-link>
+            <router-link to="/fram-work"> 农资农事 </router-link>
           </li>
           <li>
             <router-link to="/equipment"> 设备管理 </router-link>

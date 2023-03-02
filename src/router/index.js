@@ -28,6 +28,7 @@ const routes = [
         path: '/fram-work',
         component: () => import('../views/fram-work')
       },
+      {
         path: "/equipment",
         component: () => import("../views/equipment"),
       }
