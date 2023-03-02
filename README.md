@@ -1,75 +1,98 @@
 # :cn: koi-screen （响应式可视化大屏）
+
 ![输入图片说明](https://koi-fish.oss-cn-beijing.aliyuncs.com/koi/screen/images/koi.jpg)
+
 ## Gitee：https://gitee.com/BigCatHome/koi-screen
+
 ## Github：https://github.com/yuxintao6/koi
+
 ## CSDN：https://blog.csdn.net/qq_46856619?type=blog
-## 项目B站视频教程：https://space.bilibili.com/395991508
-# 项目访问地址（仅支持PC端），想看效果可以用来测试尺寸大小是否自适应
+
+## 项目 B 站视频教程：https://space.bilibili.com/395991508
+
+# 项目访问地址（仅支持 PC 端），想看效果可以用来测试尺寸大小是否自适应
+
 ## http://www.koi-screen.online/#/
+
 ## http://www.koi-screen.online/#/ems
+
 ## http://www.koi-screen.online/#/pcs
 
 # 项目特点： koi-screen
-- 1、亲测自适应15.6寸至70寸大屏自适应且自适应占满整个屏幕。
-- 2、自动适应支持电脑不同分辨率，自适应占满整个屏幕。例如：1920x1080，2k，1680x1050等。
-- 3、采用Vue2.0、ElementUI、Axios、ECharts、DataV和Flex布局等技术进行构建。
-- 4、根据适应浏览器大小而进行自适应，自适应Echarts图表，字体和图标。
+
+- 1、亲测自适应 15.6 寸至 70 寸大屏自适应且自适应占满整个屏幕。
+- 2、自动适应支持电脑不同分辨率，自适应占满整个屏幕。例如：1920x1080，2k，1680x1050 等。
+- 3、采用 Vue2.0、ElementUI、Axios、ECharts、DataV 和 Flex 布局等技术进行构建。
+- 4、根据适应浏览器大小而进行自适应，自适应 Echarts 图表，字体和图标。
 
 # 项目目录
+
 ![输入图片说明](https://koi-fish.oss-cn-beijing.aliyuncs.com/koi/screen/images/koi2.jpg)
 
-##  :tw-1f4a1: 1、项目介绍
+## :tw-1f4a1: 1、项目介绍
 
-- 1、亲测自适应15.6寸至70寸大屏。
-- 2、采用Vue2.0、ElementUI、Axios、ECharts、DataV和Flex布局等进行构建。
-- 3、希望各位兄台在白嫖的时候，记得star和fork。当然大佬们可以提出bug和建议，以及完善项目
+- 1、亲测自适应 15.6 寸至 70 寸大屏。
+- 2、采用 Vue2.0、ElementUI、Axios、ECharts、DataV 和 Flex 布局等进行构建。
+- 3、希望各位兄台在白嫖的时候，记得 star 和 fork。当然大佬们可以提出 bug 和建议，以及完善项目
 
+注意：本项目开发，是基于 Google 进行开发，最好使用 Google 浏览器或者火狐浏览器进行打开。
 
-注意：本项目开发，是基于Google进行开发，最好使用Google浏览器或者火狐浏览器进行打开。
+## :tw-1f4af: 2、可视化监控大屏作用
 
-##  :tw-1f4af: 2、可视化监控大屏作用
 1. 大数据时代，人们不仅讲究以事实说话，更愿意以数据说话。到底该如何更直观地展现数据，让使用者去作出正确决策或行动、帮助使用者发挥数据本身的价值？在此背景下，数据大屏可视化应运而生。
 2. 在数据的获取、储存、共享和分析中，数据可视化尤为重要。
 3. 随着社会信息化的高速增长，数据大屏已经在很多商业领域彰显价值，比如会议展厅、园区管理、城市交通调度中心、公安指挥中心、企业生产监控等重要场所。
 4. 大屏信息量的高度集中，能够多方位、多角度、全景展现各项指标，实时监控，动态一目了然。
 
-##  :sunflower: 3、屏幕适配
+## :sunflower: 3、屏幕适配
+
 - 在此之前本来想找一款可进行快速开发的模板，但是在市面上并未见到符合心中要求的。只好写一款自己认为比较满意的。
-- 作者采用vue2.0x、DataV、Element-UI以及Echarts进行开发，致力于打造一款可适应屏幕分辨率的可视化监控大屏。
-- 本项目适应Echarts大小以及字体大小都根据分辨率进行等比例适应。
-- 宽度：1、flex布局。2、grid网格布局。3、Element-UI的Layout布局。最终采用第三种。
+- 作者采用 vue2.0x、DataV、Element-UI 以及 Echarts 进行开发，致力于打造一款可适应屏幕分辨率的可视化监控大屏。
+- 本项目适应 Echarts 大小以及字体大小都根据分辨率进行等比例适应。
+- 宽度：1、flex 布局。2、grid 网格布局。3、Element-UI 的 Layout 布局。最终采用第三种。
 - 高度：宽度和高度使用定时器对浏览器进行监控，用来监控页面的动态变化大小，以用来计算字体和高度大小。
-- 已封装Axios,调用后端API接口的方法和ruoyi-vue前端一样，在api文件中的js里面写接口，vue页面进行调用。
+- 已封装 Axios,调用后端 API 接口的方法和 ruoyi-vue 前端一样，在 api 文件中的 js 里面写接口，vue 页面进行调用。
+
 ## :tw-1f380: 4、采用技术
+
 1. Vue/Cli：https://cn.vuejs.org/
-2. Element-UI的Layout布局：https://element.eleme.cn/#/zh-CN/component/layout
-3. Axios：访问后端接口API方式跟RuoYi项目保持一致。
+2. Element-UI 的 Layout 布局：https://element.eleme.cn/#/zh-CN/component/layout
+3. Axios：访问后端接口 API 方式跟 RuoYi 项目保持一致。
 4. DataV：http://datav.jiaminghi.com/guide/borderBox.html#dv-border-box-12
-5. Flex布局：https://www.runoob.com/w3cnote/flex-grammar.html
+5. Flex 布局：https://www.runoob.com/w3cnote/flex-grammar.html
 6. Echarts：https://echarts.apache.org/zh/index.html
 7. 等等技术。
 
-##  :tw-1f60a: 5、作者：･ᴗ･
-​                             
-##  :tw-1f33c: 6、安装启动步骤
+## :tw-1f60a: 5、作者：･ᴗ･
+
+​
+
+## :tw-1f33c: 6、安装启动步骤
 
 ### 6.1、项目下载依赖
+
 ```
 npm install 或者 cnpm install
 ```
 
 ### 6.2、项目启动
+
 ```
 npm run serve
 ```
+
 ### 6.3、项目地址
+
 作者写过并完善的可视化大屏，可进行参考！
+
 ```
 http://www.koi-screen.online/#/
 http://www.koi-screen.online/#/ems
 http://www.koi-screen.online/#/pcs
 ```
+
 ### 6.4、项目启动报错
+
 ```
 项目启动报错，大概率是npm版本问题或者前端对应环境node和npm未进行安装。
 以下步骤：
@@ -91,11 +114,12 @@ http://www.koi-screen.online/#/pcs
   4.5、vue-concise-slider轮播列表
    官网：https://chenxuan0000.github.io/vue-seamless-scroll/zh/guide/
    安装：npm install vue-seamless-scroll --save
-5、下载项目依赖：npm install 
+5、下载项目依赖：npm install
 6、启动项目：npm run serve
 7、项目打包：npm run build
 ```
-### 6.5、如果不小心下载了Eslint，如何进行删除
+
+### 6.5、如果不小心下载了 Eslint，如何进行删除
 
 ```
 Eslint彻底删除步骤：
@@ -104,7 +128,9 @@ Eslint彻底删除步骤：
 3、最好搜索全项目文件，删除一切eslint相关的配置代码。
 4、删除完后，重新下载依赖 npm install，重启项目 npm run serve 。
 ```
-##  :tw-1f367: 7、标题常用emoji和路由配置
+
+## :tw-1f367: 7、标题常用 emoji 和路由配置
+
 - 😄 😃 😆 😍 😘 😆 😁 😉 😂 😭 😎 😷 😵 🌝 🌍 🌎 🌏 ⛅️ 🔯 ♈️ 🕙
 - 💛 💙 💜 ❤️ 💚 💔 💓 💗 💘 💖 ⭐️ ❓ ❔ 💤 🎵 🐛 🐞 🐠 🐕 ⚠️ 🚩
 - 💩 👍 👊 ✌️ ✋ 👈 👈 ☝️ 🙏 👩 👨 👦 👧 👶 👲 👮 😻 🐢 🐬 🐧 🚋 🚅
@@ -113,7 +139,9 @@ Eslint彻底删除步骤：
 - 💐 🌸 🌷 🍀 🌹 🌻 🌺 🍁 🍃 🌿 🍄 🌵 🌴 🌲 🌳 🌼 🌞 🎃 🎁 👻 🔔 🎉
 - 🔍 🔎 🔒 🔆 🔨 💣 ✒️ ⚽️ 📙 📘 📐 ✏️ 🏆 💎 💍 👠 🍵 🍺 🍻 🍔 🍗 🍖
 - 🍚 🍦 🍨 🍩 🍧 🍎 🍭 🍊 🍋 🍓 🍑 🍐 🍍 🍅 🌽 🏡 🏫 🏠 💒 ⛪️ 🏭 🌈
+
 ### 路由配置
+
 ```
 新建页面后，进行路由配置。
 访问除静态路由配置的路径外，统一返回404页面。
@@ -124,9 +152,9 @@ Eslint彻底删除步骤：
   },
 ```
 
-##  :tw-1f41e: 8、封装Axios与Ruoyi-Vue调用后端方式保持一致
+## :tw-1f41e: 8、封装 Axios 与 Ruoyi-Vue 调用后端方式保持一致
 
-> baseURL: 'http://127.0.0.1:8017' ->此项用来配置nginx对应的上线地址。
+> baseURL: 'http://127.0.0.1:8017' ->此项用来配置 nginx 对应的上线地址。
 
 > 路径：
 >
@@ -181,11 +209,10 @@ export default service
 
 ```
 
-后端api接口放置文件夹，写过vue前后端的项目应该都知道。不再进行详细描述。
-路径：/src/api/xxx/index.js中
+后端 api 接口放置文件夹，写过 vue 前后端的项目应该都知道。不再进行详细描述。
+路径：/src/api/xxx/index.js 中
 
-
-vue页面调用接口方式：
+vue 页面调用接口方式：
 
 ```
 // 引入api包中的后端接口方法
@@ -196,9 +223,9 @@ mounted() {
 },
 data() {
    return {
-     allData: [], 
+     allData: [],
     }
-},    
+},
 methods: {
     getData() {
       getCurrentData().then(res => {
@@ -210,13 +237,13 @@ methods: {
 ## :tw-1f40b: 9、前端项目通用代码模板
 
 require("../../../assets/theme/shine") 引入的是自定义主题，
-如果想要Echarts变得好看，并且不需要过多的反复配置，则最好在官网定制一个主题。
-这里作者已经自定义主题，如若有看着不舒服的阔以去Echarts官网进行配置。
+如果想要 Echarts 变得好看，并且不需要过多的反复配置，则最好在官网定制一个主题。
+这里作者已经自定义主题，如若有看着不舒服的阔以去 Echarts 官网进行配置。
 网址：https://echarts.apache.org/zh/theme-builder.html
 
 ```
 <!-- 初始化代码 -->
-<template>      
+<template>
     <div ref="refChart" :style="{ height: kHOne + 'px'}"></div>
 </template>
 
@@ -239,7 +266,7 @@ export default {
     // 浏览器字体大小
     kFOne: null,
     // 自适应浏览器获取宽高大小定时器
-    koiTime: null 
+    koiTime: null
   }
   },
   created () {},
@@ -258,7 +285,7 @@ export default {
     // 获取接口数据
     this.getData();
     // 局部刷新定时器
-    //this.getDataTimer();    
+    //this.getDataTimer();
   },
   beforeDestroy () {
 
@@ -293,7 +320,7 @@ export default {
       // 浏览器字体计算
       this.kFOne = Math.round(this.screenWidth / 100);
       // 浏览器宽度宽度
-      this.kWOne = this.screenWidth;      
+      this.kWOne = this.screenWidth;
       //console.log("宽度->"+this.screenWidth);
     },
     getData() {
@@ -301,8 +328,8 @@ export default {
       // getModuleData().then(res => {
       //       this.allData = res.data;
       //       //console.log("ALLDATA->"+JSON.stringify(this.allData.pcsSum));
-      //       // echarts查不到数据，将初始化echarts的方法全部放置到接口方法中即可。  
-      // })  
+      //       // echarts查不到数据，将初始化echarts的方法全部放置到接口方法中即可。
+      // })
       // 获取服务器的数据, 对this.allData进行赋值之后, 调用updateChart方法更新图表
       //console.log("ALLDATA->",JSON.stringify(res.data))
       //console.log("ALLDATA->",JSON.stringify(this.allData))
@@ -322,7 +349,7 @@ export default {
         this.getData();
         //console.log("Hello World")
       }, 3000)
-    },  
+    },
   }
 }
 </script>
@@ -331,7 +358,8 @@ export default {
 </style>
 ```
 
-##  :tw-1f383: 10、主页采用Element-UI布局
+## :tw-1f383: 10、主页采用 Element-UI 布局
+
 ### 官网参考：https://element.eleme.cn/#/zh-CN/component/layout
 
 ```
@@ -342,84 +370,96 @@ export default {
               <div :style="{ height: kHTwo + 'px'}">
                 <dv-border-box-12 style="padding:12px">
                   1eft1
-                </dv-border-box-12> 
+                </dv-border-box-12>
               </div>
-      
+
               <div :style="{ height: kHThree + 'px'}">
                 <!-- style="padding:12px" -->
                 <dv-border-box-12 style="padding:12px">
                   1eft2
-                </dv-border-box-12> 
+                </dv-border-box-12>
               </div>
             </el-col>
 
-            <el-col :span="12"> 
+            <el-col :span="12">
               <div :style="{ height: kHFour + 'px'}">
                 <dv-border-box-12 style="padding:12px">
                   center1
-                </dv-border-box-12> 
+                </dv-border-box-12>
               </div>
               <div :style="{ height: kHFive + 'px'}">
                 <dv-border-box-12 style="padding:12px">
                   center2
-                </dv-border-box-12> 
+                </dv-border-box-12>
               </div>
             </el-col>
-            
+
             <el-col :span="6">
               <div :style="{ height: kHSix + 'px'}">
                 <dv-border-box-12 style="padding:12px">
                   right1
-                </dv-border-box-12> 
+                </dv-border-box-12>
               </div>
               <div :style="{ height: kHSeven + 'px'}">
                 <dv-border-box-12 style="padding:12px">
                   right2
-                </dv-border-box-12> 
+                </dv-border-box-12>
               </div>
               <div :style="{ height: kHEight + 'px'}">
                 <dv-border-box-12 style="padding:12px">
                   right3
-                </dv-border-box-12> 
-              </div>              
+                </dv-border-box-12>
+              </div>
             </el-col>
 
           </el-row>
         </div>
           <!-- 总体布局end -->
 ```
-##  :tw-1f60e: 11、组件展示代码
+
+## :tw-1f60e: 11、组件展示代码
+
 ### 目的：为了快速开发，直接复制粘贴改下高度即可。
+
 ### 1、饼形图自适应
+
 ![输入图片说明](https://koi-fish.oss-cn-beijing.aliyuncs.com/koi/screen/images/bxt.jpg)
 
 ### 2、折线图自适应
+
 ![输入图片说明](https://koi-fish.oss-cn-beijing.aliyuncs.com/koi/screen/images/zxt.jpg)
 
 ### 3、柱形图自适应
+
 ```
 
 ```
+
 ### 4、数据无缝轮播
-```
-正在开发中，有小伙伴开发完了可以直接提供于我。
-```
-### 5、中国地图
-```
-正在开发中，有小伙伴开发完了可以直接提供于我。
-```
-### 6、有小伙伴开发后可进行贡献，作者会完善文档内容。
+
 ```
 正在开发中，有小伙伴开发完了可以直接提供于我。
 ```
 
-##  :tw-1f48c: 12、项目部署
+### 5、中国地图
+
+```
+正在开发中，有小伙伴开发完了可以直接提供于我。
+```
+
+### 6、有小伙伴开发后可进行贡献，作者会完善文档内容。
+
+```
+正在开发中，有小伙伴开发完了可以直接提供于我。
+```
+
+## :tw-1f48c: 12、项目部署
 
 - 1、购买服务器，阿里云或者腾讯云等，这里不在进行步骤展示。
-- 2、打包命令：npm run build ，会生成一个dist包。
-- 3、域名购买，域名解析映射购买的服务器IP、SSL证书申请以及域名备案等三步。不再进行演示，不清楚阔以直接面向百度
-- 4、开放防火墙80端口和443端口，一般情况都会默认开放。
-- 5、nginx配置，阿里云域名上面有帮助文档，也可以进行参考。
+- 2、打包命令：npm run build ，会生成一个 dist 包。
+- 3、域名购买，域名解析映射购买的服务器 IP、SSL 证书申请以及域名备案等三步。不再进行演示，不清楚阔以直接面向百度
+- 4、开放防火墙 80 端口和 443 端口，一般情况都会默认开放。
+- 5、nginx 配置，阿里云域名上面有帮助文档，也可以进行参考。
 
 ```
 worker_processes  1;
@@ -445,15 +485,15 @@ http {
 		listen  80;
         # 填写绑定证书的域名,本地的是localhost
 		server_name  koi-screen.online,localhost;
-	  
+
 		location / {
 			try_files $uri $uri/ /index.html;
         # 项目目录 nginx目录中的前端带包dist文件夹，默认dist，可以修改文件夹名称
 			root   dist;
 			index  index.html;
 		}
-	  
-        # /api 开头的后端项目 
+
+        # /api 开头的后端项目
         location /api {
                 proxy_pass http://localhost:8007/;
             }
@@ -471,9 +511,9 @@ http {
         root html;
         index index.html index.htm;
         # SSL证书地址
-        ssl_certificate cert/域名.pem;  
+        ssl_certificate cert/域名.pem;
         # SSL证书公钥
-        ssl_certificate_key cert/域名.key; 
+        ssl_certificate_key cert/域名.key;
         # 超时时间
         ssl_session_timeout 5m;
         # 请按照以下套件配置，配置加密套件，写法遵循 openssl 标准。
@@ -486,9 +526,11 @@ http {
         }
     }
 
-} 
+}
 ```
-## 13、欢迎各位兄台积极优化，剔除BUG进行修复以及开源贡献自适应组件模板代码。
+
+## 13、欢迎各位兄台积极优化，剔除 BUG 进行修复以及开源贡献自适应组件模板代码。
+
 - 每一份开源来之不易，欢迎兄台们喜欢的捧个场，让作者更有每天持之以恒的动力。
 <table>
     <tr>
@@ -497,11 +539,11 @@ http {
     </tr>
 </table>
 
-## 14、QQ群交流
+## 14、QQ 群交流
+
 <table>
     <tr>
         <td><img src="https://koi-fish.oss-cn-beijing.aliyuncs.com/koi/screen/images/QQ.JPG"/></td>
         <td><img src="https://koi-fish.oss-cn-beijing.aliyuncs.com/koi/screen/images/QQ.JPG"/></td>
     </tr>
 </table>
-
