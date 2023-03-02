@@ -106,7 +106,7 @@
         },
         gataData(){
           for(let i = 0; i< this.titleList.length ;i++){
-            let item = JSON.parse(   JSON.stringify(this.seriesItem)   )
+            let item = JSON.parse(JSON.stringify(this.seriesItem))
             item.name = this.titleList[i]
             item.areaStyle.color.colorStops = this.colorStopsList[i]
             let arr = []
