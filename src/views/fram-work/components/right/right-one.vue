@@ -39,7 +39,6 @@
               data: ['总产量', '产值'],
               textStyle: {
                 color: '#fff'
-                // ...
               }
             },
             tooltip: {
