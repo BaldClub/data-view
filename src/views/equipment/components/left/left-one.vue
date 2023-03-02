@@ -1,6 +1,6 @@
 <template>
     <div class="content">
-        <h2>扫码趋势</h2>
+        <h2>设备总数</h2>
         <div ref="echarts" :style="{height: maxHeight * 0.9 + 'px'}">
   
         </div>

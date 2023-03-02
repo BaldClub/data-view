@@ -1,6 +1,6 @@
 <template>
     <div class="content">
-        <h2>品种分布</h2>
+        <h2>设备状态</h2>
         <div ref="echarts" :style="{height: maxHeight * 0.9 + 'px'}">
   
         </div>

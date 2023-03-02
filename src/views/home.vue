@@ -8,16 +8,48 @@
           <!-- 第一部分-头部-start -->
             <div class="header">
               <ul class="link-list left">
-                <li>首页</li>
-                <li>溯源统计</li>
-                <li>智能监控</li>
-                <li>数据统计</li>
+                <li>
+                  <router-link to="/">
+                    首页
+                  </router-link>
+                </li>
+                <li>
+                  <router-link to="/trace">
+                    溯源统计
+                  </router-link>
+                </li>
+                <li>
+                  <router-link to="/monitor">
+                    智能监控
+                  </router-link>
+                </li>
+                <li>
+                  <router-link to="/data-statistics">
+                    数据统计
+                  </router-link>
+                </li>
               </ul>
               <ul class="link-list right  ">
-                <li>农资农事</li>
-                <li>设备管理</li>
-                <li>环境监测</li>
-                <li>生产管理</li>
+                <li>
+                  <router-link to="/">
+                    农资农事
+                  </router-link>
+                </li>
+                <li>
+                  <router-link to="/equipment">
+                    设备管理
+                  </router-link>
+                </li>
+                <li>
+                  <router-link to="/">
+                    环境监测
+                  </router-link>
+                </li>
+                <li>
+                  <router-link to="/">
+                    生产管理
+                  </router-link>
+                </li>
               </ul>
               <!-- 时间 -->
               <!-- <div class="localTime colorPink" :style="{'font-size': Math.round(this.screenWidth/100) + 'px'}">{{ dateYear }} {{ dateWeek }} {{ dateDay }}</div> -->

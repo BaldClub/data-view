@@ -21,9 +21,9 @@
   
       <el-col :span="10">
         <div :style="{ height: kHFour + 'px'}">
-          <dv-border-box-12 class="container-item" style="padding:12px">
+          <div class="container-item" style="padding:12px">
               <conterOne :max-height="kHFour"></conterOne>
-          </dv-border-box-12>
+          </div>
         </div>
       </el-col>
   
@@ -57,6 +57,7 @@
   import rightThree from './components/right/right-three.vue'
   import background from '@/components/background.vue'
   export default {
+    name: 'index',
     components:{
       background,leftOne,leftTwo,leftThree,conterOne,rightOne,rightTwo,rightThree
     },
@@ -93,9 +94,9 @@
     methods: {
       getScreenHeight() {
           this.screenHeight = window.innerHeight || document.documentElement.innerHeight || document.body.clientHeight;
-          this.kHOne = Math.round(this.screenHeight * 0.25);
-          this.kHTwo = Math.round(this.screenHeight * 0.26);
-          this.kHThree = Math.round(this.screenHeight * 0.415);
+          this.kHOne = Math.round(this.screenHeight * 0.309);
+          this.kHTwo = Math.round(this.screenHeight * 0.308);
+          this.kHThree = Math.round(this.screenHeight * 0.308);
           this.kHFour = Math.round(this.screenHeight * 0.925);
           this.kHSix = Math.round(this.screenHeight * 0.28);
           this.kHSeven = Math.round(this.screenHeight * 0.32);

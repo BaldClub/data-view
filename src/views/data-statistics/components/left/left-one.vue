@@ -1,6 +1,6 @@
 <template>
     <div class="content">
-        <h2>预警报警次数</h2>
+        <h2>工厂产值/利润对比</h2>
         <div ref="echarts" :style="{height: maxHeight * 0.9 + 'px'}">
   
         </div>
@@ -14,9 +14,16 @@
         return {
           echarts:'',
           option :{
+            legend: {
+              data: ['Rainfall', 'Evaporation'],
+              textStyle: {
+                color: '#fff'
+                // ...
+              }
+            },
             xAxis: {
               type: 'category',
-              name: '单位（月）',
+              name: '单位（时间）',
               axisLabel: {
                   show: true,
                   textStyle: {
@@ -27,7 +34,7 @@
             },
             yAxis: {
               type: 'value',
-              name: '单位（次）',
+              name: '单位（数量）',
               axisLabel: {
                   show: true,
                   textStyle: {
@@ -41,7 +48,6 @@
                 type: 'shadow'
               }
             },
-           
             grid:{
                 top: 40,
                 right: 70,
@@ -49,6 +55,14 @@
             },
             series: [
               {
+                name: 'Rainfall',
+                type: 'bar',
+                data: [
+                  2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3
+                ],
+                markLine: {
+                  data: [{ type: 'average', name: 'Avg' }]
+                },
                 itemStyle: {
                   color: {
                     type: 'linear',
@@ -58,18 +72,50 @@
                     y2: 1,
                     colorStops: [
                       {
-                          offset: 0, color: 'rgb(255, 0, 135)' // 0% 处的颜色
+                          offset: 1, color: 'rgb(255, 0, 135)' // 0% 处的颜色
                       }, 
                       {
-                          offset: 1, color: 'rgb(135, 0, 157)' // 100% 处的颜色
+                          offset: 0.5, color: 'rgb(135, 0, 157)' // 100% 处的颜色
+                      },
+                      {
+                          offset: 0, color: 'rgb(55, 162, 255)' // 100% 处的颜色
                       },
                      
                     ],
                     global: false // 缺省为 false
                   }
                 },
-                data: [120, 200, 150, 80, 70, 110, 130, 13, 130, 130, 130, 130],
+              },
+              {
+                name: 'Evaporation',
                 type: 'bar',
+                data: [
+                  2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3
+                ],
+                markLine: {
+                  data: [{ type: 'average', name: 'Avg' }]
+                },
+                itemStyle: {
+                  color: {
+                    type: 'linear',
+                    x: 0,
+                    y: 0,
+                    x2: 0,
+                    y2: 1,
+                    colorStops: [
+                      {
+                          offset: 0.1, color: 'rgb(55, 162, 255)' // 100% 处的颜色
+                      },
+                      {
+                          offset: 0.5, color: 'rgb(0, 221, 255)' // 100% 处的颜色
+                      },
+                      {
+                          offset: 0, color: 'rgb(128, 255, 165)' // 100% 处的颜色
+                      }
+                    ],
+                    global: false // 缺省为 false
+                  }
+                }
               }
             ]
           }
