@@ -52,6 +52,7 @@ export default {
             type: "shadow",
           },
         },
+
         grid: {
           top: 40,
           right: 70,
