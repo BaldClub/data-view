@@ -10,12 +10,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="item in 4">
-          <td>30(个)</td>
-          <td>实时影像</td>
+        <tr v-for="item in dataList">
+          <td>{{  item.num }}(个)</td>
+          <td>{{ item.name }}</td>
           <td>
             <dv-percent-pond
-              :config="config"
+              :config="item.config"
               :style="{
                 width: maxHeight * 0.2 + 'px',
                 height: maxHeight * 0.1 + 'px',
@@ -33,10 +33,33 @@ export default {
   props: ["maxHeight"],
   data() {
     return {
-      config: {
-        value: 99,
-        shape: "round",
-      },
+      dataList:[
+        {
+          num: 30,
+          name: '实时影像',
+          config: {
+            value: 80,
+            shape: "round",
+          },
+        },
+        {
+          num: 10,
+          name: '室外环境监测',
+          config: {
+            value: 90,
+            shape: "round",
+          },
+        },
+        {
+          num: 100,
+          name: '菇房环境监测',
+          config: {
+            value: 86,
+            shape: "round",
+          },
+        }
+      ],
+      
     };
   },
 };
@@ -70,15 +93,13 @@ export default {
       }
       tr {
         display: grid;
-        margin: 10px 0px;
+        margin: 16px 0px;
         background-color: rgba(55, 162, 255, 0.356);
         grid-template-columns: 20% 35% 45%;
         td {
-          padding: 10px 0px;
+          padding: 14px 0px;
           overflow: hidden;
-          /*文本不会换行*/
           white-space: nowrap;
-          /*当文本溢出包含元素时，以省略号表示超出的文本*/
           text-overflow: ellipsis;
           display: flex;
           justify-content: center;

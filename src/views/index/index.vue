@@ -120,8 +120,8 @@ export default {
         document.documentElement.innerHeight ||
         document.body.clientHeight;
       this.kHOne = Math.round(this.screenHeight * 0.25);
-      this.kHTwo = Math.round(this.screenHeight * 0.26);
-      this.kHThree = Math.round(this.screenHeight * 0.415);
+      this.kHTwo = Math.round(this.screenHeight * 0.3);
+      this.kHThree = Math.round(this.screenHeight * 0.375);
       this.kHFour = Math.round(this.screenHeight * 0.54);
       this.kHFive = Math.round(this.screenHeight * 0.386);
       this.kHSix = Math.round(this.screenHeight * 0.28);

@@ -1,64 +1,67 @@
 <template>
-  <div class="content">
-    <div class="item">
-      <div class="icon">
-        <dv-decoration-9
-          :style="{
-            height: maxHeight * 0.35 + 'px',
-            width: maxHeight * 0.35 + 'px',
-          }"
-        >
-          <img
-            src="@/assets/images/icon-area.png"
-            :style="{ height: maxHeight * 0.2 + 'px' }"
-            alt=""
-          />
-        </dv-decoration-9>
+  <div>
+    <h2>物联网设备统计</h2>
+    <div class="content">
+      <div class="item">
+        <div class="icon">
+          <dv-decoration-9
+            :style="{
+              height: maxHeight * 0.35 + 'px',
+              width: maxHeight * 0.35 + 'px',
+            }"
+          >
+            <img
+              src="@/assets/images/icon-area.png"
+              :style="{ height: maxHeight * 0.2 + 'px' }"
+              alt=""
+            />
+          </dv-decoration-9>
+        </div>
+        <div class="name">园区面积</div>
+        <dv-digital-flop :config="config" />
       </div>
-      <div class="name">园区面积</div>
-      <dv-digital-flop :config="config" />
-    </div>
-    <div class="item">
-      <div class="icon">
-        <dv-decoration-9
-          :style="{
-            height: maxHeight * 0.35 + 'px',
-            width: maxHeight * 0.35 + 'px',
-          }"
-        >
-          <img
-            src="@/assets/images/icon-factory.png"
-            :style="{ height: maxHeight * 0.2 + 'px' }"
-            alt=""
-          />
-        </dv-decoration-9>
+      <div class="item">
+        <div class="icon">
+          <dv-decoration-9
+            :style="{
+              height: maxHeight * 0.35 + 'px',
+              width: maxHeight * 0.35 + 'px',
+            }"
+          >
+            <img
+              src="@/assets/images/icon-factory.png"
+              :style="{ height: maxHeight * 0.2 + 'px' }"
+              alt=""
+            />
+          </dv-decoration-9>
+        </div>
+        <div class="name">厂房数量</div>
+        <dv-digital-flop
+          :config="config"
+          style="width: 100%; color: aquamarine"
+        />
       </div>
-      <div class="name">厂房数量</div>
-      <dv-digital-flop
-        :config="config"
-        style="width: 100%; color: aquamarine"
-      />
-    </div>
-    <div class="item">
-      <div class="icon">
-        <dv-decoration-9
-          :style="{
-            height: maxHeight * 0.35 + 'px',
-            width: maxHeight * 0.35 + 'px',
-          }"
-        >
-          <img
-            src="@/assets/images/icon-mushroom.png"
-            :style="{ height: maxHeight * 0.2 + 'px' }"
-            alt=""
-          />
-        </dv-decoration-9>
+      <div class="item">
+        <div class="icon">
+          <dv-decoration-9
+            :style="{
+              height: maxHeight * 0.35 + 'px',
+              width: maxHeight * 0.35 + 'px',
+            }"
+          >
+            <img
+              src="@/assets/images/icon-mushroom.png"
+              :style="{ height: maxHeight * 0.2 + 'px' }"
+              alt=""
+            />
+          </dv-decoration-9>
+        </div>
+        <div class="name">栽培品种</div>
+        <dv-digital-flop
+          :config="config"
+          style="width: 100%; color: aquamarine"
+        />
       </div>
-      <div class="name">栽培品种</div>
-      <dv-digital-flop
-        :config="config"
-        style="width: 100%; color: aquamarine"
-      />
     </div>
   </div>
 </template>
@@ -89,6 +92,10 @@ export default {
 </script>
 
 <style lang="less" scoped>
+  h2 {
+    padding-left: 0.6em;
+    text-align: left;
+  }
 .content {
   padding-top: 10px;
   display: grid;

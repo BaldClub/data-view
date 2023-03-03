@@ -11,131 +11,39 @@ export default {
   data() {
     return {
       echarts: "",
-      colorStopsList: [
-        [
-          { offset: 0, color: "rgb(128, 255, 165)" },
-          { offset: 1, color: "rgb(1, 191, 236)" },
-        ],
-        [
-          { offset: 0, color: "rgb(0, 221, 255)" },
-          { offset: 1, color: "rgb(77, 119, 255)" },
-        ],
-        [
-          { offset: 0, color: "rgb(255, 162, 0)" },
-          { offset: 1, color: "rgb(255, 231, 179)" },
-        ],
-        [
-          { offset: 0, color: "rgb(255, 0, 135)" },
-          { offset: 1, color: "rgb(135, 0, 157)" },
-        ],
-        [
-          { offset: 0, color: "rgb(255, 191, 0)" },
-          { offset: 1, color: "rgb(224, 62, 76)" },
-        ],
-        [
-          { offset: 0, color: "rgb(255, 0, 191)" },
-          { offset: 1, color: "rgb(255, 179, 200)" },
-        ],
-      ],
-      seriesItem: {
-        name: "Line 1",
-        type: "line",
-        stack: "Total",
-        smooth: true,
-        lineStyle: {
-          width: 0,
-        },
-        showSymbol: false,
-        areaStyle: {
-          opacity: 0.8,
-          color: {
-            type: "linear",
-            x: 0,
-            y: 0,
-            x2: 0,
-            y2: 1,
-            colorStops: [
-              {
-                offset: 0,
-                color: "rgb(128, 255, 165)", // 0% 处的颜色
-              },
-              {
-                offset: 1,
-                color: "rgb(1, 191, 236)", // 100% 处的颜色
-              },
-            ],
-            global: false, // 缺省为 false
-          },
-        },
-        emphasis: {
-          focus: "series",
-        },
-        data: [140, 232, 101, 264, 90, 340, 250],
-      },
       titleList: ["平菇", "黑木耳", "香菇", "金针菇", "茶树菇", "杏鲍菇"],
       option: {
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            animation: false
+          }
+        },
         legend: {
-          data: ["平菇", "黑木耳", "香菇", "金针菇", "茶树菇", "杏鲍菇"],
+          data:["平菇", "黑木耳", "香菇", "金针菇", "茶树菇", "杏鲍菇"],
           textStyle: {
             color: "#fff",
-            // ...
           },
         },
         xAxis: {
-          type: "category",
-          name: "单位（月）",
-          boundaryGap: false,
-          data: [
-            "一月",
-            "二月",
-            "三月",
-            "四月",
-            "五月",
-            "六月",
-            "七月",
-            "八月",
-            "九月",
-            "十月",
-            "十一月",
-            "十二月",
-          ],
-          axisLabel: {
-            show: true,
-            textStyle: {
-              color: "#ffffff",
-            },
-          },
+          type: 'time',
+          splitLine: {
+            show: false
+          }
         },
         yAxis: {
-          type: "value",
-          name: "单位（元/kg）",
-          axisLabel: {
-            show: true,
-            textStyle: {
-              color: "#ffffff",
-            },
-          },
+          type: 'value',
+          boundaryGap: [0, '100%'],
+          splitLine: {
+            show: false
+          }
         },
-        tooltip: {
-          trigger: "axis",
-          axisPointer: {
-            type: "cross",
-            label: {
-              backgroundColor: "#6a7985",
-            },
-          },
-        },
-        grid: {
-          top: 40,
-          right: 70,
-          bottom: 50,
-        },
-        series: [],
-      },
-    };
+        series: []
+      }
+    }
   },
   mounted() {
-    this.gataData();
+    this.getData()
     this.initCharts();
   },
   methods: {
@@ -143,20 +51,39 @@ export default {
       this.echarts = this.$echarts.init(this.$refs.echarts);
       this.echarts.setOption(this.option);
     },
-    gataData() {
-      for (let i = 0; i < this.titleList.length; i++) {
-        let item = JSON.parse(JSON.stringify(this.seriesItem));
-        item.name = this.titleList[i];
-        item.areaStyle.color.colorStops = this.colorStopsList[i];
-        let arr = [];
-        for (let j = 0; j < 12; j++) {
-          arr.push(Math.random(j) * 100);
+    randomData(now, value) {
+      return {
+        name: now.toString(),
+        value: [
+          [now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'),
+          Math.round(value)
+        ]
+      };
+    },
+    getData(){
+      let oneDay = 24 * 3600 * 1000;
+      let value = Math.random() * 1000;
+      for(let j=0; j < 6;j++){
+        let now = new Date(2022, 9, 3);
+        let item = []
+        let series = {
+          name: 'Fake Data',
+          type: 'line',
+          showSymbol: false,
+          data: []
         }
-        item.data = arr;
-        this.option.series.push(item);
+        for (var i = 0; i < 100; i++) {
+          now = new Date(+ now + oneDay);
+          value = value + Math.random() * 21 - 10;
+          item.push(this.randomData(now,value));
+        }
+        series.name = this.titleList[j]
+        series.data = JSON.parse(JSON.stringify(item))
+        this.option.series.push(JSON.parse(JSON.stringify(series)));
       }
       console.log(this.option.series);
-    },
+    }
+    
   },
 };
 </script>

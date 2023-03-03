@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <h2>扫码趋势</h2>
+    <h2>食用菌总产量/产值</h2>
     <div ref="echarts" :style="{ height: maxHeight * 0.9 + 'px' }"></div>
   </div>
 </template>
@@ -38,7 +38,7 @@ export default {
         },
         yAxis: {
           type: "value",
-          name: "单位（次）",
+          name: "单位（吨/万元）",
           axisLabel: {
             show: true,
             textStyle: {
@@ -47,7 +47,7 @@ export default {
           },
         },
         legend: {
-          data: ["总产量", "产值"],
+          data: ["产量", "产值"],
           textStyle: {
             color: "#fff",
             // ...
@@ -66,7 +66,7 @@ export default {
         },
         series: [
           {
-            name: "总产量",
+            name: "产量",
             itemStyle: {
               color: {
                 type: "linear",
@@ -77,24 +77,12 @@ export default {
                 colorStops: [
                   {
                     offset: 0,
-                    color: "rgb(255, 0, 135)", // 0% 处的颜色
-                  },
-                  {
-                    offset: 0.1,
-                    color: "rgb(135, 0, 157)", // 100% 处的颜色
-                  },
-                  {
-                    offset: 0.5,
-                    color: "rgb(55, 162, 255)", // 100% 处的颜色
-                  },
-                  {
-                    offset: 0.7,
-                    color: "rgb(0, 221, 255)", // 100% 处的颜色
+                    color: "#9ec9e2", // 0% 处的颜色
                   },
                   {
                     offset: 1,
-                    color: "rgb(128, 255, 165)", // 100% 处的颜色
-                  },
+                    color: "#057be2", // 100% 处的颜色
+                  }
                 ],
                 global: false, // 缺省为 false
               },
@@ -104,7 +92,7 @@ export default {
           },
           {
             name: "产值",
-            color: ["rgb(128, 255, 165)"],
+            color: ["#e24d3f"],
             data: [
               150, 230, 224, 218, 135, 147, 260, 150, 230, 224, 218, 135, 147,
             ],
