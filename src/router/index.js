@@ -21,14 +21,18 @@ const routes = [
         component: () => import("../views/monitor"),
       },
       {
-        path: "/equipment",
-        component: () => import("../views/equipment"),
+        path: '/data-statistics',
+        component: () => import('../views/data-statistics')
       },
       {
-        path: "/data-statistics",
-        component: () => import("../views/data-statistics"),
+        path: '/fram-work',
+        component: () => import('../views/fram-work')
       },
-    ],
+      {
+        path: "/equipment",
+        component: () => import("../views/equipment"),
+      }
+    ]
   },
   {
     path: "/login",
