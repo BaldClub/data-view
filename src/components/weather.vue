@@ -30,10 +30,10 @@
             "layout": "1",
             "width": this.width  -22,
             "height": this.maxHeight - 24,
-            "background": "1",
+            "background": "5",
             "dataColor": "FFFFFF",
             "borderRadius": "5",
-            "city": "CN101040700",
+            "city": "CN101260201",
             "key": "9c112fffe3f849068a1c91abf817c26e"
           }
         }
