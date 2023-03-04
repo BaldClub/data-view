@@ -3,7 +3,9 @@
     <background></background>
     <el-col :span="7">
       <div :style="{ height: kHOne + 'px' }" class="bg-container">
-        <weather :max-height="kHOne"></weather>
+        <dv-border-box-12 class="container-item">
+          <weather :max-height="kHOne"></weather>
+        </dv-border-box-12>
       </div>
       <div :style="{ height: kHTwo + 'px' }">
         <dv-border-box-12 class="container-item" style="padding: 12px">
