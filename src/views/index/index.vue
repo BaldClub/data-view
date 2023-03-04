@@ -3,9 +3,7 @@
     <background></background>
     <el-col :span="7">
       <div :style="{ height: kHOne + 'px' }" class="bg-container">
-        <dv-border-box-12 class="container-item" style="padding: 12px">
-          <leftOne :max-height="kHOne"></leftOne>
-        </dv-border-box-12>
+        <weather :max-height="kHOne"></weather>
       </div>
       <div :style="{ height: kHTwo + 'px' }">
         <dv-border-box-12 class="container-item" style="padding: 12px">
@@ -53,7 +51,7 @@
 </template>
 
 <script>
-import leftOne from "./components/left/left-one.vue";
+import weather from "@/components/weather.vue";
 import leftTwo from "./components/left/left-two.vue";
 import leftThree from "./components/left/left-three.vue";
 import conterOne from "./components/conter/conter-one.vue";
@@ -67,7 +65,7 @@ export default {
   name: "index",
   components: {
     background,
-    leftOne,
+    weather,
     leftTwo,
     leftThree,
     conterOne,

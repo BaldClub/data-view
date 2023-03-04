@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>物联网设备统计</h2>
+    <h2>园区总览</h2>
     <div class="content">
       <div class="item">
         <div class="icon">

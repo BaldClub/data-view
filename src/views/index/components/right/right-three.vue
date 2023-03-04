@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <h2>扫码记录</h2>
+    <h2>实时政策</h2>
     <ul>
       <li v-for="item in 6">
         <a href="#">
@@ -33,6 +33,9 @@ export default {
     text-align: left;
   }
   ul {
+    .thead{
+      display: flex;
+    }
     li {
       a {
         display: flex;
