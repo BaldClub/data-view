@@ -10,9 +10,9 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="item in dataList">
-          <td>{{  item.num }}(个)</td>
-          <td>{{ item.name }}</td>
+        <tr v-for="{ num, name, config } in dataList">
+          <td>{{ num }}(个)</td>
+          <td>{{ name }}</td>
           <td>
             <dv-percent-pond
               :config="item.config"
