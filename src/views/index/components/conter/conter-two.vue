@@ -48,7 +48,7 @@ export default {
     }
   },
   mounted() {
-    this.getData()
+    this.getData();
     this.initCharts();
   },
   methods: {
