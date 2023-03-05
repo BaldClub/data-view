@@ -24,7 +24,7 @@ export default {
         },
         series: [
           {
-            name: "Access From",
+            name: "种植面积（亩）",
             type: "pie",
             radius: ["40%", "70%"],
             avoidLabelOverlap: false,
@@ -48,11 +48,12 @@ export default {
               show: false,
             },
             data: [
-              { value: 1048, name: "Search Engine" },
-              { value: 735, name: "Direct" },
-              { value: 580, name: "Email" },
-              { value: 484, name: "Union Ads" },
-              { value: 300, name: "Video Ads" },
+              { value: 1048, name: '平菇' },
+              { value: 735, name: "黑木耳" },
+              { value: 580, name: "香菇" },
+              { value: 484, name: "金针菇" },
+              { value: 300, name: "茶树菇" },
+              { value: 300, name: "杏鲍菇" },
             ],
           },
         ],

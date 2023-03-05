@@ -3,8 +3,8 @@
     <background></background>
     <el-col :span="7">
       <div :style="{ height: kHOne + 'px' }" class="bg-container">
-        <dv-border-box-12 class="container-item" style="padding: 12px">
-          <leftOne :max-height="kHOne"></leftOne>
+        <dv-border-box-12 class="container-item">
+          <weather :max-height="kHOne"></weather>
         </dv-border-box-12>
       </div>
       <div :style="{ height: kHTwo + 'px' }">
@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import leftOne from "./components/left/left-one.vue";
+import weather from "@/components/weather.vue";
 import leftTwo from "./components/left/left-two.vue";
 import leftThree from "./components/left/left-three.vue";
 import conterOne from "./components/conter/conter-one.vue";
@@ -67,7 +67,7 @@ export default {
   name: "index",
   components: {
     background,
-    leftOne,
+    weather,
     leftTwo,
     leftThree,
     conterOne,
@@ -120,8 +120,8 @@ export default {
         document.documentElement.innerHeight ||
         document.body.clientHeight;
       this.kHOne = Math.round(this.screenHeight * 0.25);
-      this.kHTwo = Math.round(this.screenHeight * 0.26);
-      this.kHThree = Math.round(this.screenHeight * 0.415);
+      this.kHTwo = Math.round(this.screenHeight * 0.3);
+      this.kHThree = Math.round(this.screenHeight * 0.375);
       this.kHFour = Math.round(this.screenHeight * 0.54);
       this.kHFive = Math.round(this.screenHeight * 0.386);
       this.kHSix = Math.round(this.screenHeight * 0.28);
