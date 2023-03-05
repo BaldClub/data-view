@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <h2>客户分布统计{{ maxHeight }}</h2>
+    <h2>客户分布统计</h2>
     <div ref="echarts" :style="{ height: maxHeight * 0.9 + 'px' }"></div>
   </div>
 </template>
@@ -22,18 +22,13 @@ export default {
             },
           },
           data: [
-            "一月",
-            "二月",
-            "三月",
-            "四月",
-            "五月",
-            "六月",
-            "七月",
-            "八月",
-            "九月",
-            "十月",
-            "十一月",
-            "十二月",
+            "贵州",
+            "重庆",
+            "四川",
+            "湖南",
+            "湖北",
+            "广东",
+            "上海",
           ],
         },
         yAxis: {
@@ -67,31 +62,19 @@ export default {
                 x2: 0,
                 y2: 1,
                 colorStops: [
+                {
+                    offset: 0,
+                    color: "#9ec9e2", // 0% 处的颜色
+                  },
                   {
                     offset: 1,
-                    color: "rgb(255, 0, 135)", // 0% 处的颜色
-                  },
-                  {
-                    offset: 0.7,
-                    color: "rgb(135, 0, 157)", // 100% 处的颜色
-                  },
-                  {
-                    offset: 0.5,
-                    color: "rgb(55, 162, 255)", // 100% 处的颜色
-                  },
-                  {
-                    offset: 0.2,
-                    color: "rgb(0, 221, 255)", // 100% 处的颜色
-                  },
-                  {
-                    offset: 0,
-                    color: "rgb(128, 255, 165)", // 100% 处的颜色
-                  },
+                    color: "#057be2", // 100% 处的颜色
+                  }
                 ],
                 global: false, // 缺省为 false
               },
             },
-            data: [120, 200, 150, 80, 70, 110, 130, 13, 130, 130, 130, 130],
+            data: [650, 423, 310, 280, 220, 180, 150],
             type: "bar",
           },
         ],

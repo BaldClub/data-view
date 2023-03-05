@@ -51,7 +51,7 @@ import conterOne from "./components/conter/conter-one.vue";
 import rightOne from "./components/right/right-one.vue";
 import rightTwo from "./components/right/right-two.vue";
 import rightThree from "./components/right/right-three.vue";
-import background from "@/components/background.vue";
+import background from "./components/bg/china.vue";
 export default {
   name: "index",
   components: {
