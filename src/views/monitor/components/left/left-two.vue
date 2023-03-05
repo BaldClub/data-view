@@ -1,24 +1,28 @@
 <template>
-  <div class="content" :style="{ height: maxHeight + 'px' }">
-    <h2>扫码记录</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>设备</th>
-          <th>菇房</th>
-          <th>状态</th>
-          <th>时间</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="item in 4">
-          <td>产品名</td>
-          <td>产品编号产品编号产品编号产品编号</td>
-          <td>位置</td>
-          <td>时间</td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="content">
+    <h2>设备详情</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>设备</th>
+            <th>菇房</th>
+            <th>状态</th>
+            <th>时间</th>
+          </tr>
+        </thead>
+      </table>
+      <div class="table-container" :style="{ height: maxHeight - 100 + 'px' }">
+        <table>
+          <tbody>
+            <tr v-for="item in 8">
+              <td>产品名</td>
+              <td>产品编号产品编号产品编号产品编号</td>
+              <td>位置</td>
+              <td>时间</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
   </div>
 </template>
 
@@ -40,6 +44,9 @@ export default {
     padding-left: 0.6em;
     text-align: left;
   }
+  .table-container{
+    overflow: auto;
+  }
   table {
     width: 100%;
     margin-top: 10px;
@@ -55,6 +62,7 @@ export default {
       }
     }
     tbody {
+
       color: #fff;
       :hover {
         background-color: rgba(55, 162, 255, 0.156);

@@ -30,19 +30,19 @@ export default {
     return {
       config: [
         {
-          data: [99],
+          data: [80],
           shape: "round",
           colors: ["#00e695", "#4ce691", "#ace6c6"],
           name: "在线",
         },
         {
-          data: [98],
+          data: [15],
           shape: "round",
           colors: ["#aba3e6", "#b361e6", "#ace6c6"],
           name: "离线",
         },
         {
-          data: [2],
+          data: [5],
           shape: "round",
           colors: ["#e6171e", "#e6acaa", "#e6acaa"],
           name: "异常",
