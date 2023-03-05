@@ -15,7 +15,7 @@
           <td>{{ name }}</td>
           <td>
             <dv-percent-pond
-              :config="item.config"
+              :config="config"
               :style="{
                 width: maxHeight * 0.2 + 'px',
                 height: maxHeight * 0.1 + 'px',
