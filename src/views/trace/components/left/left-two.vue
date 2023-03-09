@@ -69,29 +69,17 @@ export default {
                 colorStops: [
                   {
                     offset: 0,
-                    color: "rgb(255, 0, 135)", // 0% 处的颜色
-                  },
-                  {
-                    offset: 0.1,
-                    color: "rgb(135, 0, 157)", // 100% 处的颜色
-                  },
-                  {
-                    offset: 0.5,
-                    color: "rgb(55, 162, 255)", // 100% 处的颜色
-                  },
-                  {
-                    offset: 0.7,
-                    color: "rgb(0, 221, 255)", // 100% 处的颜色
+                    color: "#9ec9e2", // 0% 处的颜色
                   },
                   {
                     offset: 1,
-                    color: "rgb(128, 255, 165)", // 100% 处的颜色
-                  },
+                    color: "#057be2", // 100% 处的颜色
+                  }
                 ],
                 global: false, // 缺省为 false
               },
             },
-            data: [120, 200, 150, 80, 70, 110, 130, 13, 130, 130, 130, 130],
+            data: [],
             type: "bar",
           },
         ],
@@ -99,6 +87,7 @@ export default {
     };
   },
   mounted() {
+    this.initData()
     this.initCharts();
   },
   methods: {
@@ -106,6 +95,11 @@ export default {
       this.echarts = this.$echarts.init(this.$refs.echarts);
       this.echarts.setOption(this.option);
     },
+    initData(){
+      for(let i=0 ; i < 12; i++){
+        this.option.series[0].data.push((Math.floor (Math.random() * 500) % 200 + 300))
+      }
+    }
   },
 };
 </script>
