@@ -8,7 +8,7 @@
     <div
       class="item"
       v-for="item in 6"
-      :style="{ width: maxHeight * 0.69 + 'px' }"
+      :style="{ width: maxHeight * 0.64 + 'px' }"
     >
       <div class="name">设备名</div>
       <video width="100%" controls>
@@ -33,7 +33,7 @@ export default {
   flex-wrap: wrap;
   overflow: auto;
   .item {
-    margin: 5px;
+    margin: 8px;
     margin-top: 40px;
     background-color: #fff;
     position: relative;
