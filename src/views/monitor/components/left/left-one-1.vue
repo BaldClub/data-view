@@ -5,8 +5,6 @@
 -->
 <template>
   <div class="container-item">
-
-
   </div>
 </template>
 
