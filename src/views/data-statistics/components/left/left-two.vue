@@ -14,7 +14,7 @@ export default {
       option: {
         xAxis: {
           type: "category",
-          name: "单位（月）",
+          name: "单位（年）",
           axisLabel: {
             show: true,
             textStyle: {
@@ -22,35 +22,26 @@ export default {
             },
           },
           data: [
-            "一月",
-            "二月",
-            "三月",
-            "四月",
-            "五月",
-            "六月",
-            "七月",
-            "八月",
-            "九月",
-            "十月",
-            "十一月",
-            "十二月",
+            "2019","2020","2021", "2022",
           ],
         },
         yAxis: {
           type: "value",
-          name: "单位（次）",
+          name: "单位（个）",
           axisLabel: {
             show: true,
             textStyle: {
               color: "#ffffff",
             },
           },
+          splitLine: {
+            show: false
+          }
         },
         legend: {
-          data: ["总产量", "产值"],
+          data: ["设备数量"],
           textStyle: {
             color: "#fff",
-            // ...
           },
         },
         tooltip: {
@@ -66,10 +57,10 @@ export default {
         },
         series: [
           {
-            name: "产值",
-            color: ["rgb(128, 255, 165)"],
+            name: "设备数量",
+            color: ["#e9b633"],
             data: [
-              150, 230, 224, 218, 135, 147, 260, 150, 230, 224, 218, 135, 147,
+              55, 130, 144,150,180, 210
             ],
             type: "line",
           },

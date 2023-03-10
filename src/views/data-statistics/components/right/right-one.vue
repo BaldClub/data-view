@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import { dateYears } from '../../data/data'
 export default {
   props: ["maxHeight"],
   data() {
@@ -14,31 +15,18 @@ export default {
       option: {
         xAxis: {
           type: "category",
-          name: "单位（月）",
+          name: "单位（年）",
           axisLabel: {
             show: true,
             textStyle: {
               color: "#ffffff",
             },
           },
-          data: [
-            "一月",
-            "二月",
-            "三月",
-            "四月",
-            "五月",
-            "六月",
-            "七月",
-            "八月",
-            "九月",
-            "十月",
-            "十一月",
-            "十二月",
-          ],
+          data: [],
         },
         yAxis: {
           type: "value",
-          name: "单位（次）",
+          name: "单位（万元）",
           axisLabel: {
             show: true,
             textStyle: {
@@ -47,7 +35,7 @@ export default {
           },
         },
         legend: {
-          data: ["总产量", "产值"],
+          data: ["资金投入"],
           textStyle: {
             color: "#fff",
           },
@@ -65,10 +53,10 @@ export default {
         },
         series: [
           {
-            name: "产值",
+            name: "资金投入",
             color: ["rgb(128, 255, 165)"],
             data: [
-              150, 230, 224, 218, 135, 147, 260, 150, 230, 224, 218, 135, 147,
+              150, 230, 224, 218, 135 
             ],
             type: "line",
           },
@@ -77,6 +65,7 @@ export default {
     };
   },
   mounted() {
+    this.initData()
     this.initCharts();
   },
   methods: {
@@ -84,6 +73,9 @@ export default {
       this.echarts = this.$echarts.init(this.$refs.echarts);
       this.echarts.setOption(this.option);
     },
+    initData(){
+      this.option.xAxis.data = dateYears
+    }
   },
 };
 </script>

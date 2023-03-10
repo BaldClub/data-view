@@ -13,39 +13,25 @@ export default {
       echarts: "",
       option: {
         legend: {
-          data: ["Rainfall", "Evaporation"],
+          data: ["产值", "利润"],
           textStyle: {
             color: "#fff",
-            // ...
           },
         },
         xAxis: {
           type: "category",
-          name: "单位（时间）",
+          name: "单位（月）",
           axisLabel: {
             show: true,
             textStyle: {
               color: "#ffffff",
             },
           },
-          data: [
-            "一月",
-            "二月",
-            "三月",
-            "四月",
-            "五月",
-            "六月",
-            "七月",
-            "八月",
-            "九月",
-            "十月",
-            "十一月",
-            "十二月",
-          ],
+          data: [],
         },
         yAxis: {
           type: "value",
-          name: "单位（数量）",
+          name: "单位（万元）",
           axisLabel: {
             show: true,
             textStyle: {
@@ -66,11 +52,10 @@ export default {
         },
         series: [
           {
-            name: "Rainfall",
+            name: "产值",
             type: "bar",
             data: [
-              2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4,
-              3.3,
+              32.6, 20.0, 6.4, 3.3,
             ],
             markLine: {
               data: [{ type: "average", name: "Avg" }],
@@ -101,11 +86,10 @@ export default {
             },
           },
           {
-            name: "Evaporation",
+            name: "利润",
             type: "bar",
             data: [
-              2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0,
-              2.3,
+              48.7, 18.8, 6.0,
             ],
             markLine: {
               data: [{ type: "average", name: "Avg" }],
@@ -140,6 +124,7 @@ export default {
     };
   },
   mounted() {
+    this.initData()
     this.initCharts();
   },
   methods: {
@@ -147,6 +132,15 @@ export default {
       this.echarts = this.$echarts.init(this.$refs.echarts);
       this.echarts.setOption(this.option);
     },
+    // 数据初始化
+    initData() {
+      let xData = []
+      let now = new Date().getMonth();
+      for (var i = 0; i <= now; i++) {
+        xData.push((i + 1) + '月')
+      }
+      this.option.xAxis.data = xData
+    }
   },
 };
 </script>

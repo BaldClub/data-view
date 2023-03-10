@@ -21,20 +21,7 @@ export default {
               color: "#ffffff",
             },
           },
-          data: [
-            "一月",
-            "二月",
-            "三月",
-            "四月",
-            "五月",
-            "六月",
-            "七月",
-            "八月",
-            "九月",
-            "十月",
-            "十一月",
-            "十二月",
-          ],
+          data: [],
         },
         yAxis: {
           type: "value",
@@ -67,26 +54,16 @@ export default {
                 x2: 0,
                 y2: 1,
                 colorStops: [
+                
                   {
-                    offset: 0,
-                    color: "rgb(255, 0, 135)", // 0% 处的颜色
-                  },
-                  {
-                    offset: 0.1,
+                    offset: 1,
                     color: "rgb(135, 0, 157)", // 100% 处的颜色
                   },
                   {
-                    offset: 0.5,
+                    offset: 0,
                     color: "rgb(55, 162, 255)", // 100% 处的颜色
                   },
-                  {
-                    offset: 0.7,
-                    color: "rgb(0, 221, 255)", // 100% 处的颜色
-                  },
-                  {
-                    offset: 1,
-                    color: "rgb(128, 255, 165)", // 100% 处的颜色
-                  },
+                
                 ],
                 global: false, // 缺省为 false
               },
@@ -99,6 +76,7 @@ export default {
     };
   },
   mounted() {
+    this.initData()
     this.initCharts();
   },
   methods: {
@@ -106,6 +84,15 @@ export default {
       this.echarts = this.$echarts.init(this.$refs.echarts);
       this.echarts.setOption(this.option);
     },
+    // 数据初始化
+    initData(){
+      let xData = []
+      let now = new Date().getMonth();
+      for (var i = 0; i <= now; i++) {
+          xData.push((i+1) + '月')
+      }
+      this.option.xAxis.data = xData
+    }
   },
 };
 </script>
