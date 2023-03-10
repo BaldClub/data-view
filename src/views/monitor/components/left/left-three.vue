@@ -9,14 +9,18 @@
           <th>时间</th>
         </tr>
       </thead>
-      <tbody>
-        <tr v-for="item in 4">
-          <td>设备1异常</td>
-          <td>I 级别</td>
-          <td>时间</td>
-        </tr>
-      </tbody>
     </table>
+    <div class="table-container" :style="{ height: maxHeight - 100 + 'px' }">
+      <table>
+        <tbody>
+          <tr v-for="item in 9">
+            <td>设备1异常</td>
+            <td>I 级别</td>
+            <td>时间</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
 
@@ -34,6 +38,9 @@ export default {
 <style lang="less" scoped>
 .content {
   overflow: auto;
+  .table-container{
+    overflow: auto;
+  }
   h2 {
     padding-left: 0.6em;
     text-align: left;
