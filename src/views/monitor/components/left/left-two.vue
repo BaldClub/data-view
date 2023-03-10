@@ -62,7 +62,6 @@ export default {
       }
     }
     tbody {
-
       color: #fff;
       :hover {
         background-color: rgba(55, 162, 255, 0.156);
