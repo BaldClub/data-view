@@ -124,7 +124,7 @@ export default {
     };
   },
   mounted() {
-    this.getData()
+    this.initData()
     this.initCharts();
   },
   methods: {
@@ -133,7 +133,7 @@ export default {
       this.echarts.setOption(this.option);
     },
     // 数据初始化
-    getData() {
+    initData() {
       let xData = []
       let now = new Date().getMonth();
       for (var i = 0; i <= now; i++) {
