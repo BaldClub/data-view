@@ -31,6 +31,10 @@ const routes = [
       {
         path: "/equipment",
         component: () => import("../views/equipment"),
+      },
+      {
+        path: "/production",
+        component: () => import("../views/production"),
       }
     ]
   },
