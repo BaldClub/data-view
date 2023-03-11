@@ -35,7 +35,11 @@ const routes = [
       {
         path: "/production",
         component: () => import("../views/production"),
-      }
+      },
+      {
+        path: "/environmental",
+        component: () => import("../views/environmental"),
+      },
     ]
   },
   {
