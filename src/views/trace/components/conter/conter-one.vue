@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <h2>扫码销售对比</h2>
-    <div ref="echarts" :style="{ height: maxHeight * 0.9 + 'px' }"></div>
+    <div ref="echarts" :style="{ height: `${maxHeight * 0.9}px` }"></div>
   </div>
 </template>
 

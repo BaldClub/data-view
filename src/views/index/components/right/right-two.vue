@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <h2>食用菌总产量/产值</h2>
-    <div ref="echarts" :style="{ height: maxHeight * 0.9 + 'px' }"></div>
+    <div ref="echarts" :style="{ height: `${maxHeight * 0.9}px` }"></div>
   </div>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
     <div class="content">
         <h2>总费用</h2>
-        <div ref="echarts" :style="{height: maxHeight * 0.9 + 'px'}">
+        <div ref="echarts" :style="{height: `${maxHeight * 0.9}px`}">
             
         </div>
     </div>
