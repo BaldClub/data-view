@@ -2,9 +2,9 @@
   <div class="content">
       <h2>菇房环境数据</h2>
       <div class="list">
-          <div class="item" :class="['color-' + (index+1) ]"
+          <div class="item" :class="[`color-${index+1}`]"
               v-for="item,index in data" :key="item.name" 
-              :style="{ padding: maxHeight * 0.055 + 'px 0px' }">
+              :style="{ padding: `${maxHeight * 0.055}px 0px` }">
               <p>{{ item.value }}</p>
               <span>{{ item.name }}</span>
           </div>

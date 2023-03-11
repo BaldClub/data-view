@@ -1,5 +1,5 @@
 <template>
-  <div class="content" :style="{ height: maxHeight + 'px' }">
+  <div class="content" :style="{ height: `${maxHeight}px` }">
     <h2>预警报警</h2>
     <table>
       <thead>
@@ -10,7 +10,7 @@
         </tr>
       </thead>
     </table>
-    <div class="table-container" :style="{ height: maxHeight - 100 + 'px' }">
+    <div class="table-container" :style="{ height: `${maxHeight - 100}px` }">
       <table>
         <tbody>
           <tr v-for="{ type, time, id } in dataList">

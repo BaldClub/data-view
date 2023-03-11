@@ -80,6 +80,7 @@ export const equipmentList = [
         status: true
     },
 ]
+
 /**
  * 农事调控开关
  */

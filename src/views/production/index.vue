@@ -58,7 +58,6 @@
   import leftThree from "./components/left/left-three.vue";
   import conterOne from "./components/conter/conter-one.vue";
   import conterTwo from "./components/conter/conter-two.vue";
-  import conterThree from "./components/conter/conter-three.vue";
   import rightOne from "./components/right/right-one.vue";
   import rightTwo from "./components/right/right-two.vue";
   import rightThree from "./components/right/right-three.vue";
@@ -72,7 +71,6 @@
       leftThree,
       conterOne,
       conterTwo,
-      conterThree,
       rightOne,
       rightTwo,
       rightThree,
