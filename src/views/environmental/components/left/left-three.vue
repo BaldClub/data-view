@@ -90,7 +90,6 @@ export default {
         this.option.series.push(JSON.parse(JSON.stringify(series)));
       }
     }
-
   },
 };
 </script>
