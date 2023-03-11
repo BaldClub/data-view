@@ -47,7 +47,7 @@ export default {
     }
   },
   mounted() {
-    this.getData();
+    this.initData();
     this.initCharts();
   },
   methods: {
@@ -70,7 +70,7 @@ export default {
       return Math.round(Math.random() * (arr[1] - arr[0])) + arr[0];
     },
     // 数据初始化
-    getData() {
+    initData() {
       let numDay = Math.floor((new Date().getTime() - new Date(2023, 0, 1).getTime()) / ONE_DAY);
       for (let j = 0; j < 6; j++) {
         let now = new Date(2023, 0, 1);
