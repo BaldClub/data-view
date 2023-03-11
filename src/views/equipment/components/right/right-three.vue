@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <h2>预警报警次数</h2>
-    <div ref="echarts" :style="{ height: maxHeight * 0.9 + 'px' }"></div>
+    <div ref="echarts" :style="{ height: `${maxHeight * 0.9}px` }"></div>
   </div>
 </template>
 

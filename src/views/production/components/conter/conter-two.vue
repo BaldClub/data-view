@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <h2>菇房主要环境参数趋势</h2>
-    <div ref="echarts" :style="{ height: maxHeight * 0.9 + 'px' }"></div>
+    <div ref="echarts" :style="{ height: `${maxHeight * 0.9}px` }"></div>
   </div>
 </template>
 
