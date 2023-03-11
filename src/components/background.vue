@@ -24,7 +24,7 @@ export default {
   },
 };
 </script>
-
+  
 <style lang="less" scoped>
 #bg-vanta {
   position: absolute;
