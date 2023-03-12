@@ -1,104 +1,85 @@
 <template>
   <div class="content">
     <h2>预警报警次数</h2>
-    <div ref="echarts" :style="{ height: `${maxHeight * 0.9}px` }"></div>
+    <div ref="echarts" :style="{ height: `${maxHeight * 0.9}px` }">
+
+    </div>
   </div>
 </template>
-
+  
 <script>
 export default {
-  props: ["maxHeight"],
+  props: ['maxHeight'],
   data() {
     return {
-      echarts: "",
+      echarts: '',
       option: {
         xAxis: {
-          type: "category",
-          name: "单位（月）",
+          type: 'category',
+          name: '单位（月）',
           axisLabel: {
             show: true,
             textStyle: {
-              color: "#ffffff",
-            },
+              color: '#ffffff'
+            }
           },
-          data: [
-            "一月",
-            "二月",
-            "三月",
-            "四月",
-            "五月",
-            "六月",
-            "七月",
-            "八月",
-            "九月",
-            "十月",
-            "十一月",
-            "十二月",
-          ],
+          data: []
         },
         yAxis: {
-          type: "value",
-          name: "单位（次）",
+          type: 'value',
+          name: '单位（次）',
           axisLabel: {
             show: true,
             textStyle: {
-              color: "#ffffff",
-            },
+              color: '#ffffff'
+            }
           },
         },
         tooltip: {
-          trigger: "axis",
+          trigger: 'axis',
           axisPointer: {
-            type: "shadow",
-          },
+            type: 'shadow'
+          }
         },
-
         grid: {
           top: 40,
           right: 70,
-          bottom: 50,
+          bottom: 50
         },
         series: [
           {
             itemStyle: {
-              color: {
-                type: "linear",
-                x: 0,
-                y: 0,
-                x2: 0,
-                y2: 1,
-                colorStops: [
-                  {
-                    offset: 0,
-                    color: "rgb(255, 0, 135)", // 0% 处的颜色
-                  },
-                  {
-                    offset: 1,
-                    color: "rgb(135, 0, 157)", // 100% 处的颜色
-                  },
-                ],
-                global: false, // 缺省为 false
-              },
+              color: '#ba7f86'
             },
-            data: [120, 200, 150, 80, 70, 110, 130, 13, 130, 130, 130, 130],
-            type: "bar",
-          },
-        ],
-      },
-    };
+            data: [21, 31, 12],
+            type: 'bar'
+          }
+        ]
+      }
+    }
   },
   mounted() {
-    this.initCharts();
+    this.initData()
+    this.initCharts()
   },
   methods: {
     initCharts() {
-      this.echarts = this.$echarts.init(this.$refs.echarts);
-      this.echarts.setOption(this.option);
+      this.echarts = this.$echarts.init(this.$refs.echarts)
+      this.echarts.setOption(this.option)
     },
-  },
-};
+    // 数据初始化
+    initData() {
+      let xData = []
+      let now = new Date().getMonth();
+      for (var i = 0; i <= now; i++) {
+        xData.push((i + 1) + '月')
+      }
+      this.option.xAxis.data = xData
+    }
+  }
+}
 </script>
-
+  
 <style lang="less" scoped>
 .content {
   h2 {
@@ -107,3 +88,4 @@ export default {
   }
 }
 </style>
+  

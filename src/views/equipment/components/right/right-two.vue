@@ -23,18 +23,19 @@ export default {
         },
         series: [
           {
-            name: "Nightingale Chart",
+            name: "设备状态",
             type: "pie",
             radius: [50, 100],
             center: ["50%", "40%"],
-            roseType: "area",
+            avoidLabelOverlap: false,
             itemStyle: {
               borderRadius: 8,
             },
             data: [
-              { value: 40, name: "rose 1" },
-              { value: 38, name: "rose 2" },
-              { value: 32, name: "rose 3" },
+              { value: 10, name: "特殊设备" },
+              { value: 30, name: "重点设备" },
+              { value: 20, name: "专用设备" },
+              { value: 40, name: "一般设备" },
             ],
           },
         ],
