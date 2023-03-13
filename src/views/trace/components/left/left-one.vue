@@ -7,7 +7,7 @@
         <span>今日扫码次数</span>
       </div>
       <div class="item color-2" :style="{ padding: maxHeight * 0.055 + 'px 0px' }">
-        <p>100</p>
+        <p>580</p>
         <span>累计扫码次数</span>
       </div>
       <div class="item color-3" :style="{ padding: maxHeight * 0.055 + 'px 0px' }">
@@ -15,7 +15,7 @@
         <span>今日售出数量</span>
       </div>
       <div class="item color-4" :style="{ padding: maxHeight * 0.055 + 'px 0px' }">
-        <p>10000</p>
+        <p>9870</p>
         <span>累计售出数量</span>
       </div>
     </div>

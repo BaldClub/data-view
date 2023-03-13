@@ -2,10 +2,7 @@
   <div class="content">
     <div class="video">
       <video width="100%" controls>
-        <source
-          src="http://www.w3school.com.cn/example/html5/mov_bbb.mp4"
-          type="video/mp4"
-        />
+        <source src="http://www.w3school.com.cn/example/html5/mov_bbb.mp4" type="video/mp4" />
       </video>
     </div>
     <div class="text">
@@ -30,10 +27,12 @@ export default {
   width: 100%;
   height: 100%;
   background-color: #000;
+
   .video {
     width: 100%;
     margin: 0px auto;
   }
+
   .text {
     text-align: left;
   }
