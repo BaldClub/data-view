@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import dataList from '../../data/tableConvert.com_dwwymg.json'
+import dataList from '../../data/policy-data.json'
 export default {
   props: ["maxHeight"],
   data() {
