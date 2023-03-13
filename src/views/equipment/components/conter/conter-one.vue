@@ -6,7 +6,7 @@
 <template>
   <div class="container-item" :style="{ height: maxHeight + 'px' }">
     <div class="redius-bg" :style="{ height: maxHeight * 0.6 + 'px' }">
-      <div class="item" v-for="(item, index) in 6" :class="['position-' + (index + 1)]">
+      <div class="item" v-for="(_, index) in 6" :class="['position-' + (index + 1)]">
         <div>
           <p>{{ dataList[index].name }}</p>
           <p class="proportion">{{ dataList[index].num }}%</p>
@@ -58,10 +58,10 @@ export default {
 
 each(range(6), {
   .position-@{value} {
-    width: if(@value =5, 37%, 21%);
-    height: if(@value =5, 37%, 23%);
-    top: if(@value =5, calc(50% - 19%), calc(extract(@top-list, @value) - 12.5%));
-    left: if(@value =5, calc(50% - 19%), calc(extract(@left-list, @value) - 12.5%));
+    width: if(@value = 5, 37%, 21%);
+    height: if(@value = 5, 37%, 23%);
+    top: if(@value = 5, calc(50% - 19%), calc(extract(@top-list, @value) - 12.5%));
+    left: if(@value = 5, calc(50% - 19%), calc(extract(@left-list, @value) - 12.5%));
     background-color: #ffffffb4;
   }
 });
@@ -90,10 +90,12 @@ each(range(6), {
       align-items: center;
       color: #000;
       font-size: 2rem;
-      .proportion{
+
+      .proportion {
         text-align: center;
         font-size: 22px;
       }
+
       &:hover {
         opacity: 1;
       }
