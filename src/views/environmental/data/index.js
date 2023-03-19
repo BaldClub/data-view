@@ -27,6 +27,36 @@ export const mushroomRoom = [
         value: '5.6'
     }
 ]
+/**
+ * 气象站参数
+ */
+export const weatherData = [
+    {
+        name: '空气温度',
+        value: '17.4 ℃'
+    },
+    {
+        name: '空气湿度',
+        value: '49 %'
+    },
+    {
+        name: '光照',
+        value: '1540 Lux'
+    },
+    {
+        name: '雨量',
+        value: '7.3 mm/h'
+    },
+    {
+        name: '风向',
+        value: '西南'
+    },
+    {
+        name: '风速',
+        value: '2.2 m/s'
+    }
+]
+
 
 /**
  * 食用菌产量统计

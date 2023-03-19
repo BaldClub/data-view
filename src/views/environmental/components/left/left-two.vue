@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <h2>气象站参数趋势</h2>
+    <h2>气象站数据趋势</h2>
     <div ref="echarts" :style="{ height: `${maxHeight * 0.9}px` }"></div>
   </div>
 </template>
@@ -12,7 +12,7 @@ export default {
   data() {
     return {
       echarts: "",
-      titleList: ["空气温度", "空气湿度", "光照", "雨量", "风向", "风速"],
+      titleList: ["空气温度", "空气湿度", "光照", "雨量", "风速"],
       rangeData: [
         [20, 26], [60, 70], [1000, 1600], [1500, 2000], [2, 30], [6, 7]
       ],
@@ -24,7 +24,7 @@ export default {
           }
         },
         legend: {
-          data: ["空气温度", "空气湿度", "光照", "CO2浓度", "CO浓度", "菌包PH值"],
+          data: ["空气温度", "空气湿度", "光照", "雨量","风速"],
           textStyle: {
             color: "#fff",
           },
@@ -72,7 +72,7 @@ export default {
     // 数据获取
     getData() {
       let numDay = Math.floor((new Date().getTime() - new Date(2023, 0, 1).getTime()) / ONE_DAY);
-      for (let j = 0; j < 6; j++) {
+      for (let j = 0; j < 5; j++) {
         let now = new Date(2023, 0, 1);
         let item = []
         let series = {

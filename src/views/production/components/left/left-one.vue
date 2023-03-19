@@ -1,6 +1,6 @@
 <template>
     <div class="content">
-        <h2>菇房实时环境参数</h2>
+        <h2>菇房实时环境数据</h2>
         <div class="list">
             <div class="item" :class="[`color-${index+1}`]"
                 v-for="item,index in data" :key="item.name" 

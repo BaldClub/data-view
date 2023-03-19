@@ -13,7 +13,7 @@
 </template>
   
 <script>
-import { mushroomRoom } from '../../data'
+import { weatherData } from '../../data'
 export default {
     props: ["maxHeight"],
     data(){
@@ -26,7 +26,7 @@ export default {
     },
     methods:{
         initData(){
-            this.data = mushroomRoom
+            this.data = weatherData
         }
     }
 };
