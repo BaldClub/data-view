@@ -2,7 +2,7 @@
   <div class="content">
     <div class="video">
       <video width="100%" controls>
-        <source src="http://www.w3school.com.cn/example/html5/mov_bbb.mp4" type="video/mp4" />
+        <source :src="url" type="video/mp4" />
       </video>
     </div>
     <div class="text">
@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  props: ["maxHeight"],
+  props: ["maxHeight","url"],
   data() {
     return {};
   },
@@ -35,6 +35,7 @@ export default {
 
   .text {
     text-align: left;
+    font-size: 1.2rem;
   }
 }
 </style>

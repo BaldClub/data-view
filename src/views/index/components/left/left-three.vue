@@ -10,8 +10,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="{ num, name, config } in dataList">
-          <td>{{ num }}(个)</td>
+        <tr v-for="{ count, name, config } in dataList">
+          <td>{{ count }}(个)</td>
           <td>{{ name }}</td>
           <td>
             <dv-percent-pond
@@ -29,13 +29,14 @@
 </template>
 
 <script>
+import { device } from '@/api/index';
 export default {
   props: ["maxHeight"],
   data() {
     return {
       dataList:[
         {
-          num: 30,
+          count: 30,
           name: '实时影像',
           config: {
             value: 80,
@@ -43,7 +44,7 @@ export default {
           },
         },
         {
-          num: 10,
+          count: 10,
           name: '室外环境监测',
           config: {
             value: 90,
@@ -51,7 +52,7 @@ export default {
           },
         },
         {
-          num: 100,
+          count: 100,
           name: '菇房环境监测',
           config: {
             value: 86,
@@ -62,6 +63,26 @@ export default {
       
     };
   },
+  mounted(){
+    this.getData()
+  },
+  methods:{
+    getData(){
+      device().then(res => {
+          this.dataList = res.data.map(item =>(
+            {
+              name: item.name,
+              count: item.count,
+              config:{
+                value: Math.floor(item.online * 100),
+                shape: "round",
+              }
+            }
+          ))
+          console.log(this.dataList);
+      })
+    }
+  }
 };
 </script>
 

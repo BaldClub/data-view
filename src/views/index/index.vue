@@ -9,7 +9,7 @@
       </div>
       <div :style="{ height: kHTwo + 'px' }">
         <dv-border-box-12 class="container-item" style="padding: 12px">
-          <leftTwo :max-height="kHTwo"></leftTwo>
+          <leftTwo :max-height="kHTwo" :data="park"></leftTwo>
         </dv-border-box-12>
       </div>
       <div :style="{ height: kHThree + 'px' }">
@@ -22,7 +22,7 @@
     <el-col :span="10">
       <div :style="{ height: kHFour + 'px' }">
         <dv-border-box-12 class="container-item" style="padding: 12px">
-          <conterOne :max-height="kHFour"></conterOne>
+          <conterOne :max-height="kHFour" :url="park.url"></conterOne>
         </dv-border-box-12>
       </div>
       <div :style="{ height: kHFive + 'px' }">
@@ -63,6 +63,9 @@ import rightOne from "./components/right/right-one.vue";
 import rightTwo from "./components/right/right-two.vue";
 import rightThree from "./components/right/right-three.vue";
 import background from "@/components/background.vue";
+
+import { park } from "@/api/index"
+
 export default {
   name: "index",
   components: {
@@ -95,12 +98,14 @@ export default {
       kHSix: 300,
       kHSeven: 400,
       kHEight: 400,
+      park: {}
     };
   },
   created() {
     this.getScreenHeight();
   },
   mounted() {
+    this.getData()
     // 页面大小改变时触发
     window.addEventListener("resize", this.getScreenHeight, false);
     // 页面大小改变时触发
@@ -134,6 +139,11 @@ export default {
         document.documentElement.clientWidth ||
         document.body.clientWidth;
     },
+    getData() {
+      park().then(res => {
+        this.park = res.data
+      })
+    }
   },
 };
 </script>

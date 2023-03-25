@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import { strains } from '@/api/index'
 export default {
   props: ["maxHeight"],
   data() {
@@ -61,13 +62,24 @@ export default {
     };
   },
   mounted() {
-    this.initCharts();
+    this.getData()
   },
   methods: {
     initCharts() {
       this.echarts = this.$echarts.init(this.$refs.echarts);
       this.echarts.setOption(this.option);
     },
+    getData() {
+      strains().then(res => {
+        this.option.series[0].data = res.data.map(item => (
+          {
+            value: item.count,
+            name: item.type
+          }
+        ))
+        this.initCharts();
+      })
+    }
   },
 };
 </script>
