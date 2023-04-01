@@ -1,91 +1,111 @@
 <template>
-  <div class="content">
-    <h2>预警报警次数</h2>
-    <div ref="echarts" :style="{ height: `${maxHeight * 0.9}px` }">
-
+  <div class="content" :style="{ height: `${maxHeight}px` }">
+    <h2>预警报警</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>类型</th>
+          <th>具体信息</th>
+          <th>时间</th>
+        </tr>
+      </thead>
+    </table>
+    <div class="table-container" :style="{ height: `${maxHeight - 100}px` }">
+      <table>
+        <tbody>
+          <tr v-for="{ type, time, detail } in dataList">
+            <td>{{ type }}</td>
+            <td>{{ detail }}</td>
+            <td>{{ time }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </template>
-  
+
 <script>
 export default {
-  props: ['maxHeight'],
+  props: ["maxHeight"],
   data() {
     return {
-      echarts: '',
-      option: {
-        xAxis: {
-          type: 'category',
-          name: '单位（月）',
-          axisLabel: {
-            show: true,
-            textStyle: {
-              color: '#ffffff'
-            }
-          },
-          data: []
+      dataList: [
+        {
+          type: '原材料',
+          detail: "木屑仓库不足",
+          time: '2023/3/10 13:34:45'
         },
-        yAxis: {
-          type: 'value',
-          name: '单位（次）',
-          axisLabel: {
-            show: true,
-            textStyle: {
-              color: '#ffffff'
-            }
-          },
+        {
+          type: '药品',
+          detail: "杀虫药不足",
+          time: '2023/3/10 13:34:45'
         },
-        tooltip: {
-          trigger: 'axis',
-          axisPointer: {
-            type: 'shadow'
-          }
+        {
+          type: '农事',
+          detail: "及时采摘菇房1",
+          time: '2023/3/10 13:34:45'
         },
-        grid: {
-          top: 40,
-          right: 70,
-          bottom: 50
-        },
-        series: [
-          {
-            itemStyle: {
-              color: '#ba7f86'
-            },
-            data: [2,1,1],
-            type: 'bar'
-          }
-        ]
-      }
-    }
+      ]
+    };
   },
-  mounted() {
-    this.initData()
-    this.initCharts()
-  },
-  methods: {
-    initCharts() {
-      this.echarts = this.$echarts.init(this.$refs.echarts)
-      this.echarts.setOption(this.option)
-    },
-    // 数据初始化
-    initData() {
-      let xData = []
-      let now = new Date().getMonth();
-      for (var i = 0; i <= now; i++) {
-        xData.push((i + 1) + '月')
-      }
-      this.option.xAxis.data = xData
-    }
-  }
-}
+  mounted() { },
+  methods: {},
+};
 </script>
-  
+
 <style lang="less" scoped>
 .content {
+  overflow: auto;
+
+  .table-container {
+    overflow: auto;
+  }
+
   h2 {
     padding-left: 0.6em;
     text-align: left;
+    margin-bottom: 10px;
+  }
+
+  table {
+    width: 100%;
+
+    thead {
+      color: #fff;
+      background-color: rgb(55, 162, 255);
+
+      tr {
+        display: grid;
+        grid-template-columns: repeat(3, 33.3%);
+
+        th {
+          padding: 6px 0px;
+        }
+      }
+    }
+
+    tbody {
+      color: #fff;
+
+      :hover {
+        background-color: rgba(55, 162, 255, 0.156);
+      }
+
+      tr {
+        display: grid;
+        margin: 10px 0px;
+        background-color: rgba(55, 162, 255, 0.356);
+        grid-template-columns: repeat(3, 33.3%);
+
+        td {
+          color: red;
+          padding: 6px 0px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+    }
   }
 }
 </style>
-  
