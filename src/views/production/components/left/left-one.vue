@@ -1,69 +1,43 @@
 <template>
-    <div class="content">
-        <h2>菇房实时环境数据</h2>
-        <div class="list">
-            <div class="item" :class="[`color-${index+1}`]"
-                v-for="item,index in data" :key="item.name" 
-                :style="{ padding: `${maxHeight * 0.055}px 0px` }">
-                <p>{{ item.value }}</p>
-                <span>{{ item.name }}</span>    
-            </div>
-        </div>
-    </div>
+    <environmentData title="菇房区实时环境数据" :max-height="maxHeight" :data="data"></environmentData>
 </template>
   
 <script>
-import { mushroomRoom } from '../../data'
+import environmentData from '../common/environment-data.vue';
 export default {
+    components:{
+        environmentData
+    },
     props: ["maxHeight"],
     data(){
         return {
-            data: []
+            data: [
+                {
+                    name: '空气温度',
+                    value: '21 ℃'
+                },
+                {
+                    name: '空气湿度',
+                    value: '65 %'
+                },
+                {
+                    name: '光照',
+                    value: '1250 Lux'
+                },
+                {
+                    name: 'CO2浓度',
+                    value: '890 ppm'
+                },
+                {
+                    name: 'CO浓度',
+                    value: '100 ppm'
+                },
+                {
+                    name: '菌包PH值',
+                    value: '0'
+                }
+            ]
         }
     },
-    mounted(){
-        this.initData()
-    },
-    methods:{
-        initData(){
-            this.data = mushroomRoom
-        }
-    }
 };
 </script>
-  
-<style lang="less" scoped>
-@colorList: #00e29a, #b9e200, #005ee2, #8386e2, #00c928, #83c977;
-
-each(@colorList, {
-    .color-@{index} {
-        color : @value
-    }
-});
-
-.content {
-    h2 {
-        padding-left: 0.6em;
-        text-align: left;
-    }
-
-    .list {
-        display: grid;
-        grid-template-columns: 33.33% 33.33% 33.33%;
-
-        .item {
-            margin: 10px 12px;
-            background-color: #1c1c21;
-
-            p {
-                font-size: 2rem;
-                text-align: center;
-            }
-
-            span {
-                font-size: 1rem;
-            }
-        }
-    }
-}</style>
-  

@@ -86,6 +86,26 @@ export const equipmentList = [
  */
 export const farmingList = [
     {
+        icon: '/icon/icon_fan.png',
+        name: '拌料',
+        status: true
+    },
+    {
+        icon: '/icon/icon_top_open_windows.png',
+        name: '装袋',
+        status: true
+    },
+    {
+        icon: '/icon/icon_side_open_windows.png',
+        name: '灭菌',
+        status: true
+    },
+    {
+        icon: '/icon/icon_shading.png',
+        name: '强冷',
+        status: true
+    },
+    {
         icon: '/icon/icon_lighting.png',
         name: '采摘',
         status: true

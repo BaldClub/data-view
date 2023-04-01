@@ -1,82 +1,40 @@
 <template>
-  <div class="content">
-    <h2>食用菌栽培品种分布</h2>
-    <div ref="echarts" :style="{ height: `${maxHeight * 0.9}px` }"></div>
-  </div>
+  <environmentData title="接种区实时环境数据" :max-height="maxHeight" :data="data"></environmentData>
 </template>
 
 <script>
+import environmentData from '../common/environment-data.vue';
 export default {
+  components:{
+      environmentData
+  },
   props: ["maxHeight"],
-  data() {
-    return {
-      echarts: "",
-      option: {
-        tooltip: {
-          trigger: "item",
-        },
-        legend: {
-          top: "5%",
-          left: "center",
-          textStyle: {
-            color: "#fff",
-          },
-        },
-        series: [
-          {
-            name: "种植面积（亩）",
-            type: "pie",
-            radius: ["40%", "70%"],
-            avoidLabelOverlap: false,
-            itemStyle: {
-              borderRadius: 10,
-              borderColor: "#fff",
-              borderWidth: 2,
+  data(){
+      return {
+        data: [
+            {
+                name: '空气温度',
+                value: '19 ℃'
             },
-            label: {
-              show: false,
-              position: "center",
+            {
+                name: '空气湿度',
+                value: '58 %'
             },
-            emphasis: {
-              label: {
-                show: true,
-                fontSize: 40,
-                fontWeight: "bold",
-              },
+            {
+                name: '光照',
+                value: '1510 Lux'
             },
-            labelLine: {
-              show: false,
+            {
+                name: 'CO2浓度',
+                value: '870 ppm'
             },
-            data: [
-              { value: 1048, name: '平菇' },
-              { value: 735, name: "黑木耳" },
-              { value: 580, name: "香菇" },
-              { value: 484, name: "金针菇" },
-              { value: 300, name: "茶树菇" },
-              { value: 300, name: "杏鲍菇" },
-            ],
-          },
-        ],
-      },
-    };
-  },
-  mounted() {
-    this.initCharts();
-  },
-  methods: {
-    initCharts() {
-      this.echarts = this.$echarts.init(this.$refs.echarts);
-      this.echarts.setOption(this.option);
-    },
+            {
+                name: 'CO浓度',
+                value: '98 ppm'
+            },
+            
+        ]
+      }
   },
 };
 </script>
-
-<style lang="less" scoped>
-.content {
-  h2 {
-    padding-left: 0.6em;
-    text-align: left;
-  }
-}
-</style>
