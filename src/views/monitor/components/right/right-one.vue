@@ -33,23 +33,10 @@
     </div>
     <div
       class="item"
-      :style="{ width: maxHeight * 0.62 + 'px' }"
-    >
-      <div class="name">摄像头1-2</div>
-      <!-- <video width="100%" controls>
-        <source
-          src="http://www.w3school.com.cn/example/html5/mov_bbb.mp4"
-          type="video/mp4"
-        />
-      </video> -->
-      <img style="width: 100%" src="@/assets/images/微信图片_20230313122853.png" alt="">
-    </div>
-    <div
-      class="item"
       v-for="item in 4"
       :style="{ width: maxHeight * 0.62 + 'px' }"
     >
-      <div class="name">摄像头1-{{ item + 2 }}</div>
+      <div class="name">摄像头1-{{ item + 1 }}</div>
       <video width="100%" controls>
         <source
           src="#"

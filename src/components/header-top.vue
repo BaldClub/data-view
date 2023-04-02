@@ -4,7 +4,8 @@
       食用菌生产全程可视化管理系统
     </div>
     <div class="system-time">
-      {{ dateYear }} {{ dateWeek }} {{ dateDay }}
+       2023 / 03 / 13 周一 13: 00: 29 
+      <!-- {{ dateYear }} {{ dateWeek }} {{ dateDay }} -->
     </div>
     <div class="link-list">
       <div class="link-item" v-for="{ name, to }, index in routerList" :key="name" @click="changeActive(index)">
