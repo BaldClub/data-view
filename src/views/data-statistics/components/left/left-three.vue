@@ -6,7 +6,8 @@
 </template>
 
 <script>
-import { dataResource } from '../../data/data'
+import { left3 } from '../../../../data/data-statistics';
+
 export default {
   props: ["maxHeight"],
   data() {
@@ -23,9 +24,7 @@ export default {
               color: "#ffffff",
             },
           },
-          data: [
-            "2019", "2020", "2021", "2022",
-          ],
+          data: left3.yearList,
         },
         yAxis: {
           type: "value",
@@ -77,11 +76,11 @@ export default {
         type: "line",
       }
       let allData = [0, 0, 0, 0, 0]
-      this.option.legend.data = ['总数据资源',...Object.keys(dataResource)]
-      Object.keys(dataResource).forEach(item => {
+      this.option.legend.data = ['总数据资源', ...Object.keys(left3.dataResource)]
+      Object.keys(left3.dataResource).forEach(item => {
         series.name = item
-        series.data = dataResource[item]
-        dataResource[item].forEach((item, index) =>{
+        series.data = left3.dataResource[item]
+        left3.dataResource[item].forEach((item, index) => {
           allData[index] += item
         })
         this.option.series.push(JSON.parse(JSON.stringify(series)))

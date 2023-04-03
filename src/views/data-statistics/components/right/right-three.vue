@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import { right3 } from '../../../../data/data-statistics';
+
 export default {
   props: ["maxHeight"],
   data() {
@@ -21,7 +23,7 @@ export default {
               color: "#ffffff",
             },
           },
-          data: [],
+          data: right3.monthList,
         },
         yAxis: {
           type: "value",
@@ -49,7 +51,7 @@ export default {
             itemStyle: {
               color: '#ba7f86'
             },
-            data: [120, 200, 150, 80, 70, 110, 130, 13, 130, 130, 130, 130],
+            data: right3.data,
             type: "bar",
           },
         ],
@@ -57,7 +59,6 @@ export default {
     };
   },
   mounted() {
-    this.initData()
     this.initCharts();
   },
   methods: {
@@ -65,15 +66,6 @@ export default {
       this.echarts = this.$echarts.init(this.$refs.echarts);
       this.echarts.setOption(this.option);
     },
-    // 数据初始化
-    initData() {
-      let xData = []
-      let now = new Date().getMonth();
-      for (var i = 0; i <= now; i++) {
-        xData.push((i + 1) + '月')
-      }
-      this.option.xAxis.data = xData
-    }
   },
 };
 </script>

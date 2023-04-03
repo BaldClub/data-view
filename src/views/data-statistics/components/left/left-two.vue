@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import { left2 } from '../../../../data/data-statistics';
+
 export default {
   props: ["maxHeight"],
   data() {
@@ -21,9 +23,7 @@ export default {
               color: "#ffffff",
             },
           },
-          data: [
-            "2019","2020","2021", "2022",
-          ],
+          data: left2.yearList,
         },
         yAxis: {
           type: "value",
@@ -59,9 +59,7 @@ export default {
           {
             name: "设备数量",
             color: ["#e9b633"],
-            data: [
-              55, 130, 144,150,180, 210
-            ],
+            data: left2.deviceList,
             type: "line",
           },
         ],

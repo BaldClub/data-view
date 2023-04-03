@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import { left1 } from '../../../../data/data-statistics';
+
 export default {
   props: ["maxHeight"],
   data() {
@@ -27,7 +29,7 @@ export default {
               color: "#ffffff",
             },
           },
-          data: [],
+          data: left1.xData,
         },
         yAxis: {
           type: "value",
@@ -54,9 +56,7 @@ export default {
           {
             name: "产值",
             type: "bar",
-            data: [
-              32.6, 20.0, 6.4, 3.3,
-            ],
+            data: left1.outputValue,
             markLine: {
               data: [{ type: "average", name: "Avg" }],
             },
@@ -88,9 +88,7 @@ export default {
           {
             name: "利润",
             type: "bar",
-            data: [
-              48.7, 18.8, 6.0,
-            ],
+            data: left1.data,
             markLine: {
               data: [{ type: "average", name: "Avg" }],
             },
@@ -124,7 +122,6 @@ export default {
     };
   },
   mounted() {
-    this.initData()
     this.initCharts();
   },
   methods: {
@@ -132,15 +129,6 @@ export default {
       this.echarts = this.$echarts.init(this.$refs.echarts);
       this.echarts.setOption(this.option);
     },
-    // 数据初始化
-    initData() {
-      let xData = []
-      let now = new Date().getMonth();
-      for (var i = 0; i <= now; i++) {
-        xData.push((i + 1) + '月')
-      }
-      this.option.xAxis.data = xData
-    }
   },
 };
 </script>
