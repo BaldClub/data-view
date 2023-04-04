@@ -6,7 +6,10 @@
 </template>
 
 <script>
-const ONE_DAY = 24 * 3600 * 1000
+import { conter_two } from '../../../../data/environmental';
+
+const { indicator, data } = conter_two;
+
 export default {
   props: ["maxHeight"],
   data() {
@@ -21,15 +24,7 @@ export default {
           trigger: 'item'
         },
         radar: {
-          indicator: [
-            { text: '晴天', max: 100 },
-            { text: '多云', max: 100 },
-            { text: '阴天', max: 100 },
-            { text: '小雨', max: 100 },
-            { text: '中雨', max: 100 },
-            { text: '大雨', max: 100 },
-            { text: '雪', max: 100 }
-          ]
+          indicator,
         },
         series: [
           {
@@ -44,16 +39,9 @@ export default {
               }
             },
             areaStyle: {
-                color: '#95bfbc',
+              color: '#95bfbc',
             },
-            data: [
-              {
-                name: '天气',
-                value: [
-                  70,90,67,32,23,30,30,
-                ]
-              }
-            ]
+            data,
           }
         ]
       }

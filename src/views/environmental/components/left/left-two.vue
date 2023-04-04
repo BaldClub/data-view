@@ -6,7 +6,11 @@
 </template>
 
 <script>
+// import { left2 } from '../../../../data/environmental';
+
+// const { data } = left2;
 const ONE_DAY = 24 * 3600 * 1000
+
 export default {
   props: ["maxHeight"],
   data() {
@@ -24,7 +28,7 @@ export default {
           }
         },
         legend: {
-          data: ["空气温度", "空气湿度", "光照", "雨量","风速"],
+          data: ["空气温度", "空气湿度", "光照", "雨量", "风速"],
           textStyle: {
             color: "#fff",
           },
