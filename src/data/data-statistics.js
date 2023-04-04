@@ -1,6 +1,11 @@
 // 年份列表
 export const yearList = ["2019", "2020", "2021", "2022", "2023"];
 
+// 月份列表
+let monthList = [...Array(new Date().getMonth() + 1).keys()].map(
+  (num) => `${num + 1} 月`
+);
+
 export const dataList = [
   {
     name: "光照",
@@ -39,12 +44,6 @@ export const dataList = [
     num: 10,
   },
 ];
-
-let monthList = [];
-let now = new Date().getMonth();
-for (var i = 0; i <= now; i++) {
-  monthList.push(i + 1 + "月");
-}
 
 // 工厂产值/利润对比
 export const left1 = {
