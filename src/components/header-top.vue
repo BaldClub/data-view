@@ -47,7 +47,7 @@ export default {
         },
         {
           name: '农资农事',
-          to: '/fram-work'
+          to: '/farm-work'
         },
         {
           name: '设备管理',

@@ -25,8 +25,8 @@ const routes = [
         component: () => import('../views/data-statistics')
       },
       {
-        path: '/fram-work',
-        component: () => import('../views/fram-work')
+        path: '/farm-work',
+        component: () => import('../views/farm-work')
       },
       {
         path: "/equipment",
