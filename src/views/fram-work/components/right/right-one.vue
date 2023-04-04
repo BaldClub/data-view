@@ -9,6 +9,7 @@
   
 <script>
 import { dateYears } from "../../data";
+
 export default {
   props: ['maxHeight'],
   data() {
