@@ -25,27 +25,15 @@
 </template>
 
 <script>
+import { right3 } from '../../../../data/farm-work';
+
+const { dataList } = right3;
+
 export default {
   props: ["maxHeight"],
   data() {
     return {
-      dataList: [
-        {
-          type: '原材料',
-          detail: "木屑仓库不足",
-          time: '2023/3/10 13:34:45'
-        },
-        {
-          type: '药品',
-          detail: "杀虫药不足",
-          time: '2023/3/10 13:34:45'
-        },
-        {
-          type: '农事',
-          detail: "及时采摘菇房1",
-          time: '2023/3/10 13:34:45'
-        },
-      ]
+      dataList,
     };
   },
   mounted() { },

@@ -8,7 +8,9 @@
 </template>
   
 <script>
-import { dateYears } from "../../data";
+import { right1 } from '../../../../data/farm-work';
+
+const { monthList, data } = right1;
 
 export default {
   props: ['maxHeight'],
@@ -25,7 +27,7 @@ export default {
               color: '#ffffff'
             }
           },
-          data: []
+          data: monthList
         },
         yAxis: {
           type: 'value',
@@ -58,7 +60,7 @@ export default {
           {
             name: '杀虫剂',
             color: ['rgb(128, 255, 165)'],
-            data: [2354, 2503, 920],
+            data: data[0],
             type: 'line',
             itemStyle: {
               color: {
@@ -86,7 +88,7 @@ export default {
           {
             name: '杀菌剂',
             color: ['rgb(128, 255, 165)'],
-            data: [2554, 2303, 870],
+            data: data[1],
             type: 'line',
             itemStyle: {
               color: 'rgb(128, 255, 165)'
@@ -97,22 +99,13 @@ export default {
     }
   },
   mounted() {
-    this.initData()
-    this.initCharts()
+    this.initCharts();
   },
   methods: {
     initCharts() {
-      this.echarts = this.$echarts.init(this.$refs.echarts)
-      this.echarts.setOption(this.option)
+      this.echarts = this.$echarts.init(this.$refs.echarts);
+      this.echarts.setOption(this.option);
     },
-    initData(){
-      let xData = []
-      let now = new Date().getMonth();
-      for (var i = 0; i <= now; i++) {
-        xData.push((i + 1) + '月')
-      }
-      this.option.xAxis.data = xData
-    }
   }
 }
 </script>

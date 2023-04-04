@@ -6,7 +6,10 @@
 </template>
 
 <script>
-import { materialOut } from '../../data'
+import { left2 } from '../../../../data/farm-work';
+
+const { monthList, materialOut } = left2;
+
 export default {
   props: ["maxHeight"],
   data() {
@@ -29,7 +32,7 @@ export default {
               color: "#ffffff",
             },
           },
-          data: [],
+          data: monthList,
         },
         yAxis: {
           type: "value",
@@ -67,11 +70,6 @@ export default {
     },
     // 数据初始化
     initData() {
-      let xData = []
-      let now = new Date().getMonth();
-      for (var i = 0; i <= now; i++) {
-        xData.push((i + 1) + '月')
-      }
       for (let i = 0; i < materialOut.length; i++) {
         let series = {
           name: materialOut[i].name,
@@ -86,7 +84,6 @@ export default {
         }
         this.option.series.push(series)
       }
-      this.option.xAxis.data = xData
     }
   },
 };

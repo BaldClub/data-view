@@ -8,7 +8,9 @@
 </template>
   
 <script>
-import { dateYears } from "../../data";
+// import { dateYears } from "../../data";
+import { yearList } from '../../../../data/farm-work';
+
 export default {
   props: ['maxHeight'],
   data() {
@@ -37,13 +39,13 @@ export default {
             y2: 1,
             colorStops: [
               {
-                offset: 0, color: 'rgb(128, 255, 165)' 
+                offset: 0, color: 'rgb(128, 255, 165)'
               },
               {
-                offset: 1, color: 'rgb(1, 191, 236)' 
+                offset: 1, color: 'rgb(1, 191, 236)'
               }
             ],
-            global: false 
+            global: false
           }
         },
         emphasis: {
@@ -57,7 +59,7 @@ export default {
           type: 'category',
           name: '单位（年）',
           boundaryGap: false,
-          data: [],
+          data: yearList,
           axisLabel: {
             show: true,
             textStyle: {
@@ -104,13 +106,12 @@ export default {
 
     },
     initData() {
-      this.option.xAxis.data = dateYears
       for (let i = 0; i < this.titleList.length; i++) {
         let item = JSON.parse(JSON.stringify(this.seriesItem))
         item.name = this.titleList[i]
         item.type = 'line'
         item.areaStyle.color.colorStops = this.colorStopsList[i]
-        let arr = [20, 28,32,30,8]
+        let arr = [20, 28, 32, 30, 8]
         item.data = arr
         this.option.series.push(item)
       }
