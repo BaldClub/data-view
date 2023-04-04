@@ -17,36 +17,13 @@
 </template>
 
 <script>
+import { dataList } from '../../../../data/equipment';
+
 export default {
   props: ["maxHeight"],
   data() {
     return {
-      dataList: [
-        {
-          name: "摄像头",
-          num: 15,
-        },
-        {
-          name: "透传",
-          num: 10,
-        },
-        {
-          name: "气象站",
-          num: 5,
-        },
-        {
-          name: "灭菌锅",
-          num: 2,
-        },
-        {
-          name: "传感器",
-          num: 40,
-        },
-        {
-          name: "其他",
-          num: 28,
-        },
-      ],
+      dataList,
     };
   },
 };
@@ -58,10 +35,10 @@ export default {
 
 each(range(6), {
   .position-@{value} {
-    width: if(@value = 5, 37%, 21%);
-    height: if(@value = 5, 37%, 23%);
-    top: if(@value = 5, calc(50% - 19%), calc(extract(@top-list, @value) - 12.5%));
-    left: if(@value = 5, calc(50% - 19%), calc(extract(@left-list, @value) - 12.5%));
+    width: if(@value =5, 37%, 21%);
+    height: if(@value =5, 37%, 23%);
+    top: if(@value =5, calc(50% - 19%), calc(extract(@top-list, @value) - 12.5%));
+    left: if(@value =5, calc(50% - 19%), calc(extract(@left-list, @value) - 12.5%));
     background-color: #ffffffb4;
   }
 });

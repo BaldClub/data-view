@@ -6,6 +6,10 @@
 </template>
 
 <script>
+import { right2 } from '../../../../data/equipment';
+
+const { data } = right2;
+
 export default {
   props: ["maxHeight"],
   data() {
@@ -31,12 +35,7 @@ export default {
             itemStyle: {
               borderRadius: 8,
             },
-            data: [
-              { value: 10, name: "特殊设备" },
-              { value: 30, name: "重点设备" },
-              { value: 20, name: "专用设备" },
-              { value: 40, name: "一般设备" },
-            ],
+            data,
           },
         ],
       },

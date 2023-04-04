@@ -8,7 +8,10 @@
 </template>
   
 <script>
-import { dateYears } from '../../data'
+import { left1 } from '../../../../data/equipment';
+
+const { yearList, data } = left1;
+
 export default {
   props: ['maxHeight'],
   data() {
@@ -24,7 +27,7 @@ export default {
               color: '#ffffff'
             }
           },
-          data: []
+          data: yearList,
         },
         yAxis: {
           type: 'value',
@@ -52,7 +55,7 @@ export default {
             itemStyle: {
               color: '#2fb5ba'
             },
-            data: [40,68,70,79,80,81],
+            data,
             type: 'bar'
           }
         ]
@@ -60,18 +63,13 @@ export default {
     }
   },
   mounted() {
-    this.initData()
-    this.initCharts()
+    this.initCharts();
   },
   methods: {
     initCharts() {
-      this.echarts = this.$echarts.init(this.$refs.echarts)
-      this.echarts.setOption(this.option)
+      this.echarts = this.$echarts.init(this.$refs.echarts);
+      this.echarts.setOption(this.option);
     },
-    // 数据初始化
-    initData() {
-      this.option.xAxis.data = dateYears
-    }
   }
 }
 </script>

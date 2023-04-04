@@ -14,7 +14,7 @@
     <div class="table-container" :style="{ height: `${maxHeight - 100}px` }">
       <table>
         <tbody>
-          <tr v-for="{ location, time, detail,id } in dataList" :key="id">
+          <tr v-for="{ location, time, detail, id } in dataList" :key="id">
             <td>{{ id }}</td>
             <td>{{ location }}</td>
             <td>{{ detail }}</td>
@@ -27,31 +27,15 @@
 </template>
 
 <script>
+import { right3 } from '../../../../data/equipment';
+
+const { dataList } = right3;
+
 export default {
   props: ["maxHeight"],
   data() {
     return {
-      dataList: [
-        {
-          id:"1633225138344296442",
-          location: '菇房1',
-          detail: "掉线",
-          time: '2023/3/10 13:34:45'
-        },
-        {
-          id:"1633225138344296448",
-          location: '菇房2',
-          detail: "故障",
-          time: '2023/3/10 14:24:25'
-        },
-        {
-          id:"1633225138344296432",
-          location: '菇房3',
-          detail: "故障",
-          time: '2023/3/09 8:24:43'
-        },
-
-      ]
+      dataList,
     };
   },
   mounted() { },

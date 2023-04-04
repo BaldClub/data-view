@@ -6,6 +6,10 @@
 </template>
 
 <script>
+import { left3 } from '../../../../data/equipment';
+
+const { data } = left3;
+
 export default {
   props: ["maxHeight"],
   data() {
@@ -18,7 +22,7 @@ export default {
             color: "#fff",
           },
         },
-        color:['#27ba7a','#bab21e','#ba6052'],
+        color: ['#27ba7a', '#bab21e', '#ba6052'],
         tooltip: {
           trigger: "item",
         },
@@ -32,11 +36,7 @@ export default {
             itemStyle: {
               borderRadius: 8,
             },
-            data: [
-              { value: 90, name: "正常" },
-              { value: 5, name: "故障" },
-              { value: 5, name: "报废" },
-            ],
+            data,
           },
         ],
       },

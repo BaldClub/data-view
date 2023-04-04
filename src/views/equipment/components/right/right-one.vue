@@ -9,34 +9,17 @@
 </template>
 
 <script>
+import { right1 } from '../../../../data/equipment';
+
+const { data } = right1;
+
 export default {
   props: ["maxHeight"],
   data() {
     return {
       echarts: "",
       config: {
-        data: [
-          {
-            name: '传感器8',
-            value: 812
-          },
-          {
-            name: '气象站1',
-            value: 758
-          },
-          {
-            name: '传感器2',
-            value: 703
-          },
-          {
-            name: '传感器21',
-            value: 681
-          },
-          {
-            name: '透传9',
-            value: 732
-          },
-        ],
+        data,
         unit: 'h'
       }
     };
