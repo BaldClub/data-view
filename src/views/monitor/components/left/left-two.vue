@@ -15,10 +15,10 @@
         <table>
           <tbody>
             <tr v-for="item in 8">
-              <td>摄像头{{ item }}</td>
-              <td>菇房{{ item }}</td>
-              <td>{{ item > 3 ? '离线': '正常' }}</td>
-              <td>2023-01-11</td>
+              <td>产品名</td>
+              <td>产品编号产品编号产品编号产品编号</td>
+              <td>位置</td>
+              <td>时间</td>
             </tr>
           </tbody>
         </table>

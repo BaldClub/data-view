@@ -54,11 +54,11 @@ export default {
         },
         {
           name: '环境监测',
-          to: '/environmental'
+          to: '/'
         },
         {
           name: '生产管理',
-          to: '/production'
+          to: '/'
         },
         {
           name: '登录',

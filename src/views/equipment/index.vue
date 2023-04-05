@@ -21,7 +21,9 @@
 
     <el-col :span="10">
       <div :style="{ height: kHFour + 'px' }">
+        <dv-border-box-12 class="container-item" style="padding: 12px">
           <conterOne :max-height="kHFour"></conterOne>
+        </dv-border-box-12>
       </div>
     </el-col>
 

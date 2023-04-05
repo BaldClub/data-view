@@ -18,24 +18,23 @@ export default {
             color: "#fff",
           },
         },
-        color:['#27ba7a','#bab21e','#ba6052'],
         tooltip: {
           trigger: "item",
         },
         series: [
           {
-            name: "设备状态",
+            name: "Nightingale Chart",
             type: "pie",
             radius: [50, 150],
             center: ["50%", "40%"],
-            avoidLabelOverlap: false,
+            roseType: "area",
             itemStyle: {
               borderRadius: 8,
             },
             data: [
-              { value: 90, name: "正常" },
-              { value: 5, name: "故障" },
-              { value: 5, name: "报废" },
+              { value: 40, name: "rose 1" },
+              { value: 38, name: "rose 2" },
+              { value: 32, name: "rose 3" },
             ],
           },
         ],

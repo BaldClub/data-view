@@ -11,11 +11,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="item in dataList">
-          <td>{{item.name}}</td>
-          <td>{{ item.number }}</td>
-          <td>{{ item.location }}</td>
-          <td>{{ item.time }}</td>
+        <tr v-for="item in 4">
+          <td>产品名</td>
+          <td>产品编号产品编号产品编号产品编号</td>
+          <td>位置</td>
+          <td>时间</td>
         </tr>
       </tbody>
     </table>
@@ -23,22 +23,13 @@
 </template>
 
 <script>
-import { scanRecord } from '../../data'
 export default {
   props: ["maxHeight"],
   data() {
-    return {
-      dataList:[]
-    };
+    return {};
   },
-  mounted() {
-    this.initData()
-  },
-  methods: {
-    initData(){
-      this.dataList = scanRecord
-    }
-  },
+  mounted() {},
+  methods: {},
 };
 </script>
 

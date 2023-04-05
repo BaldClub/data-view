@@ -1,10 +1,7 @@
 <template>
   <div class="content">
     <h2>设备使用时长排名</h2>
-    <div class="ranking-list">
-      <dv-scroll-ranking-board :config="config" style="color:aqua"
-        :style="{ height: `${maxHeight * 0.8}px`, width: '100%' }" />
-    </div>
+    <div ref="echarts" :style="{ height: `${maxHeight * 0.9}px` }"></div>
   </div>
 </template>
 
@@ -14,33 +11,54 @@ export default {
   data() {
     return {
       echarts: "",
-      config: {
-        data: [
+      data: [],
+      option: {
+        xAxis: {
+          max: "dataMax",
+        },
+        yAxis: {
+          type: "category",
+          data: ["A", "B", "C", "D", "E"],
+          inverse: true,
+          animationDuration: 300,
+          animationDurationUpdate: 300,
+        },
+        series: [
           {
-            name: '传感器8',
-            value: 812
-          },
-          {
-            name: '气象站1',
-            value: 758
-          },
-          {
-            name: '传感器2',
-            value: 703
-          },
-          {
-            name: '传感器21',
-            value: 681
-          },
-          {
-            name: '透传9',
-            value: 732
+            realtimeSort: true,
+            name: "X",
+            type: "bar",
+            data: {},
+            label: {
+              show: true,
+              position: "right",
+              valueAnimation: true,
+            },
           },
         ],
-        unit: 'h'
-      }
+        animationDuration: 0,
+        animationDurationUpdate: 3000,
+        animationEasing: "linear",
+        animationEasingUpdate: "linear",
+      },
     };
-  }
+  },
+  mounted() {
+    this.getData();
+    this.initCharts();
+  },
+  methods: {
+    initCharts() {
+      this.echarts = this.$echarts.init(this.$refs.echarts);
+      this.echarts.setOption(this.option);
+    },
+    getData() {
+      for (let i = 0; i < 5; ++i) {
+        this.data.push(Math.round(Math.random() * 200));
+      }
+      this.option.series[0].data = this.data;
+    },
+  },
 };
 </script>
 
@@ -49,10 +67,6 @@ export default {
   h2 {
     padding-left: 0.6em;
     text-align: left;
-  }
-
-  .ranking-list {
-    padding: 0px 10px;
   }
 }
 </style>

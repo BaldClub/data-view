@@ -1,18 +1,9 @@
 <template>
   <div class="content">
-    <div class="video">
-      <img style="width: 100%" src="@/assets/images/微信图片_20230313122833.png" alt="">
-    </div>
-    <div class="video">
-      <img style="width: 100%" src="@/assets/images/微信图片_20230313122859.png" alt="">
-    </div>
-    <div class="video">
-      <img style="width: 100%" src="@/assets/images/微信图片_20230313122853.png" alt="">
-    </div>
-    <div class="video">
+    <div class="video" v-for="item in 4">
       <video width="100%" controls>
         <source
-          src="#"
+          src="http://www.w3school.com.cn/example/html5/mov_bbb.mp4"
           type="video/mp4"
         />
       </video>

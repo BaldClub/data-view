@@ -47,7 +47,24 @@ export default {
         series: [
           {
             itemStyle: {
-              color: '#ba7f86'
+              color: {
+                type: "linear",
+                x: 0,
+                y: 0,
+                x2: 0,
+                y2: 1,
+                colorStops: [
+                  {
+                    offset: 0,
+                    color: "rgb(255, 0, 135)", // 0% 处的颜色
+                  },
+                  {
+                    offset: 1,
+                    color: "rgb(135, 0, 157)", // 100% 处的颜色
+                  },
+                ],
+                global: false, // 缺省为 false
+              },
             },
             data: [120, 200, 150, 80, 70, 110, 130, 13, 130, 130, 130, 130],
             type: "bar",

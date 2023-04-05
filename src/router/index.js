@@ -47,10 +47,6 @@ const routes = [
     component: () => import("../views/login/login.vue"),
   },
   {
-    path: "/change-password",
-    component: () => import("../views/change-password"),
-  },
-  {
     path: "/china",
     component: () => import("../views/trace/components/bg/china.vue"),
   },

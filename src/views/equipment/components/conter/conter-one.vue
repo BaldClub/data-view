@@ -6,11 +6,18 @@
 <template>
   <div class="container-item" :style="{ height: maxHeight + 'px' }">
     <div class="redius-bg" :style="{ height: maxHeight * 0.6 + 'px' }">
-      <div class="item" v-for="(_, index) in 6" :class="['position-' + (index + 1)]">
-        <div>
-          <p>{{ dataList[index].name }}</p>
-          <p class="proportion">{{ dataList[index].num }}%</p>
-        </div>
+      <div
+        class="item"
+        v-for="(item, index) in dataList"
+        :style="{
+          'background-image': `linear-gradient(to right, ${item.color[0]}, ${item.color[0]})`,
+          top: (((index / 3) * 50) % (100 - item.num / 1.4)) + '%',
+          left: (((index % 3) * 50) % (100 - item.num / 1.5)) + '%',
+          height: item.num + '%',
+          width: item.num + '%',
+        }"
+      >
+        {{ item.name }}
       </div>
     </div>
   </div>
@@ -23,28 +30,34 @@ export default {
     return {
       dataList: [
         {
-          name: "摄像头",
-          num: 15,
+          name: "光照",
+          color: ["rgb(128, 255, 165)", "rgb(1, 191, 236)"],
+          num: 60,
         },
         {
-          name: "透传",
+          name: "光照",
+          color: ["rgb(0, 221, 255)", "rgb(77, 119, 255)"],
           num: 10,
         },
         {
-          name: "气象站",
+          name: "光照",
+          color: ["rgb(255, 162, 0)", "rgb(255, 231, 179)"],
           num: 5,
         },
         {
-          name: "灭菌锅",
-          num: 2,
+          name: "光照",
+          color: ["rgb(255, 0, 135)", "rgb(135, 0, 157)"],
+          num: 15,
         },
         {
-          name: "传感器",
-          num: 40,
+          name: "光照",
+          color: ["rgb(255, 191, 0)", "rgb(224, 62, 76)"],
+          num: 10,
         },
         {
-          name: "其他",
-          num: 28,
+          name: "光照",
+          color: ["rgb(255, 0, 191)", "rgb(255, 179, 200)"],
+          num: 60,
         },
       ],
     };
@@ -53,20 +66,6 @@ export default {
 </script>
 
 <style scoped lang="less">
-@top-list: 42%, 15%, 30%, 69%, 50%, 58%;
-@left-list: 18%, 60%, 84%, 20%, 50%, 88%;
-
-each(range(6), {
-  .position-@{value} {
-    width: if(@value = 5, 37%, 21%);
-    height: if(@value = 5, 37%, 23%);
-    top: if(@value = 5, calc(50% - 19%), calc(extract(@top-list, @value) - 12.5%));
-    left: if(@value = 5, calc(50% - 19%), calc(extract(@left-list, @value) - 12.5%));
-    background-color: #ffffffb4;
-  }
-});
-
-
 .container-item {
   width: 100%;
   position: relative;
@@ -74,28 +73,22 @@ each(range(6), {
   display: flex;
   justify-content: center;
   align-items: center;
-
   .redius-bg {
-    background-color: #76e8bc;
+    background-color: #e1e2e3bd;
     width: 90%;
     border-radius: 50%;
     position: relative;
-
     .item {
+      width: 40px;
+      height: 100px;
       opacity: 0.8;
       position: absolute;
       border-radius: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
-      color: #000;
+      color: #fff;
       font-size: 2rem;
-
-      .proportion {
-        text-align: center;
-        font-size: 22px;
-      }
-
       &:hover {
         opacity: 1;
       }

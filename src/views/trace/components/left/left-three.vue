@@ -15,7 +15,7 @@ export default {
       titleList: ["平菇", "黑木耳", "香菇", "金针菇", "茶树菇", "杏鲍菇"],
       // 数据范围
       rangeData:[
-        [30, 100] , [40, 70], [80, 100], [100, 200], [20, 60], [20, 50]
+        [200, 500] , [200, 500], [200, 500], [100, 500], [400, 800], [200, 500]
       ],
       option: {
         tooltip: {
@@ -48,7 +48,7 @@ export default {
     }
   },
   mounted() {
-    this.initData();
+    this.getData();
     this.initCharts();
   },
   methods: {
@@ -71,7 +71,7 @@ export default {
       return Math.round(Math.random() * (arr[1] - arr[0])) + arr[0];
     },
     // 数据初始化
-    initData(){
+    getData(){
       let numDay =  Math.floor((new Date().getTime() - new Date(2023, 0, 1).getTime()) / ONE_DAY);
       for(let j=0; j < 6;j++){
         let now = new Date(2023, 0, 1);

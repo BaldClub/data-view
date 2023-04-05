@@ -91,12 +91,6 @@ export default {
         data: allData,
         type: "line"
       })
-      let xData = []
-      let now = new Date().getMonth();
-      for (var i = 0; i <= now; i++) {
-        xData.push((i + 1) + '月')
-      }
-      this.option.xAxis.data = xData
     }
   },
 };

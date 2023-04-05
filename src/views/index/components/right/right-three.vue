@@ -1,14 +1,14 @@
 <template>
   <div class="content">
     <h2>实时政策</h2>
-    <ul :style="{ height: `${maxHeight * 0.86}px` }">
-      <li v-for="{title,time,link} in data">
+    <ul>
+      <li v-for="item in 6">
         <a href="#">
           <div class="radius"></div>
           <div class="title">
-            {{title}}
+            政策政策政策政策政策政策政策政策政策政策政策政策政策政策政策政策政策政策政策政策
           </div>
-          <div class="time">{{ time }}</div>
+          <div class="time">2023-2-29 18:00</div>
         </a>
       </li>
     </ul>
@@ -16,17 +16,12 @@
 </template>
 
 <script>
-import dataList from '../../data/policy-data.json'
 export default {
   props: ["maxHeight"],
   data() {
-    return {
-      data: []
-    };
+    return {};
   },
-  mounted() {
-    this.data = dataList
-  },
+  mounted() {},
   methods: {},
 };
 </script>
@@ -37,14 +32,10 @@ export default {
     padding-left: 0.6em;
     text-align: left;
   }
-
   ul {
-    overflow: auto;
-
-    .thead {
+    .thead{
       display: flex;
     }
-
     li {
       a {
         display: flex;
@@ -52,11 +43,9 @@ export default {
         color: #fff;
         align-items: center;
         background-color: rgba(55, 162, 255, 0.356);
-
         &:hover {
           background-color: rgba(55, 162, 255, 0.156);
         }
-
         .radius {
           margin: 5px;
           width: 10px;
@@ -64,7 +53,6 @@ export default {
           border-radius: 50%;
           background-color: burlywood;
         }
-
         .title {
           flex: 1;
           padding: 6px 0px;
@@ -77,11 +65,11 @@ export default {
           padding-left: 5px;
           font-size: 1.2rem;
         }
-
         .time {
           width: 160px;
         }
       }
     }
   }
-}</style>
+}
+</style>

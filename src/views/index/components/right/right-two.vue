@@ -6,7 +6,6 @@
 </template>
 
 <script>
-import { dateYears } from '../../data'
 export default {
   props: ["maxHeight"],
   data() {
@@ -22,7 +21,20 @@ export default {
               color: "#ffffff",
             },
           },
-          data: [],
+          data: [
+            "一月",
+            "二月",
+            "三月",
+            "四月",
+            "五月",
+            "六月",
+            "七月",
+            "八月",
+            "九月",
+            "十月",
+            "十一月",
+            "十二月",
+          ],
         },
         yAxis: {
           type: "value",
@@ -91,7 +103,6 @@ export default {
     };
   },
   mounted() {
-    this.initData()
     this.initCharts();
   },
   methods: {
@@ -99,9 +110,6 @@ export default {
       this.echarts = this.$echarts.init(this.$refs.echarts);
       this.echarts.setOption(this.option);
     },
-    initData(){
-      this.option.xAxis.data = dateYears
-    }
   },
 };
 </script>

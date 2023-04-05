@@ -21,7 +21,20 @@ export default {
               color: "#ffffff",
             },
           },
-          data: [],
+          data: [
+            "一月",
+            "二月",
+            "三月",
+            "四月",
+            "五月",
+            "六月",
+            "七月",
+            "八月",
+            "九月",
+            "十月",
+            "十一月",
+            "十二月",
+          ],
         },
         yAxis: {
           type: "value",
@@ -82,15 +95,9 @@ export default {
       this.echarts = this.$echarts.init(this.$refs.echarts);
       this.echarts.setOption(this.option);
     },
-    initData() {
-      let xData = []
-      let now = new Date().getMonth();
-      for (var i = 0; i <= now; i++) {
-        xData.push((i + 1) + '月')
-      }
-      this.option.xAxis.data = xData
-      for (let i = 0; i < 12; i++) {
-        this.option.series[0].data.push((Math.floor(Math.random() * 500) % 100 + 200))
+    initData(){
+      for(let i=0 ; i < 12; i++){
+        this.option.series[0].data.push((Math.floor (Math.random() * 500) % 200 + 300))
       }
     }
   },

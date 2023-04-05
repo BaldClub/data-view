@@ -13,7 +13,7 @@ export default {
       echarts: "",
       option: {
         legend: {
-          data: ["扫码", "售出"],
+          data: ["Rainfall", "Evaporation"],
           textStyle: {
             color: "#fff",
             // ...
@@ -45,7 +45,7 @@ export default {
         },
         yAxis: {
           type: "value",
-          name: "单位（数量/次数）",
+          name: "单位（数量）",
           axisLabel: {
             show: true,
             textStyle: {
@@ -66,10 +66,11 @@ export default {
         },
         series: [
           {
-            name: "扫码",
+            name: "Rainfall",
             type: "bar",
             data: [
-              232, 241, 156,
+              2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4,
+              3.3,
             ],
             markLine: {
               data: [{ type: "average", name: "Avg" }],
@@ -100,10 +101,11 @@ export default {
             },
           },
           {
-            name: "售出",
+            name: "Evaporation",
             type: "bar",
             data: [
-              332, 441, 256,
+              2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0,
+              2.3,
             ],
             markLine: {
               data: [{ type: "average", name: "Avg" }],
@@ -138,7 +140,6 @@ export default {
     };
   },
   mounted() {
-    this.initData()
     this.initCharts();
   },
   methods: {
@@ -146,14 +147,6 @@ export default {
       this.echarts = this.$echarts.init(this.$refs.echarts);
       this.echarts.setOption(this.option);
     },
-    initData() {
-      let xData = []
-      let now = new Date().getMonth();
-      for (var i = 0; i <= now; i++) {
-        xData.push((i + 1) + '月')
-      }
-      this.option.xAxis.data = xData
-    }
   },
 };
 </script>
