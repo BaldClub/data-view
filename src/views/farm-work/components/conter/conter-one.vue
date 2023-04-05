@@ -8,8 +8,7 @@
 </template>
   
 <script>
-// import { dateYears } from "../../data";
-import { yearList } from '../../../../data/farm-work';
+import { yearList } from '../../../../data/data';
 
 export default {
   props: ['maxHeight'],
