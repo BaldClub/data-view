@@ -1,3 +1,5 @@
+import { ms } from "./data";
+
 // 气候统计
 export const conter_two = {
   indicator: [
@@ -19,14 +21,17 @@ export const conter_two = {
 
 // 气象站参数
 export const left1 = {
+  ms,
   data: [
     {
       name: "空气温度",
       value: "17.4 ℃",
+      random: [17.4, 2, 1, "℃"],
     },
     {
       name: "空气湿度",
       value: "49 %",
+      random: [49, 5, 0, "%"],
     },
     {
       name: "光照",
@@ -55,14 +60,17 @@ export const left3 = {};
 
 // 菇房环境数据
 export const right1 = {
+  ms,
   data: [
     {
       name: "空气温度",
       value: "22.4 ℃",
+      random: [22.4, 2, 1, "℃"],
     },
     {
       name: "空气湿度",
       value: "65 %",
+      random: [65, 5, 0, "%"],
     },
     {
       name: "光照",

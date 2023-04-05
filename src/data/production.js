@@ -1,4 +1,4 @@
-const ms = 5000;
+import { ms } from "./data";
 
 // 菇房区实时环境数据
 export const left1 = {

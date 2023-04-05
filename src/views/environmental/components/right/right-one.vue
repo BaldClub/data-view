@@ -12,9 +12,10 @@
 </template>
 
 <script>
+import { randomData } from '../../../../utils/';
 import { right1 } from '../../../../data/environmental';
 
-const { data } = right1;
+const { data, ms } = right1;
 
 export default {
     props: ["maxHeight"],
@@ -23,6 +24,9 @@ export default {
             data,
         }
     },
+    mounted() {
+        randomData(this, ms);
+    }
 };
 </script>
 
