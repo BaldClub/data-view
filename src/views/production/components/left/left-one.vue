@@ -4,40 +4,23 @@
   
 <script>
 import environmentData from '../common/environment-data.vue';
+import { randomData } from '../../../../utils/';
+import { left1 } from '../../../../data/production';
+
+const { data, ms } = left1;
+
 export default {
-    components:{
+    components: {
         environmentData
     },
     props: ["maxHeight"],
-    data(){
+    data() {
         return {
-            data: [
-                {
-                    name: '空气温度',
-                    value: '21 ℃'
-                },
-                {
-                    name: '空气湿度',
-                    value: '65 %'
-                },
-                {
-                    name: '光照',
-                    value: '1250 Lux'
-                },
-                {
-                    name: 'CO2浓度',
-                    value: '890 ppm'
-                },
-                {
-                    name: 'CO浓度',
-                    value: '100 ppm'
-                },
-                {
-                    name: '菌包PH值',
-                    value: '0'
-                }
-            ]
+            data,
         }
     },
+    mounted() {
+        randomData(this, ms);
+    }
 };
 </script>

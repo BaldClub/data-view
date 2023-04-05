@@ -2,11 +2,10 @@
     <div class="content">
         <h2>{{ title }}</h2>
         <div class="list">
-            <div class="item" :class="[`color-${index+1}`]"
-                v-for="{name,value},index in data" :key="name" 
+            <div class="item" :class="[`color-${index + 1}`]" v-for="{ name, value }, index in data" :key="name"
                 :style="{ padding: `${maxHeight * 0.055}px 0px` }">
                 <p>{{ value }}</p>
-                <span>{{ name }}</span>    
+                <span>{{ name }}</span>
             </div>
         </div>
     </div>
@@ -14,7 +13,7 @@
   
 <script>
 export default {
-    props: ["maxHeight","title","data"],
+    props: ["maxHeight", "title", "data"],
 };
 </script>
   
@@ -51,5 +50,6 @@ each(@colorList, {
             }
         }
     }
-}</style>
+}
+</style>
   
