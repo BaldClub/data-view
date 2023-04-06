@@ -7,13 +7,39 @@
   <div class="container-item" :style="{ height: maxHeight * 0.97 + 'px' }">
     <div
       class="item"
-      v-for="item in 6"
-      :style="{ width: maxHeight * 0.64 + 'px' }"
+      :style="{ width: maxHeight * 0.62 + 'px' }"
     >
-      <div class="name">设备名</div>
-      <video width="100%" controls>
+      <div class="name">摄像头1-0</div>
+      <!-- <video width="100%" controls>
         <source
           src="http://www.w3school.com.cn/example/html5/mov_bbb.mp4"
+          type="video/mp4"
+        />
+      </video> -->
+      <img style="width: 100%" src="@/assets/images/微信图片_20230313122833.png" alt="">
+    </div>
+    <div
+      class="item"
+      :style="{ width: maxHeight * 0.62 + 'px' }"
+    >
+      <div class="name">摄像头1-1</div>
+      <!-- <video width="100%" controls>
+        <source
+          src="http://www.w3school.com.cn/example/html5/mov_bbb.mp4"
+          type="video/mp4"
+        />
+      </video> -->
+      <img style="width: 100%" src="@/assets/images/微信图片_20230313122859.png" alt="">
+    </div>
+    <div
+      class="item"
+      v-for="item in 4"
+      :style="{ width: maxHeight * 0.62 + 'px' }"
+    >
+      <div class="name">摄像头1-{{ item + 1 }}</div>
+      <video width="100%" controls>
+        <source
+          src="#"
           type="video/mp4"
         />
       </video>

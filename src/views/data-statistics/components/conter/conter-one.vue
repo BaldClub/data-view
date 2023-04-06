@@ -17,48 +17,13 @@
 </template>
 
 <script>
+import { dataList } from '../../../../data/data-statistics';
+
 export default {
   props: ["maxHeight"],
   data() {
     return {
-      dataList: [
-        {
-          name: "光照",
-          num: 15,
-        },
-        {
-          name: "CO2",
-          num: 10,
-        },
-        {
-          name: "温度",
-          num: 15,
-        },
-        {
-          name: "湿度",
-          num: 10,
-        },
-        {
-          name: "设备",
-          num: 10,
-        },
-        {
-          name: "产量",
-          num: 16,
-        },
-        {
-          name: "价格",
-          num: 10,
-        },
-        {
-          name: "政策",
-          num: 4,
-        },
-        {
-          name: "PH值",
-          num: 10,
-        },
-      ],
+      dataList: dataList,
     };
   },
 };
@@ -102,10 +67,12 @@ each(range(9), {
       align-items: center;
       color: #000;
       font-size: 2rem;
-      .proportion{
+
+      .proportion {
         text-align: center;
         font-size: 22px;
       }
+
       &:hover {
         opacity: 1;
       }

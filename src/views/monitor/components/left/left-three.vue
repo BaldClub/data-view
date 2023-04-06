@@ -13,11 +13,7 @@
     <div class="table-container" :style="{ height: maxHeight - 100 + 'px' }">
       <table>
         <tbody>
-          <tr v-for="item in 9">
-            <td>设备1异常</td>
-            <td>I 级别</td>
-            <td>时间</td>
-          </tr>
+          
         </tbody>
       </table>
     </div>

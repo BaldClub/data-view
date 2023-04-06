@@ -17,6 +17,11 @@
             <leftThree :max-height="kHThree"></leftThree>
           </dv-border-box-12>
         </div>
+        <div :style="{ height: kHLeftFour + 'px' }">
+          <dv-border-box-12 class="container-item" style="padding: 12px">
+            <LeftFour :max-height="kHLeftFour"></LeftFour>
+          </dv-border-box-12>
+        </div>
       </el-col>
   
       <el-col :span="10">
@@ -56,25 +61,29 @@
   import leftOne from "./components/left/left-one.vue";
   import leftTwo from "./components/left/left-two.vue";
   import leftThree from "./components/left/left-three.vue";
+  import leftFour from "./components/left/left-four.vue";
   import conterOne from "./components/conter/conter-one.vue";
   import conterTwo from "./components/conter/conter-two.vue";
   import rightOne from "./components/right/right-one.vue";
   import rightTwo from "./components/right/right-two.vue";
   import rightThree from "./components/right/right-three.vue";
   import background from "@/components/background.vue";
+import LeftFour from "./components/left/left-four.vue";
   export default {
     name: "index",
     components: {
-      background,
-      leftOne,
-      leftTwo,
-      leftThree,
-      conterOne,
-      conterTwo,
-      rightOne,
-      rightTwo,
-      rightThree,
-    },
+    background,
+    leftOne,
+    leftTwo,
+    leftThree,
+    leftFour,
+    conterOne,
+    conterTwo,
+    rightOne,
+    rightTwo,
+    rightThree,
+    LeftFour
+},
     data() {
       return {
         screenHeight:
@@ -117,14 +126,15 @@
           window.innerHeight ||
           document.documentElement.innerHeight ||
           document.body.clientHeight;
-        this.kHOne = Math.round(this.screenHeight * 0.26);
-        this.kHTwo = Math.round(this.screenHeight * 0.29);
-        this.kHThree = Math.round(this.screenHeight * 0.375);
+        this.kHOne = Math.round(this.screenHeight * 0.2315);
+        this.kHTwo = Math.round(this.screenHeight * 0.2315);
+        this.kHThree = Math.round(this.screenHeight * 0.2315);
+        this.kHLeftFour = Math.round(this.screenHeight * 0.2315)
         this.kHFour = Math.round(this.screenHeight * 0.5);
         this.kHFive = Math.round(this.screenHeight * 0.426);
         this.kHSix = Math.round(this.screenHeight * 0.25);
-        this.kHSeven = Math.round(this.screenHeight * 0.15);
-        this.kHEight = Math.round(this.screenHeight * 0.525);
+        this.kHSeven = Math.round(this.screenHeight * 0.25);
+        this.kHEight = Math.round(this.screenHeight * 0.425);
       },
       getScreenWidth() {
         this.screenWidth =

@@ -1,109 +1,101 @@
 <template>
-  <div class="content">
-    <h2>预警报警次数</h2>
-    <div ref="echarts" :style="{ height: `${maxHeight * 0.9}px` }"></div>
+  <div class="content" :style="{ height: `${maxHeight}px` }">
+    <h2>预警报警</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>设备编号</th>
+          <th>安装位置</th>
+          <th>具体信息</th>
+          <th>时间</th>
+        </tr>
+      </thead>
+    </table>
+    <div class="table-container" :style="{ height: `${maxHeight - 100}px` }">
+      <table>
+        <tbody>
+          <tr v-for="{ location, time, detail, id } in dataList" :key="id">
+            <td>{{ id }}</td>
+            <td>{{ location }}</td>
+            <td>{{ detail }}</td>
+            <td>{{ time }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
 
 <script>
+import { right3 } from '../../../../data/equipment';
+
+const { dataList } = right3;
+
 export default {
   props: ["maxHeight"],
   data() {
     return {
-      echarts: "",
-      option: {
-        xAxis: {
-          type: "category",
-          name: "单位（月）",
-          axisLabel: {
-            show: true,
-            textStyle: {
-              color: "#ffffff",
-            },
-          },
-          data: [
-            "一月",
-            "二月",
-            "三月",
-            "四月",
-            "五月",
-            "六月",
-            "七月",
-            "八月",
-            "九月",
-            "十月",
-            "十一月",
-            "十二月",
-          ],
-        },
-        yAxis: {
-          type: "value",
-          name: "单位（次）",
-          axisLabel: {
-            show: true,
-            textStyle: {
-              color: "#ffffff",
-            },
-          },
-        },
-        tooltip: {
-          trigger: "axis",
-          axisPointer: {
-            type: "shadow",
-          },
-        },
-
-        grid: {
-          top: 40,
-          right: 70,
-          bottom: 50,
-        },
-        series: [
-          {
-            itemStyle: {
-              color: {
-                type: "linear",
-                x: 0,
-                y: 0,
-                x2: 0,
-                y2: 1,
-                colorStops: [
-                  {
-                    offset: 0,
-                    color: "rgb(255, 0, 135)", // 0% 处的颜色
-                  },
-                  {
-                    offset: 1,
-                    color: "rgb(135, 0, 157)", // 100% 处的颜色
-                  },
-                ],
-                global: false, // 缺省为 false
-              },
-            },
-            data: [120, 200, 150, 80, 70, 110, 130, 13, 130, 130, 130, 130],
-            type: "bar",
-          },
-        ],
-      },
+      dataList,
     };
   },
-  mounted() {
-    this.initCharts();
-  },
-  methods: {
-    initCharts() {
-      this.echarts = this.$echarts.init(this.$refs.echarts);
-      this.echarts.setOption(this.option);
-    },
-  },
+  mounted() { },
+  methods: {},
 };
 </script>
 
 <style lang="less" scoped>
 .content {
+  overflow: auto;
+
+  .table-container {
+    overflow: auto;
+  }
+
   h2 {
     padding-left: 0.6em;
     text-align: left;
+    margin-bottom: 10px;
+  }
+
+  table {
+    width: 100%;
+
+    thead {
+      color: #fff;
+      background-color: rgb(55, 162, 255);
+
+      tr {
+        display: grid;
+        grid-template-columns: repeat(4, 25%);
+
+        th {
+          padding: 6px 0px;
+        }
+      }
+    }
+
+    tbody {
+      color: #fff;
+
+      :hover {
+        background-color: rgba(55, 162, 255, 0.156);
+      }
+
+      tr {
+        display: grid;
+        margin: 10px 0px;
+        background-color: rgba(55, 162, 255, 0.356);
+        grid-template-columns: repeat(4, 25%);
+
+        td {
+          color: red;
+          padding: 6px 0px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+    }
   }
 }
 </style>

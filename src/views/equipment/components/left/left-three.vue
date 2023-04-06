@@ -6,6 +6,10 @@
 </template>
 
 <script>
+import { left3 } from '../../../../data/equipment';
+
+const { data } = left3;
+
 export default {
   props: ["maxHeight"],
   data() {
@@ -18,24 +22,21 @@ export default {
             color: "#fff",
           },
         },
+        color: ['#27ba7a', '#bab21e', '#ba6052'],
         tooltip: {
           trigger: "item",
         },
         series: [
           {
-            name: "Nightingale Chart",
+            name: "设备状态",
             type: "pie",
             radius: [50, 150],
             center: ["50%", "40%"],
-            roseType: "area",
+            avoidLabelOverlap: false,
             itemStyle: {
               borderRadius: 8,
             },
-            data: [
-              { value: 40, name: "rose 1" },
-              { value: 38, name: "rose 2" },
-              { value: 32, name: "rose 3" },
-            ],
+            data,
           },
         ],
       },

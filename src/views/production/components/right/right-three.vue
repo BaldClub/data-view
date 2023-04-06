@@ -12,7 +12,7 @@
     <div class="table-container" :style="{ height: `${maxHeight - 100}px` }">
       <table>
         <tbody>
-          <tr v-for="{type, time} in dataList">
+          <tr v-for="{ type, time } in dataList">
             <td>{{ type }}</td>
             <td>{{ time }}</td>
           </tr>
@@ -23,32 +23,17 @@
 </template>
 
 <script>
+import { right3 } from '../../../../data/production';
+
+const { dataList } = right3;
+
 export default {
   props: ["maxHeight"],
   data() {
     return {
-      dataList:[
-        {
-          type: '参数超标',
-          time: '2023/3/10 13:34:45'
-        },
-        {
-          type: '采摘',
-          time: '2023/3/10 13:34:45'
-        },
-        {
-          type: '参数超标',
-          time: '2023/3/10 13:34:45'
-        },
-        {
-          type: '参数超标',
-          time: '2023/3/10 13:34:45'
-        }
-      ]
+      dataList,
     };
   },
-  mounted() { },
-  methods: {},
 };
 </script>
 
@@ -75,7 +60,7 @@ export default {
 
       tr {
         display: grid;
-        grid-template-columns: 50%  50%;
+        grid-template-columns: 50% 50%;
 
         th {
           padding: 6px 0px;
@@ -94,7 +79,7 @@ export default {
         display: grid;
         margin: 10px 0px;
         background-color: rgba(55, 162, 255, 0.356);
-        grid-template-columns: 50%  50%;
+        grid-template-columns: 50% 50%;
 
         td {
           color: red;
@@ -106,4 +91,5 @@ export default {
       }
     }
   }
-}</style>
+}
+</style>

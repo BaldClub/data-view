@@ -25,8 +25,8 @@ const routes = [
         component: () => import('../views/data-statistics')
       },
       {
-        path: '/fram-work',
-        component: () => import('../views/fram-work')
+        path: '/farm-work',
+        component: () => import('../views/farm-work')
       },
       {
         path: "/equipment",
@@ -45,6 +45,10 @@ const routes = [
   {
     path: "/login",
     component: () => import("../views/login/login.vue"),
+  },
+  {
+    path: "/change-password",
+    component: () => import("../views/change-password"),
   },
   {
     path: "/china",

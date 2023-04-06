@@ -6,6 +6,10 @@
 </template>
 
 <script>
+import { right2 } from '../../../../data/data-statistics';
+
+const { data, monthList } = right2;
+
 export default {
   props: ["maxHeight"],
   data() {
@@ -21,7 +25,7 @@ export default {
               color: "#ffffff",
             },
           },
-          data: [],
+          data: monthList,
         },
         yAxis: {
           type: "value",
@@ -54,7 +58,7 @@ export default {
                 x2: 0,
                 y2: 1,
                 colorStops: [
-                
+
                   {
                     offset: 1,
                     color: "rgb(135, 0, 157)", // 100% 处的颜色
@@ -63,12 +67,12 @@ export default {
                     offset: 0,
                     color: "rgb(55, 162, 255)", // 100% 处的颜色
                   },
-                
+
                 ],
                 global: false, // 缺省为 false
               },
             },
-            data: [120, 200, 150, 80, 70, 110, 130, 13, 130, 130, 130, 130],
+            data,
             type: "bar",
           },
         ],
@@ -76,7 +80,6 @@ export default {
     };
   },
   mounted() {
-    this.initData()
     this.initCharts();
   },
   methods: {
@@ -84,15 +87,6 @@ export default {
       this.echarts = this.$echarts.init(this.$refs.echarts);
       this.echarts.setOption(this.option);
     },
-    // 数据初始化
-    initData(){
-      let xData = []
-      let now = new Date().getMonth();
-      for (var i = 0; i <= now; i++) {
-          xData.push((i+1) + '月')
-      }
-      this.option.xAxis.data = xData
-    }
   },
 };
 </script>

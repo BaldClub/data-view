@@ -46,7 +46,7 @@ export default {
         },
         {
           name: '农资农事',
-          to: '/fram-work'
+          to: '/farm-work'
         },
         {
           name: '设备管理',
@@ -54,11 +54,11 @@ export default {
         },
         {
           name: '环境监测',
-          to: '/'
+          to: '/environmental'
         },
         {
           name: '生产管理',
-          to: '/'
+          to: '/production'
         },
         {
           name: '登录',

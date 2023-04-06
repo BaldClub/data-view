@@ -6,7 +6,10 @@
 </template>
 
 <script>
-import { dateYears } from '../../data/data'
+import { right1 } from '../../../../data/data-statistics';
+
+const { data, yearList } = right1;
+
 export default {
   props: ["maxHeight"],
   data() {
@@ -22,7 +25,7 @@ export default {
               color: "#ffffff",
             },
           },
-          data: [],
+          data: yearList,
         },
         yAxis: {
           type: "value",
@@ -55,9 +58,7 @@ export default {
           {
             name: "资金投入",
             color: ["rgb(128, 255, 165)"],
-            data: [
-              150, 230, 224, 218, 135 
-            ],
+            data,
             type: "line",
           },
         ],
@@ -65,7 +66,6 @@ export default {
     };
   },
   mounted() {
-    this.initData()
     this.initCharts();
   },
   methods: {
@@ -73,9 +73,6 @@ export default {
       this.echarts = this.$echarts.init(this.$refs.echarts);
       this.echarts.setOption(this.option);
     },
-    initData(){
-      this.option.xAxis.data = dateYears
-    }
   },
 };
 </script>

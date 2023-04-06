@@ -25,32 +25,15 @@
 </template>
 
 <script>
+import { right3 } from '../../../../data/environmental';
+
+const { dataList } = right3;
+
 export default {
   props: ["maxHeight"],
   data() {
     return {
-      dataList: [
-        {
-          id: 1,
-          type: '参数超标',
-          time: '2023/3/10 13:34:45'
-        },
-        {
-          id: 2,
-          type: '采摘',
-          time: '2023/3/10 13:34:45'
-        },
-        {
-          id: 3,
-          type: '参数超标',
-          time: '2023/3/10 13:34:45'
-        },
-        {
-          id: 4,
-          type: '参数超标',
-          time: '2023/3/10 13:34:45'
-        }
-      ]
+      dataList,
     };
   },
   mounted() { },

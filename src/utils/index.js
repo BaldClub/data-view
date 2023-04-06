@@ -33,3 +33,36 @@ export function formatTime(time, fmt) {
     return fmt;
   }
 }
+
+/**
+ * 获取随机数值
+ *
+ * @param {0} initNum 初始数值
+ * @param {1} offset 偏移量
+ * @param {2} fixed 保留小数点后几位
+ * @param {2} unit 单位
+ * @returns string
+ */
+const getRandom = ([initNum, offset, fixed, unit]) => {
+  let randomNum = initNum + Math.random() * offset * 2 - offset;
+  randomNum = fixed ? randomNum.toFixed(fixed) : Math.floor(randomNum);
+
+  return `${randomNum} ${unit}`;
+};
+
+/**
+ *
+ * @param that this 指针
+ * @param ms 定时器毫秒数，为 0 则不启动定时器
+ */
+export const randomData = (that, ms) => {
+  if (ms) {
+    setInterval(() => {
+      that.data = that.data.map(({ value, random, ...others }) => ({
+        value: random ? getRandom(random) : value,
+        random,
+        ...others,
+      }));
+    }, ms);
+  }
+};

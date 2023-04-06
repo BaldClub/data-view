@@ -2,7 +2,7 @@
   <div class="content">
     <h2>农事调控</h2>
     <div class="btu-list">
-      <div class="item" v-for="{icon, name, status},index in dataList">
+      <div class="item" v-for="{ icon, name, status }, index in dataList">
         <div class="icon">
           <img :src="icon" alt="">
         </div>
@@ -10,8 +10,8 @@
           {{ name }}
         </div>
         <div class="btu" @click="changeStatus(index)">
-          <div class="close" :class="{'no-active': status}">关闭</div>
-          <div class="open" :class="{'no-active': !status}">打开</div>
+          <div class="close" :class="{ 'no-active': status }">关闭</div>
+          <div class="open" :class="{ 'no-active': !status }">打开</div>
         </div>
       </div>
     </div>
@@ -19,22 +19,19 @@
 </template>
 
 <script>
-import { farmingList } from '../../data'
+import { right2 } from '../../../../data/production';
+
+const { dataList } = right2;
+
 export default {
   props: ["maxHeight"],
   data() {
     return {
-      dataList:[]
+      dataList,
     };
   },
-  mounted() {
-    this.initData()
-  },
   methods: {
-    initData(){
-      this.dataList = farmingList
-    },
-    changeStatus(index){
+    changeStatus(index) {
       this.dataList[index].status = !this.dataList[index].status
     }
   },
@@ -51,6 +48,7 @@ export default {
   .btu-list {
     display: grid;
     grid-template-columns: repeat(2, 50%);
+
     .item {
       display: flex;
       align-items: center;
@@ -60,6 +58,7 @@ export default {
         width: 20px;
         height: 20px;
         margin: 0px 10px;
+
         img {
           width: 100%;
         }
@@ -94,4 +93,5 @@ export default {
       }
     }
   }
-}</style>
+}
+</style>
