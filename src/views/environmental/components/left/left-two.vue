@@ -6,9 +6,6 @@
 </template>
 
 <script>
-// import { left2 } from '../../../../data/environmental';
-
-// const { data } = left2;
 const ONE_DAY = 24 * 3600 * 1000
 
 export default {
