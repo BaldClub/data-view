@@ -8,6 +8,8 @@
 <script>
 import { right2 } from '../../../../data/data-statistics';
 
+const { data, monthList } = right2;
+
 export default {
   props: ["maxHeight"],
   data() {
@@ -23,7 +25,7 @@ export default {
               color: "#ffffff",
             },
           },
-          data: right2.monthList,
+          data: monthList,
         },
         yAxis: {
           type: "value",
@@ -70,7 +72,7 @@ export default {
                 global: false, // 缺省为 false
               },
             },
-            data: right2.data,
+            data,
             type: "bar",
           },
         ],

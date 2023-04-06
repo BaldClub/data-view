@@ -8,6 +8,8 @@
 <script>
 import { left1 } from '../../../../data/data-statistics';
 
+const { outputValue, data, monthList } = left1;
+
 export default {
   props: ["maxHeight"],
   data() {
@@ -29,7 +31,7 @@ export default {
               color: "#ffffff",
             },
           },
-          data: left1.xData,
+          data: monthList,
         },
         yAxis: {
           type: "value",
@@ -56,7 +58,7 @@ export default {
           {
             name: "产值",
             type: "bar",
-            data: left1.outputValue,
+            data: outputValue,
             markLine: {
               data: [{ type: "average", name: "Avg" }],
             },
@@ -88,7 +90,7 @@ export default {
           {
             name: "利润",
             type: "bar",
-            data: left1.data,
+            data,
             markLine: {
               data: [{ type: "average", name: "Avg" }],
             },

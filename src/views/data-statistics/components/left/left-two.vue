@@ -8,6 +8,8 @@
 <script>
 import { left2 } from '../../../../data/data-statistics';
 
+const { deviceList, yearList } = left2;
+
 export default {
   props: ["maxHeight"],
   data() {
@@ -23,7 +25,7 @@ export default {
               color: "#ffffff",
             },
           },
-          data: left2.yearList,
+          data: yearList,
         },
         yAxis: {
           type: "value",
@@ -59,7 +61,7 @@ export default {
           {
             name: "设备数量",
             color: ["#e9b633"],
-            data: left2.deviceList,
+            data: deviceList,
             type: "line",
           },
         ],

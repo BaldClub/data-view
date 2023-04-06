@@ -8,6 +8,8 @@
 <script>
 import { right3 } from '../../../../data/data-statistics';
 
+const { data, monthList } = right3;
+
 export default {
   props: ["maxHeight"],
   data() {
@@ -23,7 +25,7 @@ export default {
               color: "#ffffff",
             },
           },
-          data: right3.monthList,
+          data: monthList,
         },
         yAxis: {
           type: "value",
@@ -51,7 +53,7 @@ export default {
             itemStyle: {
               color: '#ba7f86'
             },
-            data: right3.data,
+            data,
             type: "bar",
           },
         ],
