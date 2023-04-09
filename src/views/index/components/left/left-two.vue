@@ -18,7 +18,7 @@
           </dv-decoration-9>
         </div>
         <div class="name">园区面积</div>
-        <dv-digital-flop :config="areaConfig" />
+        <div class="data">{{ data.factoryArea }}亩</div>
       </div>
       <div class="item">
         <div class="icon">
@@ -36,10 +36,7 @@
           </dv-decoration-9>
         </div>
         <div class="name">菇房数量</div>
-        <dv-digital-flop
-          :config="houseNumConfig"
-          style="width: 100%; color: aquamarine"
-        />
+        <div class="data">{{ data.mushroomHouses }}个</div>
       </div>
       <div class="item">
         <div class="icon">
@@ -57,10 +54,7 @@
           </dv-decoration-9>
         </div>
         <div class="name">栽培品种</div>
-        <dv-digital-flop
-          :config="varietyConfig"
-          style="width: 100%; color: aquamarine"
-        />
+        <div class="data">{{ data.cultivatedVarieties }}种</div>
       </div>
     </div>
   </div>
@@ -68,24 +62,9 @@
 
 <script>
 export default {
-  props: ["maxHeight"],
+  props: ["maxHeight",'data'],
   data() {
     return {
-      areaConfig: {
-        number: [100],
-        toFixed: 0,
-        content: "{nt}亩",
-      },
-      houseNumConfig: {
-        number: [21],
-        toFixed: 0,
-        content: "{nt}个",
-      },
-      varietyConfig:{
-        number: [6],
-        toFixed: 0,
-        content: "{nt}种",
-      }
     };
   }
 };
@@ -110,6 +89,10 @@ export default {
     .icon {
       display: flex;
       justify-content: center;
+    }
+    .data{
+      font-size: 2rem;
+      margin-top: 1em;
     }
   }
 }
