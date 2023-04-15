@@ -6,7 +6,8 @@
 </template>
 
 <script>
-import { dateYears } from '../../data'
+import { yearList } from '../../../../data/data'
+import { allYield } from '../../../../data/index-data'
 export default {
   props: ["maxHeight"],
   data() {
@@ -55,35 +56,14 @@ export default {
         series: [
           {
             name: "产量",
-            itemStyle: {
-              color: {
-                type: "linear",
-                x: 0,
-                y: 0,
-                x2: 0,
-                y2: 1,
-                colorStops: [
-                  {
-                    offset: 0,
-                    color: "#9ec9e2", // 0% 处的颜色
-                  },
-                  {
-                    offset: 1,
-                    color: "#057be2", // 100% 处的颜色
-                  }
-                ],
-                global: false, // 缺省为 false
-              },
-            },
-            data: [120, 200, 150, 80, 70, 110, 130, 13, 130, 130, 130, 130],
+            color: '#5dd5f0',
+            data:[],
             type: "bar",
           },
           {
             name: "产值",
             color: ["#e24d3f"],
-            data: [
-              150, 230, 224, 218, 135, 147, 260, 150, 230, 224, 218, 135, 147,
-            ],
+            data: [],
             type: "line",
           },
         ],
@@ -100,7 +80,10 @@ export default {
       this.echarts.setOption(this.option);
     },
     initData(){
-      this.option.xAxis.data = dateYears
+      this.option.xAxis.data = yearList
+      this.option.series[0].data = allYield[0]
+      this.option.series[1].data = allYield[1]
+      
     }
   },
 };
