@@ -14,11 +14,11 @@
       <div class="table-container" :style="{ height: maxHeight - 100 + 'px' }">
         <table>
           <tbody>
-            <tr v-for="item in 8">
-              <td>摄像头{{ item }}</td>
-              <td>菇房{{ item }}</td>
-              <td>{{ item > 3 ? '离线': '正常' }}</td>
-              <td>2023-01-11</td>
+            <tr v-for="item,index in monitorList" :key="item.id">
+              <td>摄像头1-{{ index + 1 }}</td>
+              <td>菇房</td>
+              <td>{{ status ? '离线': '正常' }}</td>
+              <td>{{ item.updateTime }}</td>
             </tr>
           </tbody>
         </table>
@@ -28,12 +28,10 @@
 
 <script>
 export default {
-  props: ["maxHeight"],
+  props: ["maxHeight", "monitorList"],
   data() {
     return {};
   },
-  mounted() {},
-  methods: {},
 };
 </script>
 
@@ -55,7 +53,7 @@ export default {
       background-color: rgb(55, 162, 255);
       tr {
         display: grid;
-        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-columns: 25% 15% 15% 45%;
         th {
           padding: 6px 0px;
         }
@@ -70,7 +68,7 @@ export default {
         display: grid;
         margin: 10px 0px;
         background-color: rgba(55, 162, 255, 0.356);
-        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-columns:  25% 15% 15% 45%;
         td {
           padding: 6px 0px;
           overflow: hidden;

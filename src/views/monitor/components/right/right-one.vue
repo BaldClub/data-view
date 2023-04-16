@@ -7,39 +7,12 @@
   <div class="container-item" :style="{ height: maxHeight * 0.97 + 'px' }">
     <div
       class="item"
-      :style="{ width: maxHeight * 0.62 + 'px' }"
+      v-for="item,index in monitorList" :key="item.id"
     >
-      <div class="name">摄像头1-0</div>
-      <!-- <video width="100%" controls>
-        <source
-          src="http://www.w3school.com.cn/example/html5/mov_bbb.mp4"
-          type="video/mp4"
-        />
-      </video> -->
-      <img style="width: 100%" src="@/assets/images/微信图片_20230313122833.png" alt="">
-    </div>
-    <div
-      class="item"
-      :style="{ width: maxHeight * 0.62 + 'px' }"
-    >
-      <div class="name">摄像头1-1</div>
-      <!-- <video width="100%" controls>
-        <source
-          src="http://www.w3school.com.cn/example/html5/mov_bbb.mp4"
-          type="video/mp4"
-        />
-      </video> -->
-      <img style="width: 100%" src="@/assets/images/微信图片_20230313122859.png" alt="">
-    </div>
-    <div
-      class="item"
-      v-for="item in 4"
-      :style="{ width: maxHeight * 0.62 + 'px' }"
-    >
-      <div class="name">摄像头1-{{ item + 1 }}</div>
+      <div class="name">摄像头1-{{ index + 1 }}</div>
       <video width="100%" controls>
         <source
-          src="#"
+          :src="item.url"
           type="video/mp4"
         />
       </video>
@@ -49,18 +22,18 @@
 
 <script>
 export default {
-  props: ["maxHeight"],
+  props: ["maxHeight","monitorList"],
 };
 </script>
 
 <style scoped lang="less">
 .container-item {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   overflow: auto;
+  grid-template-columns: 50% 50%;
   .item {
     margin: 8px;
-    margin-top: 40px;
+    margin-top: 60px;
     background-color: #fff;
     position: relative;
     .name {

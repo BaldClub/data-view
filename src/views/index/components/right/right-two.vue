@@ -7,7 +7,7 @@
 
 <script>
 import { yearList } from '../../../../data/data'
-import { allYield } from '../../../../data/index-data'
+import { allYield } from '../../../../data/index.data'
 export default {
   props: ["maxHeight"],
   data() {
