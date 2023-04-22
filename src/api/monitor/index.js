@@ -12,3 +12,9 @@ export const monitorStatus = () =>
     method: "get",
   });
 
+export const alarm = () =>
+  request({
+    url: "/api/custom/monitor",
+    method: "get",
+  });
+

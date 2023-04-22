@@ -17,7 +17,7 @@
             <tr v-for="item,index in monitorList" :key="item.id">
               <td>摄像头1-{{ index + 1 }}</td>
               <td>菇房</td>
-              <td>{{ status ? '离线': '正常' }}</td>
+              <td>{{ item.status ? '离线': '正常' }}</td>
               <td>{{ item.updateTime }}</td>
             </tr>
           </tbody>

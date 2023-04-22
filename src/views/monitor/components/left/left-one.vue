@@ -49,7 +49,6 @@ export default {
         res.data.forEach(item =>{
           sum += Number(item.count)
         })
-        console.log(sum);
         res.data.forEach(item => {
           this.config.push({
             data: [Math.floor(item.count/sum * 100)],
