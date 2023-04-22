@@ -20,12 +20,19 @@
 import { dataList } from '../../../../data/data-statistics';
 
 export default {
-  props: ["maxHeight"],
+  props: ["maxHeight", 'data'],
   data() {
     return {
       dataList: dataList,
     };
   },
+  watch:{
+    data(val, old){
+      if(val){
+        this.dataList = val
+      }
+    }
+  }
 };
 </script>
 

@@ -1,7 +1,4 @@
-import { custom } from "@/api/index";
 import { yearList, monthList } from "./data";
-
-custom("data-statistics").then((res) => console.log(res));
 
 export const dataList = [
   {

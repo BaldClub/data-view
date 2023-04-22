@@ -11,7 +11,7 @@ import { left2 } from '../../../../data/data-statistics';
 const { deviceList, yearList } = left2;
 
 export default {
-  props: ["maxHeight"],
+  props: ["maxHeight", "data"],
   data() {
     return {
       echarts: "",
@@ -71,6 +71,15 @@ export default {
   mounted() {
     this.initCharts();
   },
+  watch:{ 
+    data(val,old){
+      if(val){
+        this.option.xAxis.data = val.yearList
+        this.option.series[0].data = val.deviceList
+        this.initCharts();
+      }
+    }
+  }, 
   methods: {
     initCharts() {
       this.echarts = this.$echarts.init(this.$refs.echarts);

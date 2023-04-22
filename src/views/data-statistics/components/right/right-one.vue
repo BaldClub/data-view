@@ -8,10 +8,9 @@
 <script>
 import { right1 } from '../../../../data/data-statistics';
 
-const { data, yearList } = right1;
 
 export default {
-  props: ["maxHeight"],
+  props: ["maxHeight", "data"],
   data() {
     return {
       echarts: "",
@@ -25,7 +24,7 @@ export default {
               color: "#ffffff",
             },
           },
-          data: yearList,
+          data: right1.yearList,
         },
         yAxis: {
           type: "value",
@@ -58,7 +57,7 @@ export default {
           {
             name: "资金投入",
             color: ["rgb(128, 255, 165)"],
-            data,
+            data: right1.data,
             type: "line",
           },
         ],
@@ -67,6 +66,15 @@ export default {
   },
   mounted() {
     this.initCharts();
+  },
+  watch:{
+    data(val,old){
+      if(val){
+        this.option.xAxis.data = val.yearList
+        this.option.series[0].data = val.data
+        this.initCharts()
+      }
+    }
   },
   methods: {
     initCharts() {

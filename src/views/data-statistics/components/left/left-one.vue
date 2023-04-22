@@ -8,10 +8,8 @@
 <script>
 import { left1 } from '../../../../data/data-statistics';
 
-const { outputValue, data, monthList } = left1;
-
 export default {
-  props: ["maxHeight"],
+  props: ["maxHeight", 'data'],
   data() {
     return {
       echarts: "",
@@ -31,7 +29,7 @@ export default {
               color: "#ffffff",
             },
           },
-          data: monthList,
+          data: left1.monthList,
         },
         yAxis: {
           type: "value",
@@ -58,7 +56,7 @@ export default {
           {
             name: "产值",
             type: "bar",
-            data: outputValue,
+            data: left1.outputValue,
             markLine: {
               data: [{ type: "average", name: "Avg" }],
             },
@@ -90,7 +88,7 @@ export default {
           {
             name: "利润",
             type: "bar",
-            data,
+            data: left1.data,
             markLine: {
               data: [{ type: "average", name: "Avg" }],
             },
@@ -123,9 +121,19 @@ export default {
       },
     };
   },
-  mounted() {
-    this.initCharts();
+  watch: {
+    data(val, old){
+      if(val){
+        this.option.xAxis.data = this.data.monthList
+        this.option.series[0].data = this.data.outputValue
+        this.option.series[1].data = this.data.data
+        this.initCharts();
+      }
+    }
   },
+  mounted(){
+    this.initCharts()
+  },  
   methods: {
     initCharts() {
       this.echarts = this.$echarts.init(this.$refs.echarts);

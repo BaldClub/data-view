@@ -11,7 +11,7 @@ import { left3 } from '../../../../data/data-statistics';
 const { dataResource, yearList } = left3;
 
 export default {
-  props: ["maxHeight"],
+  props: ["maxHeight", 'data'],
   data() {
     return {
       echarts: "",
@@ -63,15 +63,26 @@ export default {
     };
   },
   mounted() {
-    this.initData()
-    this.initCharts();
+    this.initData(dataResource)
   },
+  watch:{
+    data(val,old){
+      this.option.xAxis.data = val.yearList
+      if(val){
+        this.initData(val.dataResource)
+      }
+    }
+  },
+
   methods: {
     initCharts() {
       this.echarts = this.$echarts.init(this.$refs.echarts);
       this.echarts.setOption(this.option);
     },
-    initData() {
+    initData(dataResource) {
+
+      this.option.series = []
+      this.option.legend.data = []
       let series = {
         name: "设备数量",
         data: [],
@@ -92,6 +103,7 @@ export default {
         data: allData,
         type: "line"
       })
+      this.initCharts();
     }
   },
 };

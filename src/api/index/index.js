@@ -18,12 +18,6 @@ export const strains = () =>
     method: "get",
   });
 
-export const custom = (pageName) =>
-  request({
-    url: `/api/custom/${pageName}`,
-    method: "get",
-  });
-
 export const allYieldApi = () =>
   request({
     url: `/api/custom/home`,
