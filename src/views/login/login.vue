@@ -18,18 +18,18 @@
 
       <div class="item">
         <label>验证码 </label>
-        <div class="code">
-          <el-input placeholder="请输入验证码" v-model="loginFrom.code" clearable>
+        <div class="captcha">
+          <el-input placeholder="请输入验证码" v-model="loginFrom.captcha" clearable>
           </el-input>
-          <div class="code-img" @click="changCode()">
-            <img :src="codeUrl" alt="">
+          <div class="captcha-img" @click="changcaptcha()">
+            <img :src="captchaUrl" alt="">
           </div>
         </div>
       </div>
 
       <div class="btu">
         <button class="mr-30" @click="changeStatus(false)">注册</button>
-        <button @click="changeStatus(true)">登录</button>
+        <button @click="signinHandler()">登录</button>
       </div>
 
       <router-link to="/change-password">
@@ -68,17 +68,17 @@
 
       <div class="item">
         <label>验证码 </label>
-        <div class="code">
-          <el-input placeholder="请输入验证码" v-model="loginFrom.code" clearable>
+        <div class="captcha">
+          <el-input placeholder="请输入验证码" v-model="loginFrom.captcha" clearable>
           </el-input>
-          <div class="code-img" @click="changCode()">
-            <img :src="codeUrl" alt="">
+          <div class="captcha-img" @click="changcaptcha()">
+            <img :src="captchaUrl" alt="">
           </div>
         </div>
       </div>
 
       <div class="btu">
-        <button class="mr-30" @click="changeStatus(false)">注册</button>
+        <button class="mr-30" @click="signupHandler()">注册</button>
         <button @click="changeStatus(true)">登录</button>
       </div>
     </div>
@@ -87,6 +87,7 @@
 
 <script>
 import router from '@/router';
+import { signin, signup } from '@/api/user';
 
 export default {
   name: "login",
@@ -96,17 +97,87 @@ export default {
       loginFrom: {
         username: "",
         password: "",
-        code: "",
+        captcha: "",
         phone: "",
         email: ""
       },
-      codeUrl: "https://back.data.metaverse-yuanyuzhou.top/system/captcha/generate"
+      captchaUrl: "https://back.data.metaverse-yuanyuzhou.top/system/captcha/generate"
     };
   },
   mounted() {
     this.initCharts();
   },
   methods: {
+    resetLoginForm() {
+      this.loginFrom.username = '';
+      this.loginFrom.password = '';
+      this.loginFrom.captcha = '';
+      this.loginFrom.phone = '';
+      this.loginFrom.email = '';
+    },
+    async signinHandler() {
+      const { username, password, captcha } = this.loginFrom;
+      if (username === '') {
+        alert('用户名不能为空！');
+        return;
+      }
+      if (password === '') {
+        alert('密码不能为空！');
+        return;
+      }
+      if (captcha === '') {
+        alert('验证码不能为空！');
+        return;
+      }
+
+      const res = await signin({
+        username,
+        password,
+        captcha
+      });
+      if (res.success && res.code === 200) {
+        location.href = '/';
+      } else {
+        alert(res.msg);
+        resetLoginForm();
+      }
+    },
+    async signupHandler() {
+      const { username, password, captcha, phone, email } = this.loginFrom;
+
+      if (username === '') {
+        alert('用户名不能为空！');
+        return;
+      }
+      if (password === '') {
+        alert('密码不能为空！');
+        return;
+      }
+      if (phone === '') {
+        alert('手机号不能为空！');
+        return;
+      }
+      if (email === '') {
+        alert('邮箱不能为空！');
+        return;
+      }
+      if (captcha === '') {
+        alert('验证码不能为空！');
+        return;
+      }
+
+      const res = await signup({
+        username, password, phone, email, roleIds: '1649753041639096321'
+      });
+
+      if (res.success && res.code === 200) {
+        this.changeStatus(true);
+        this.signinHandler();
+      } else {
+        alert(res.msg);
+        resetLoginForm();
+      }
+    },
     changeStatus(status) {
       this.status = status;
     },
@@ -125,8 +196,8 @@ export default {
         spacing: 18,
       });
     },
-    changCode() {
-      this.codeUrl = "https://back.data.metaverse-yuanyuzhou.top/system/captcha/generate?time=" + new Date().getTime();
+    changcaptcha() {
+      this.captchaUrl = "https://back.data.metaverse-yuanyuzhou.top/system/captcha/generate?time=" + new Date().getTime();
     }
   },
   components: { router }
@@ -170,7 +241,7 @@ export default {
         flex-shrink: 0;
       }
 
-      .code {
+      .captcha {
         display: flex;
         align-items: center;
       }
