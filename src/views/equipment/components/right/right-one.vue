@@ -11,18 +11,33 @@
 <script>
 import { right1 } from '../../../../data/equipment';
 
-const { data } = right1;
 
 export default {
-  props: ["maxHeight"],
+  props: ["maxHeight", "data"],
   data() {
     return {
       echarts: "",
-      config: {
-        data,
+      config: {}
+    };
+  },
+  watch:{
+    data(val, old){
+      if(val){
+       this.initData(val.data)
+      }
+    }
+  },
+  mounted(){
+    this.initData(right1.data)
+  },
+  methods:{
+    initData(data){
+      this.config= {
+        data: data,
         unit: 'h'
       }
-    };
+      
+    }
   }
 };
 </script>

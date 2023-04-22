@@ -10,10 +10,8 @@
 <script>
 import { left2 } from '../../../../data/equipment';
 
-const { yearList, data } = left2;
-
 export default {
-  props: ['maxHeight'],
+  props: ['maxHeight', 'data'],
   data() {
     return {
       echarts: '',
@@ -27,7 +25,7 @@ export default {
               color: '#ffffff'
             }
           },
-          data: yearList,
+          data: left2.yearList,
         },
         yAxis: {
           type: 'value',
@@ -55,7 +53,7 @@ export default {
             itemStyle: {
               color: '#2fb5ba'
             },
-            data,
+            data: left2.data,
             type: 'bar'
           }
         ]
@@ -64,6 +62,15 @@ export default {
   },
   mounted() {
     this.initCharts();
+  },
+  watch:{
+    data(val, old){
+      if(val){
+        this.option.xAxis.data = val.yearList
+        this.option.series[0].data = val.data
+        this.initCharts();
+      }
+    }
   },
   methods: {
     initCharts() {

@@ -8,10 +8,9 @@
 <script>
 import { right2 } from '../../../../data/equipment';
 
-const { data } = right2;
 
 export default {
-  props: ["maxHeight"],
+  props: ["maxHeight", "data"],
   data() {
     return {
       echarts: "",
@@ -27,7 +26,7 @@ export default {
         },
         series: [
           {
-            name: "设备状态",
+            name: "",
             type: "pie",
             radius: [50, 100],
             center: ["50%", "40%"],
@@ -35,7 +34,7 @@ export default {
             itemStyle: {
               borderRadius: 8,
             },
-            data,
+            data: right2.data,
           },
         ],
       },
@@ -43,6 +42,14 @@ export default {
   },
   mounted() {
     this.initCharts();
+  },
+  watch:{
+    data(val, old){
+      if(val){
+        this.option.series[0].data = val.data
+        this.initCharts();
+      }
+    }
   },
   methods: {
     initCharts() {

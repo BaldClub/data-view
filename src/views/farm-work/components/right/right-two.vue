@@ -60,7 +60,7 @@ export default {
     };
   },
   mounted() {
-    this.initData()
+    this.initData(framWorkData)
   },
   watch:{
     data(val,old){

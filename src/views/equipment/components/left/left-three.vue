@@ -8,10 +8,8 @@
 <script>
 import { left3 } from '../../../../data/equipment';
 
-const { data } = left3;
-
 export default {
-  props: ["maxHeight"],
+  props: ["maxHeight", "data"],
   data() {
     return {
       echarts: "",
@@ -30,13 +28,13 @@ export default {
           {
             name: "设备状态",
             type: "pie",
-            radius: [50, 150],
+            radius: [50, 120],
             center: ["50%", "40%"],
             avoidLabelOverlap: false,
             itemStyle: {
               borderRadius: 8,
             },
-            data,
+            data: left3.data,
           },
         ],
       },
@@ -44,6 +42,14 @@ export default {
   },
   mounted() {
     this.initCharts();
+  },
+  watch:{
+    data(val, old){
+      if(val){
+        this.option.series[0].data = val.data
+        this.initCharts();
+      }
+    }
   },
   methods: {
     initCharts() {
