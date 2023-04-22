@@ -8,6 +8,7 @@
 <script>
 import { yearList } from '../../../../data/data'
 import { allYield } from '../../../../data/index.data'
+import { allYieldApi } from '@/api/index'
 export default {
   props: ["maxHeight"],
   data() {
@@ -39,7 +40,6 @@ export default {
           data: ["产量", "产值"],
           textStyle: {
             color: "#fff",
-            // ...
           },
         },
         tooltip: {
@@ -72,7 +72,7 @@ export default {
   },
   mounted() {
     this.initData()
-    this.initCharts();
+    
   },
   methods: {
     initCharts() {
@@ -81,9 +81,20 @@ export default {
     },
     initData(){
       this.option.xAxis.data = yearList
-      this.option.series[0].data = allYield[0]
-      this.option.series[1].data = allYield[1]
-      
+      allYieldApi().then(res =>{
+        let data = res.data.allYield
+
+        this.option.series[0].data = data[0]
+        this.option.series[1].data = data[1]
+
+        console.log(this.option.series[0].data);
+
+      }).catch(err=>{
+        this.option.series[0].data = allYield[0]
+        this.option.series[1].data = allYield[1]
+      }).finally(()=>{
+        this.initCharts();
+      })
     }
   },
 };

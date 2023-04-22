@@ -23,3 +23,9 @@ export const custom = (pageName) =>
     url: `/api/custom/${pageName}`,
     method: "get",
   });
+
+export const allYieldApi = () =>
+  request({
+    url: `/api/custom/home`,
+    method: "get",
+  });
