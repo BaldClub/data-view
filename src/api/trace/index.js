@@ -12,3 +12,9 @@ export const scanTrend = () =>
     method: "get",
   });
 
+export const saleTrend = () =>
+  request({
+    url: "/api/trace/saleTrend",
+    method: "get",
+  });
+

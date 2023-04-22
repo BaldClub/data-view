@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import { rightOne } from "@/data/trace.data"
 export default {
   props: ["maxHeight"],
   data() {
@@ -21,15 +22,7 @@ export default {
               color: "#ffffff",
             },
           },
-          data: [
-            "贵州",
-            "重庆",
-            "四川",
-            "湖南",
-            "湖北",
-            "广东",
-            "上海",
-          ],
+          data:[]
         },
         yAxis: {
           type: "value",
@@ -74,7 +67,7 @@ export default {
                 global: false, // 缺省为 false
               },
             },
-            data: [650, 423, 310, 280, 220, 180, 150],
+            data: [],
             type: "bar",
           },
         ],
@@ -82,13 +75,28 @@ export default {
     };
   },
   mounted() {
-    this.initCharts();
+    this.getData()
   },
   methods: {
     initCharts() {
       this.echarts = this.$echarts.init(this.$refs.echarts);
       this.echarts.setOption(this.option);
     },
+    getData(){
+      let titleList = []
+      let valueList = []
+      
+      rightOne.forEach(item =>{
+          titleList.push(item.title)
+          valueList.push(item.value)
+      })
+
+      this.option.xAxis.data = titleList
+      this.option.series[0].data = valueList
+    
+      this.initCharts();
+      
+    }
   },
 };
 </script>
