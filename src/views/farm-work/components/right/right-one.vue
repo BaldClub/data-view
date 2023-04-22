@@ -10,10 +10,9 @@
 <script>
 import { right1 } from '../../../../data/farm-work';
 
-const { monthList, data } = right1;
 
 export default {
-  props: ['maxHeight'],
+  props: ['maxHeight', "data"],
   data() {
     return {
       echarts: '',
@@ -27,7 +26,7 @@ export default {
               color: '#ffffff'
             }
           },
-          data: monthList
+          data: right1.monthList
         },
         yAxis: {
           type: 'value',
@@ -60,7 +59,7 @@ export default {
           {
             name: '杀虫剂',
             color: ['rgb(128, 255, 165)'],
-            data: data[0],
+            data: right1.data[0],
             type: 'line',
             itemStyle: {
               color: {
@@ -88,13 +87,23 @@ export default {
           {
             name: '杀菌剂',
             color: ['rgb(128, 255, 165)'],
-            data: data[1],
+            data: right1.data[1],
             type: 'line',
             itemStyle: {
               color: 'rgb(128, 255, 165)'
             },
           }
         ]
+      }
+    }
+  },
+  watch:{
+    data(val,old){
+      if(val){
+        this.option.xAxis.data = val.monthList
+        this.option.series[0].data = val.data[0]
+        this.option.series[1].data = val.data[1]
+        this.initCharts();
       }
     }
   },

@@ -104,3 +104,8 @@ export const right3 = {
     },
   ],
 };
+
+// 总费用
+export const centre1 = {
+  allExpense:[20, 28, 32, 30, 8]
+}
