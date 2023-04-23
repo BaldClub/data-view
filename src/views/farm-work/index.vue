@@ -86,6 +86,8 @@
       // 页面大小改变时触发
       window.addEventListener('resize',this.getScreenWidth, false);
       // 鼠标移动时触发
+
+      if (!localStorage.getItem('isLogin')) location.href = '/#/login';
     },
     beforeDestroy () {
       // 页面大小改变时触发
