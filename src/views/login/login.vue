@@ -106,6 +106,7 @@ export default {
   },
   mounted() {
     this.initCharts();
+    if (localStorage.getItem('isLogin')) location.href = '/';
   },
   methods: {
     resetLoginForm() {
@@ -136,6 +137,7 @@ export default {
         captcha
       });
       if (res.success && res.code === 200) {
+        localStorage.setItem('isLogin', true);
         location.href = '/';
       } else {
         alert(res.msg);
