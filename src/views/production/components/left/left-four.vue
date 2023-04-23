@@ -7,20 +7,28 @@ import environmentData from '../common/environment-data.vue';
 import { randomData } from '../../../../utils/';
 import { left4 } from '../../../../data/production';
 
-const { data, ms } = left4;
-
 export default {
     components: {
         environmentData
     },
-    props: ["maxHeight"],
+    props: ["maxHeight", "apiData"],
     data() {
         return {
-            data,
+            data: left4.data,
+            ms: 0
+        }
+    },
+    watch:{
+        apiData(val, old){
+            if(val){
+                this.data = val.data
+                this.ms = val.data.ms
+                randomData(this, this.ms);
+            }
         }
     },
     mounted() {
-        randomData(this, ms);
+        randomData(this, left4.ms);
     }
 };
 </script>
