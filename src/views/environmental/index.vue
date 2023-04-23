@@ -4,7 +4,7 @@
       <el-col :span="7">
         <div :style="{ height: kHOne + 'px' }" class="bg-container">
           <dv-border-box-12 class="container-item" style="padding: 12px">
-            <leftOne :max-height="kHOne"></leftOne>
+            <leftOne :api-data="data.left1" :max-height="kHOne"></leftOne>
           </dv-border-box-12>
         </div>
         <div :style="{ height: kHTwo + 'px' }">
@@ -24,7 +24,7 @@
         </div>
         <div :style="{ height: kHFive + 'px' }">
           <dv-border-box-12 class="container-item" style="padding: 12px">
-            <conterTwo :max-height="kHFive"></conterTwo>
+            <conterTwo :data="data.conter_two" :max-height="kHFive"></conterTwo>
           </dv-border-box-12>
         </div>
       </el-col>
@@ -32,7 +32,7 @@
       <el-col :span="7">
         <div :style="{ height: kHSix + 'px' }">
           <dv-border-box-12 class="container-item" style="padding: 12px">
-            <rightOne :max-height="kHSix"></rightOne>
+            <rightOne :api-data="data.right1" :max-height="kHSix"></rightOne>
           </dv-border-box-12>
         </div>
         <div :style="{ height: kHSeven + 'px' }">
@@ -42,7 +42,7 @@
         </div>
         <div :style="{ height: kHEight + 'px' }">
           <dv-border-box-12 class="container-item" style="padding: 12px">
-            <rightThree :max-height="kHEight"></rightThree>
+            <rightThree :data="data.right3" :max-height="kHEight"></rightThree>
           </dv-border-box-12>
         </div>
       </el-col>
@@ -59,6 +59,8 @@
   import rightTwo from "./components/right/right-two.vue";
   import rightThree from "./components/right/right-three.vue";
   import background from "@/components/background.vue";
+
+  import { environmental } from '@/api/environmental'
   export default {
     name: "index",
     components: {
@@ -90,6 +92,7 @@
         kHSix: 300,
         kHSeven: 400,
         kHEight: 400,
+        data: {}
       };
     },
     created() {
@@ -100,7 +103,8 @@
       window.addEventListener("resize", this.getScreenHeight, false);
       // 页面大小改变时触发
       window.addEventListener("resize", this.getScreenWidth, false);
-      // 鼠标移动时触发
+      
+      this.getData()
     },
     beforeDestroy() {
       // 页面大小改变时触发
@@ -129,6 +133,11 @@
           document.documentElement.clientWidth ||
           document.body.clientWidth;
       },
+      getData(){
+        environmental().then(res =>{
+          this.data = res.data
+        })
+      }
     },
   };
   </script>

@@ -11,7 +11,7 @@ import { conter_two } from '../../../../data/environmental';
 const { indicator, data } = conter_two;
 
 export default {
-  props: ["maxHeight"],
+  props: ["maxHeight", "data"],
   data() {
     return {
       echarts: "",
@@ -24,7 +24,7 @@ export default {
           trigger: 'item'
         },
         radar: {
-          indicator,
+          indicator: conter_two.indicator,
         },
         series: [
           {
@@ -41,9 +41,18 @@ export default {
             areaStyle: {
               color: '#95bfbc',
             },
-            data,
+            data: conter_two.data,
           }
         ]
+      }
+    }
+  },
+  watch:{
+    data(val, old){
+      if(val){
+        this.option.radar.indicator = val.indicator
+        this.option.series[0].data = val.data
+        this.initCharts();
       }
     }
   },
