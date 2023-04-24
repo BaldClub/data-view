@@ -21,7 +21,7 @@
 
     <el-col :span="10">
       <div :style="{ height: kHFour + 'px' }">
-          <conterOne :data="data.dataList" :max-height="kHFour"></conterOne>
+        <conterOne :data="data.dataList" :max-height="kHFour"></conterOne>
       </div>
     </el-col>
 
@@ -85,7 +85,7 @@ export default {
       kHSix: 300,
       kHSeven: 400,
       kHEight: 400,
-      data:{},
+      data: {},
     };
   },
   created() {
@@ -96,8 +96,10 @@ export default {
     window.addEventListener("resize", this.getScreenHeight, false);
     // 页面大小改变时触发
     window.addEventListener("resize", this.getScreenWidth, false);
+
+    if (!localStorage.getItem('isLogin')) return location.href = '/#/login';
+
     this.getData()
-    if (!localStorage.getItem('isLogin')) location.href = '/#/login';
   },
   beforeDestroy() {
     // 页面大小改变时触发
@@ -125,9 +127,9 @@ export default {
         document.documentElement.clientWidth ||
         document.body.clientWidth;
     },
-    getData(){
-      equipment().then(res =>{
-        this.data = res.data        
+    getData() {
+      equipment().then(res => {
+        this.data = res.data
       })
     }
   },

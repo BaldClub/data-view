@@ -4,7 +4,7 @@
     <el-col :span="7">
       <div :style="{ height: kHOne + 'px' }" class="bg-container">
         <dv-border-box-12 class="container-item" style="padding: 12px">
-          <leftOne  :max-height="kHOne"></leftOne>
+          <leftOne :max-height="kHOne"></leftOne>
         </dv-border-box-12>
       </div>
       <div :style="{ height: kHTwo + 'px' }">
@@ -88,7 +88,7 @@ export default {
       kHSix: 300,
       kHSeven: 400,
       kHEight: 400,
-      statisticsData:{},
+      statisticsData: {},
     };
   },
   created() {
@@ -99,7 +99,9 @@ export default {
     window.addEventListener("resize", this.getScreenHeight, false);
     // 页面大小改变时触发
     window.addEventListener("resize", this.getScreenWidth, false);
-    if (!localStorage.getItem('isLogin')) location.href = '/#/login';
+
+    if (!localStorage.getItem('isLogin')) return location.href = '/#/login';
+
     this.getData()
   },
   beforeDestroy() {
@@ -128,8 +130,8 @@ export default {
         document.documentElement.clientWidth ||
         document.body.clientWidth;
     },
-    getData(){
-      dataStatistics().then(res =>{
+    getData() {
+      dataStatistics().then(res => {
         this.statisticsData = res.data
       })
     }

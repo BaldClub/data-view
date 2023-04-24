@@ -61,7 +61,7 @@ export default {
       kHTwo: 500,
       kHThree: 300,
       kHFour: 500,
-      monitorDataList:[]
+      monitorDataList: []
     };
   },
   created() {
@@ -72,10 +72,10 @@ export default {
     window.addEventListener("resize", this.getScreenHeight, false);
     // 页面大小改变时触发
     window.addEventListener("resize", this.getScreenWidth, false);
-    this.getMonitorList()
-    // 鼠标移动时触发
 
-    if (!localStorage.getItem('isLogin')) location.href = '/#/login';
+    if (!localStorage.getItem('isLogin')) return location.href = '/#/login';
+
+    this.getMonitorList()
   },
   beforeDestroy() {
     // 页面大小改变时触发
@@ -103,8 +103,8 @@ export default {
         document.documentElement.clientWidth ||
         document.body.clientWidth;
     },
-    getMonitorList(){
-      monitorList().then(res =>{
+    getMonitorList() {
+      monitorList().then(res => {
         this.monitorDataList = res.data
       })
     }
