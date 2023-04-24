@@ -74,6 +74,8 @@ export default {
     window.addEventListener("resize", this.getScreenWidth, false);
     this.getMonitorList()
     // 鼠标移动时触发
+
+    if (!localStorage.getItem('isLogin')) location.href = '/#/login';
   },
   beforeDestroy() {
     // 页面大小改变时触发

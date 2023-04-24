@@ -115,7 +115,9 @@
       window.addEventListener("resize", this.getScreenHeight, false);
       // 页面大小改变时触发
       window.addEventListener("resize", this.getScreenWidth, false);
+      if (!localStorage.getItem('isLogin')) location.href = '/#/login';
       this.getData()
+      
     },
     beforeDestroy() {
       // 页面大小改变时触发
@@ -151,8 +153,9 @@
         })
       }
     },
-  };
-  </script>
+  },
+};
+</script>
   
-  <style lang="scss" scoped></style>
+<style lang="scss" scoped></style>
   

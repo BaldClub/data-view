@@ -97,6 +97,7 @@ export default {
     // 页面大小改变时触发
     window.addEventListener("resize", this.getScreenWidth, false);
     this.getData()
+    if (!localStorage.getItem('isLogin')) location.href = '/#/login';
   },
   beforeDestroy() {
     // 页面大小改变时触发

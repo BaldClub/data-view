@@ -99,6 +99,7 @@ export default {
     window.addEventListener("resize", this.getScreenHeight, false);
     // 页面大小改变时触发
     window.addEventListener("resize", this.getScreenWidth, false);
+    if (!localStorage.getItem('isLogin')) location.href = '/#/login';
     this.getData()
   },
   beforeDestroy() {
