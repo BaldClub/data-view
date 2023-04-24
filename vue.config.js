@@ -28,14 +28,5 @@ module.exports = defineConfig({
     historyApiFallback: true,
     allowedHosts: "all",
     open: false,
-    proxy: {
-      '/api': {
-        target: 'https://back.data.metaverse-yuanyuzhou.top', 
-        changeOrigin: true, 
-        pathRewrite: {
-          '^/api': '' 
-        }
-      }
-    }
   },
 });
