@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const request = axios.create({
-  baseURL: 'api',
+  baseURL: 'https://back.data.metaverse-yuanyuzhou.top',
   timeout: 6000
 })
 
