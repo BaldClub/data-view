@@ -9,12 +9,12 @@
       </div>
       <div :style="{ height: kHTwo + 'px' }">
         <dv-border-box-12 class="container-item" style="padding: 12px">
-          <leftTwo :max-height="kHTwo"></leftTwo>
+          <leftTwo :data="statisticsData.left2" :max-height="kHTwo"></leftTwo>
         </dv-border-box-12>
       </div>
       <div :style="{ height: kHThree + 'px' }">
         <dv-border-box-12 class="container-item" style="padding: 12px">
-          <leftThree :max-height="kHThree"></leftThree>
+          <leftThree :data="statisticsData.left3" :max-height="kHThree"></leftThree>
         </dv-border-box-12>
       </div>
     </el-col>
@@ -22,7 +22,7 @@
     <el-col :span="10">
       <div :style="{ height: kHFour + 'px' }">
         <div class="container-item" style="padding: 12px">
-          <conterOne :max-height="kHFour"></conterOne>
+          <conterOne :data="statisticsData.dataList" :max-height="kHFour"></conterOne>
         </div>
       </div>
     </el-col>
@@ -30,17 +30,17 @@
     <el-col :span="7">
       <div :style="{ height: kHSix + 'px' }">
         <dv-border-box-12 class="container-item" style="padding: 12px">
-          <rightOne :max-height="kHSix"></rightOne>
+          <rightOne :data="statisticsData.right1" :max-height="kHSix"></rightOne>
         </dv-border-box-12>
       </div>
       <div :style="{ height: kHSeven + 'px' }">
         <dv-border-box-12 class="container-item" style="padding: 12px">
-          <rightTwo :max-height="kHSeven"></rightTwo>
+          <rightTwo :data="statisticsData.right2" :max-height="kHSeven"></rightTwo>
         </dv-border-box-12>
       </div>
       <div :style="{ height: kHEight + 'px' }">
         <dv-border-box-12 class="container-item" style="padding: 12px">
-          <rightThree :max-height="kHEight"></rightThree>
+          <rightThree :data="statisticsData.right3" :max-height="kHEight"></rightThree>
         </dv-border-box-12>
       </div>
     </el-col>
@@ -56,6 +56,8 @@ import rightOne from "./components/right/right-one.vue";
 import rightTwo from "./components/right/right-two.vue";
 import rightThree from "./components/right/right-three.vue";
 import background from "@/components/background.vue";
+
+import { dataStatistics } from '@/api/data-statistics'
 export default {
   name: "index",
   components: {
@@ -86,6 +88,7 @@ export default {
       kHSix: 300,
       kHSeven: 400,
       kHEight: 400,
+      statisticsData: {},
     };
   },
   created() {
@@ -96,9 +99,10 @@ export default {
     window.addEventListener("resize", this.getScreenHeight, false);
     // 页面大小改变时触发
     window.addEventListener("resize", this.getScreenWidth, false);
-    // 鼠标移动时触发
 
-    if (!localStorage.getItem('isLogin')) location.href = '/#/login';
+    if (!localStorage.getItem('isLogin')) return location.href = '/#/login';
+
+    this.getData()
   },
   beforeDestroy() {
     // 页面大小改变时触发
@@ -126,6 +130,11 @@ export default {
         document.documentElement.clientWidth ||
         document.body.clientWidth;
     },
+    getData() {
+      dataStatistics().then(res => {
+        this.statisticsData = res.data
+      })
+    }
   },
 };
 </script>

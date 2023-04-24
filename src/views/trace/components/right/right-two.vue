@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import { saleTrend, scanTrend } from '@/api/trace'
 export default {
   props: ["maxHeight"],
   data() {
@@ -16,7 +17,6 @@ export default {
           data: ["扫码", "售出"],
           textStyle: {
             color: "#fff",
-            // ...
           },
         },
         xAxis: {
@@ -28,20 +28,7 @@ export default {
               color: "#ffffff",
             },
           },
-          data: [
-            "一月",
-            "二月",
-            "三月",
-            "四月",
-            "五月",
-            "六月",
-            "七月",
-            "八月",
-            "九月",
-            "十月",
-            "十一月",
-            "十二月",
-          ],
+          data: []
         },
         yAxis: {
           type: "value",
@@ -139,20 +126,40 @@ export default {
   },
   mounted() {
     this.initData()
-    this.initCharts();
   },
   methods: {
     initCharts() {
       this.echarts = this.$echarts.init(this.$refs.echarts);
       this.echarts.setOption(this.option);
     },
-    initData() {
-      let xData = []
-      let now = new Date().getMonth();
-      for (var i = 0; i <= now; i++) {
-        xData.push((i + 1) + '月')
-      }
-      this.option.xAxis.data = xData
+    async initData() {
+      let scanData = (await scanTrend()).data
+      let saleData = (await saleTrend()).data
+
+      let forEachList = scanData.length > saleData.length ? scanData : saleData
+
+      let scanValueList = []
+      let scanDataIndex = 0
+      let saleValueList = []
+      let saleDataIndex = 0
+      // 根据最长的记录创建x轴列表
+      forEachList.forEach(item =>{
+        this.option.xAxis.data.push(item.month)
+        if( item.month === scanData[scanDataIndex].month){
+          scanValueList.push(scanData[scanDataIndex++].count)
+        }else{
+          scanValueList.push(0)
+        }
+        if( item.month === saleData[saleDataIndex].month){
+          saleValueList.push(saleData[saleDataIndex++].count)
+        }else{
+          saleValueList.push(0)
+        }
+      })
+      console.log(scanValueList);
+      this.option.series[0].data = scanValueList
+      this.option.series[1].data = saleValueList
+      this.initCharts();
     }
   },
 };

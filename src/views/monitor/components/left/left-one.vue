@@ -25,41 +25,44 @@
 </template>
 
 <script>
+import { monitorStatus } from '@/api/monitor'
 export default {
   props: ["maxHeight"],
   data() {
     return {
-      config: [
-        {
-          data: [80],
-          shape: "round",
-          waveHeight: 10,
-          waveOpacity: 0.8,
-          colors: ["#66e200", "#00e213", "#00e275"],
-          name: "在线",
-          num: 90
-        },
-        {
-          data: [15],
-          shape: "round",
-          waveHeight: 10,
-          waveOpacity: 0.8,
-          colors: ["#00e2e2", "#5fdee2", "#97e2e2"],
-          name: "离线",
-          num: 20
-        },
-        {
-          data: [5],
-          shape: "round",
-          waveHeight: 10,
-          waveOpacity: 0.8,
-          colors: ["#e26900", "#e24d2b", "#e21d3b"],
-          name: "异常",
-          num: 10
-        },
-      ],
+      colorsList : {
+        "在线":["#66e200", "#00e213", "#00e275"],
+        "离线":["#00e2e2", "#5fdee2", "#97e2e2"],
+        "异常":["#e26900", "#e24d2b", "#e21d3b"],
+      },
+      config: [],
     };
   },
+  mounted(){
+    this.getData()
+  },
+  methods:{
+    getData(){
+      monitorStatus().then(res =>{
+        res.data.sort((a,b)=> b.count - a.count)
+        let sum = 0
+        res.data.forEach(item =>{
+          sum += Number(item.count)
+        })
+        res.data.forEach(item => {
+          this.config.push({
+            data: [Math.floor(item.count/sum * 100)],
+            shape: "round",
+            waveHeight: 10,
+            waveOpacity: 0.8,
+            colors: this.colorsList[item.status],
+            name: item.status,
+            num: item.count
+          })
+        });
+      })
+    }
+  }
 };
 </script>
 

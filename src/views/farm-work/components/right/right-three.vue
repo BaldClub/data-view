@@ -30,11 +30,18 @@ import { right3 } from '../../../../data/farm-work';
 const { dataList } = right3;
 
 export default {
-  props: ["maxHeight"],
+  props: ["maxHeight", "data"],
   data() {
     return {
       dataList,
     };
+  },
+  watch:{
+    data(val,old){
+      if(val){
+        this.dataList = val.dataList
+      }
+    }
   },
   mounted() { },
   methods: {},

@@ -9,9 +9,9 @@
   
 <script>
 import { yearList } from '../../../../data/data';
-
+import { centre1 } from '@/data/farm-work'
 export default {
-  props: ['maxHeight'],
+  props: ['maxHeight', "data"],
   data() {
     return {
       echarts: '',
@@ -95,8 +95,15 @@ export default {
     }
   },
   mounted() {
-    this.initData()
-    this.initCharts()
+    this.initData(centre1.allExpense)
+  },
+  watch:{
+    data(val, old){
+      if(val){
+        console.log(val);
+        this.initData(val.allExpense)
+      }
+    }
   },
   methods: {
     initCharts() {
@@ -104,17 +111,18 @@ export default {
       this.echarts.setOption(this.option)
 
     },
-    initData() {
+    initData(allExpense) {
+      this.option.series = []
       for (let i = 0; i < this.titleList.length; i++) {
         let item = JSON.parse(JSON.stringify(this.seriesItem))
         item.name = this.titleList[i]
         item.type = 'line'
         item.areaStyle.color.colorStops = this.colorStopsList[i]
-        let arr = [20, 28, 32, 30, 8]
+        let arr = allExpense
         item.data = arr
         this.option.series.push(item)
       }
-      console.log(this.option.series);
+      this.initCharts()
     }
   }
 }

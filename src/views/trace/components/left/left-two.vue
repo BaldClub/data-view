@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import { scanTrend } from "@/api/trace"
 export default {
   props: ["maxHeight"],
   data() {
@@ -75,7 +76,6 @@ export default {
   },
   mounted() {
     this.initData()
-    this.initCharts();
   },
   methods: {
     initCharts() {
@@ -84,14 +84,18 @@ export default {
     },
     initData() {
       let xData = []
-      let now = new Date().getMonth();
-      for (var i = 0; i <= now; i++) {
-        xData.push((i + 1) + '月')
-      }
-      this.option.xAxis.data = xData
-      for (let i = 0; i < 12; i++) {
-        this.option.series[0].data.push((Math.floor(Math.random() * 500) % 100 + 200))
-      }
+      let dataList = []
+      scanTrend().then(res =>{
+        res.data.forEach(item => {
+          xData.push(item.month)
+          dataList.push(Number(item.count))
+        });
+        this.option.series[0].data = dataList
+        this.option.xAxis.data = xData
+        this.initCharts()
+      })
+
+      
     }
   },
 };

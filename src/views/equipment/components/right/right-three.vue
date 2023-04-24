@@ -32,14 +32,19 @@ import { right3 } from '../../../../data/equipment';
 const { dataList } = right3;
 
 export default {
-  props: ["maxHeight"],
+  props: ["maxHeight", "data"],
   data() {
     return {
       dataList,
     };
   },
-  mounted() { },
-  methods: {},
+  watch:{
+    data(val, old){
+      if(val){
+        this.dataList = val.dataList
+      }
+    }
+  },
 };
 </script>
 

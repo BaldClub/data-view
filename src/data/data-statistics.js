@@ -3,7 +3,7 @@ import { yearList, monthList } from "./data";
 export const dataList = [
   {
     name: "光照",
-    num: 15,
+    num: 16,
   },
   {
     name: "CO2",

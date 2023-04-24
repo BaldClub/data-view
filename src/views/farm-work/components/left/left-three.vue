@@ -11,7 +11,7 @@ import { left3 } from '../../../../data/farm-work';
 const { monthList, energy } = left3;
 
 export default {
-  props: ["maxHeight"],
+  props: ["maxHeight",'data'],
   data() {
     return {
       echarts: "",
@@ -60,8 +60,14 @@ export default {
     };
   },
   mounted() {
-    this.initData()
-    this.initCharts();
+    this.initData(energy)
+  },
+  watch:{
+    data(val,old){
+      if(val){
+        this.initData(val.energy)
+      }
+    }
   },
   methods: {
     initCharts() {
@@ -69,7 +75,8 @@ export default {
       this.echarts.setOption(this.option);
     },
     // 数据初始化
-    initData() {
+    initData(energy) {
+      this.option.series = []
       for (let i = 0; i < energy.length; i++) {
         let series = {
           name: energy[i].name,
@@ -84,6 +91,7 @@ export default {
         }
         this.option.series.push(series)
       }
+      this.initCharts();
     }
   },
 };

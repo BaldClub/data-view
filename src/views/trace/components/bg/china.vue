@@ -4,16 +4,12 @@
 
 <script>
 import china from '@/assets/map/china.json'
+import { letToLocation } from "@/data/trace.data"
 export default {
   props: ["maxHeight"],
   data() {
     return {
       echarts: "",
-      letToLocation: [
-          [102.939478,25.106606], [116.404188,39.916458],[114.324871,30.55782],[120.220109,30.296747],
-          [101.778984,36.627853],[121.397177,31.251983],[91.076051,29.631548],[91.076051,29.631548],[113.26568,23.154211],
-          [126.719674,45.793194]
-      ],
       option: {
         tooltip: {
           trigger: 'item',
@@ -83,19 +79,18 @@ export default {
     },
     initData(){
         let data = []
-        for(let i = 0;i < this.letToLocation.length; i++){
+        for(let i = 0;i < letToLocation.length; i++){
             data.push([
             {
               coord: [107.0408, 27.729605]
             },
             {
-              coord: this.letToLocation[i],
+              coord: letToLocation[i],
               value: 10
             }
           ])
         }
         this.option.series[0].data = data
-        console.log(this.option.series[0].data);
     }
   },
 };

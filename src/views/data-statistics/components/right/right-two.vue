@@ -8,10 +8,8 @@
 <script>
 import { right2 } from '../../../../data/data-statistics';
 
-const { data, monthList } = right2;
-
 export default {
-  props: ["maxHeight"],
+  props: ["maxHeight", "data"],
   data() {
     return {
       echarts: "",
@@ -25,7 +23,7 @@ export default {
               color: "#ffffff",
             },
           },
-          data: monthList,
+          data: right2.monthList,
         },
         yAxis: {
           type: "value",
@@ -72,7 +70,7 @@ export default {
                 global: false, // 缺省为 false
               },
             },
-            data,
+            data: right2.data,
             type: "bar",
           },
         ],
@@ -81,6 +79,15 @@ export default {
   },
   mounted() {
     this.initCharts();
+  },
+  watch:{
+    data(val, old){
+      if(val){
+        this.option.xAxis.data = val.monthList
+        this.option.series[0].data = val.data
+        this.initCharts()
+      }
+    }
   },
   methods: {
     initCharts() {

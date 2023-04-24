@@ -15,17 +15,25 @@
 import { randomData } from '../../../../utils/';
 import { right1 } from '../../../../data/environmental';
 
-const { data, ms } = right1;
-
 export default {
-    props: ["maxHeight"],
+    props: ["maxHeight", "apiData"],
     data() {
         return {
-            data,
+            data: right1.data,
+            ms: 0
+        }
+    },
+    watch:{
+        apiData(val, old){
+            if(val){
+                this.data = val.data
+                this.ms = val.data.ms
+                randomData(this, this.ms);
+            }
         }
     },
     mounted() {
-        randomData(this, ms);
+        randomData(this, right1.ms);
     }
 };
 </script>

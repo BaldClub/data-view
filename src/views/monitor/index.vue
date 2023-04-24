@@ -9,7 +9,7 @@
       </div>
       <div :style="{ height: kHTwo + 'px' }">
         <dv-border-box-12 class="container-item" style="padding: 12px">
-          <leftTwo :max-height="kHTwo"></leftTwo>
+          <leftTwo :max-height="kHTwo" :monitor-list="monitorDataList"></leftTwo>
         </dv-border-box-12>
       </div>
       <div :style="{ height: kHThree + 'px' }">
@@ -22,7 +22,7 @@
     <el-col :span="17">
       <div :style="{ height: kHFour + 'px' }">
         <dv-border-box-12 class="container-item" style="padding: 12px">
-          <rightOne :max-height="kHFour"></rightOne>
+          <rightOne :max-height="kHFour" :monitor-list="monitorDataList"></rightOne>
         </dv-border-box-12>
       </div>
     </el-col>
@@ -34,6 +34,8 @@ import leftOne from "./components/left/left-one.vue";
 import leftTwo from "./components/left/left-two.vue";
 import leftThree from "./components/left/left-three.vue";
 import rightOne from "./components/right/right-one.vue";
+
+import { monitorList } from "@/api/monitor"
 export default {
   name: "index",
   components: {
@@ -59,6 +61,7 @@ export default {
       kHTwo: 500,
       kHThree: 300,
       kHFour: 500,
+      monitorDataList: []
     };
   },
   created() {
@@ -69,9 +72,10 @@ export default {
     window.addEventListener("resize", this.getScreenHeight, false);
     // 页面大小改变时触发
     window.addEventListener("resize", this.getScreenWidth, false);
-    // 鼠标移动时触发
 
-    if (!localStorage.getItem('isLogin')) location.href = '/#/login';
+    if (!localStorage.getItem('isLogin')) return location.href = '/#/login';
+
+    this.getMonitorList()
   },
   beforeDestroy() {
     // 页面大小改变时触发
@@ -99,6 +103,11 @@ export default {
         document.documentElement.clientWidth ||
         document.body.clientWidth;
     },
+    getMonitorList() {
+      monitorList().then(res => {
+        this.monitorDataList = res.data
+      })
+    }
   },
 };
 </script>
