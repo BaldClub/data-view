@@ -100,7 +100,6 @@ export default {
   watch:{
     data(val, old){
       if(val){
-        console.log(val);
         this.initData(val.allExpense)
       }
     }

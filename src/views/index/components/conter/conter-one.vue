@@ -1,9 +1,7 @@
 <template>
   <div class="content">
     <div class="video">
-      <video width="100%" controls>
-        <source :src="url" type="video/mp4" />
-      </video>
+      <videoBox url="/video/1.mp4" />
     </div>
     <div class="text">
       <p>
@@ -14,8 +12,10 @@
 </template>
 
 <script>
+import videoBox from '../../../../components/videoBox.vue'
 export default {
   props: ["maxHeight","url"],
+  components:{ videoBox },
   data() {
     return {};
   },

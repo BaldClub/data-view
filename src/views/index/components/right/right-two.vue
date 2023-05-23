@@ -87,7 +87,6 @@ export default {
         this.option.series[0].data = data[0]
         this.option.series[1].data = data[1]
 
-        console.log(this.option.series[0].data);
 
       }).catch(err=>{
         this.option.series[0].data = allYield[0]

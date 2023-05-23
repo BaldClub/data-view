@@ -156,7 +156,6 @@ export default {
           saleValueList.push(0)
         }
       })
-      console.log(scanValueList);
       this.option.series[0].data = scanValueList
       this.option.series[1].data = saleValueList
       this.initCharts();

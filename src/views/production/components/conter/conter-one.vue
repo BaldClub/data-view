@@ -1,46 +1,37 @@
 <template>
-  <div class="content">
-    <div class="video" v-for="item in dataList" :key="item.id">
-      <video width="100%" controls>
-        <source
-          :src="item.url"
-          type="video/mp4"
-        />
-      </video>
+  <div class="production_content">
+    <div class="production_video" v-for="item in dataList" :key="item">
+      <videoBox :url="item"/>
     </div>
   </div>
 </template>
 
 <script>
-import { monitorList } from "@/api/monitor"
+import videoBox from '@/components/videoBox.vue';
 export default {
   props: ["maxHeight"],
+  components: {videoBox},
   data() {
     return {
-      dataList:[]
+      dataList:[
+        '/video/1.mp4',
+        '/video/2.mp4',
+        '/video/3.mp4',
+        '/video/4.mp4'
+      ]
     };
   },
-  mounted(){
-    this.getData()
-  },
-  methods:{
-    getData(){
-      monitorList().then(res =>{
-        this.dataList = res.data.slice(0,4)
-      })
-    }
-  }
 };
 </script>
 
 <style lang="less" scoped>
-.content {
+.production_content {
   width: 100%;
   height: 100%;
   background-color: #000;
   display: grid;
   grid-template-columns: 50% 50%;
-  .video {
+  .production_video {
     width: 100%;
     display: flex;
     align-items: center;
