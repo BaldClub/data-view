@@ -1,8 +1,7 @@
-import request from "@/utils/request";
-
+import request from '@/utils/request';
 
 export const environmental = () =>
-  request({
-    url: `/api/custom/environmental`,
-    method: "get",
-  });
+    request({
+        url: `/api/custom/environmental`,
+        method: 'get',
+    });

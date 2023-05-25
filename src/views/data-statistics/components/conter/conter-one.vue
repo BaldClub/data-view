@@ -4,35 +4,35 @@
  * conter-one.vue
 -->
 <template>
-  <div class="container-item" :style="{ height: maxHeight + 'px' }">
-    <div class="redius-bg" :style="{ height: maxHeight * 0.6 + 'px' }">
-      <div class="item" v-for="(item, index) in 9" :class="['position-' + (index + 1)]">
-        <div>
-          <p>{{ dataList[index].name }}</p>
-          <p class="proportion">{{ dataList[index].num }}%</p>
+    <div class="container-item" :style="{ height: maxHeight + 'px' }">
+        <div class="redius-bg" :style="{ height: maxHeight * 0.6 + 'px' }">
+            <div class="item" v-for="(item, index) in 9" :class="['position-' + (index + 1)]">
+                <div>
+                    <p>{{ dataList[index].name }}</p>
+                    <p class="proportion">{{ dataList[index].num }}%</p>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </template>
 
 <script>
 import { dataList } from '../../../../data/data-statistics';
 
 export default {
-  props: ["maxHeight", 'data'],
-  data() {
-    return {
-      dataList: dataList,
-    };
-  },
-  watch:{
-    data(val, old){
-      if(val){
-        this.dataList = val
-      }
-    }
-  }
+    props: ['maxHeight', 'data'],
+    data() {
+        return {
+            dataList: dataList,
+        };
+    },
+    watch: {
+        data(val, old) {
+            if (val) {
+                this.dataList = val;
+            }
+        },
+    },
 };
 </script>
 
@@ -50,40 +50,39 @@ each(range(9), {
   }
 });
 
-
 .container-item {
-  width: 100%;
-  position: relative;
-  z-index: 10;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  .redius-bg {
-    background-color: #76e8bc;
-    width: 90%;
-    border-radius: 50%;
+    width: 100%;
     position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    .item {
-      opacity: 0.8;
-      position: absolute;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #000;
-      font-size: 2rem;
+    .redius-bg {
+        background-color: #76e8bc;
+        width: 90%;
+        border-radius: 50%;
+        position: relative;
 
-      .proportion {
-        text-align: center;
-        font-size: 22px;
-      }
+        .item {
+            opacity: 0.8;
+            position: absolute;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #000;
+            font-size: 2rem;
 
-      &:hover {
-        opacity: 1;
-      }
+            .proportion {
+                text-align: center;
+                font-size: 22px;
+            }
+
+            &:hover {
+                opacity: 1;
+            }
+        }
     }
-  }
 }
 </style>

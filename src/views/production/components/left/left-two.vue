@@ -9,26 +9,26 @@ import { left2 } from '../../../../data/production';
 
 export default {
     components: {
-        environmentData
+        environmentData,
     },
-    props: ["maxHeight", "apiData"],
+    props: ['maxHeight', 'apiData'],
     data() {
         return {
             data: left2.data,
-            ms: 0
-        }
+            ms: 0,
+        };
     },
-    watch:{
-        apiData(val, old){
-            if(val){
-                this.data = val.data
-                this.ms = val.data.ms
+    watch: {
+        apiData(val, old) {
+            if (val) {
+                this.data = val.data;
+                this.ms = val.data.ms;
                 randomData(this, this.ms);
             }
-        }
+        },
     },
     mounted() {
         randomData(this, left2.ms);
-    }
+    },
 };
 </script>

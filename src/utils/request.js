@@ -1,28 +1,28 @@
-import axios from "axios"
+import axios from 'axios';
 
 const request = axios.create({
-  baseURL: 'https://back.data.metaverse-yuanyuzhou.top',
-  timeout: 6000
-})
+    baseURL: 'https://back.data.metaverse-yuanyuzhou.top',
+    timeout: 6000,
+});
 
 // request interceptor
 request.interceptors.request.use(
-  config => {
-    return config;
-  },
-  error => {
-    return Promise.reject(error)
-  }
-)
+    config => {
+        return config;
+    },
+    error => {
+        return Promise.reject(error);
+    },
+);
 
 request.interceptors.response.use(
-  response => {
-    const res = response.data
-    return res
-  },
-  error => {
-    return Promise.reject(error)
-  }
-)
+    response => {
+        const res = response.data;
+        return res;
+    },
+    error => {
+        return Promise.reject(error);
+    },
+);
 
-export default request
+export default request;

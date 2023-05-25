@@ -1,0 +1,8 @@
+# config
+build
+node_modules
+node_modules_modified
+readme
+src/fj_modules
+src/lib
+src/assets/*

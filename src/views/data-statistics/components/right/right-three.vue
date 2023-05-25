@@ -1,89 +1,89 @@
 <template>
-  <div class="content">
-    <h2>预警报警次数</h2>
-    <div ref="echarts" :style="{ height: `${maxHeight * 0.9}px` }"></div>
-  </div>
+    <div class="content">
+        <h2>预警报警次数</h2>
+        <div ref="echarts" :style="{ height: `${maxHeight * 0.9}px` }"></div>
+    </div>
 </template>
 
 <script>
 import { right3 } from '../../../../data/data-statistics';
 
 export default {
-  props: ["maxHeight",'data'],
-  data() {
-    return {
-      echarts: "",
-      option: {
-        xAxis: {
-          type: "category",
-          name: "单位（月）",
-          axisLabel: {
-            show: true,
-            textStyle: {
-              color: "#ffffff",
+    props: ['maxHeight', 'data'],
+    data() {
+        return {
+            echarts: '',
+            option: {
+                xAxis: {
+                    type: 'category',
+                    name: '单位（月）',
+                    axisLabel: {
+                        show: true,
+                        textStyle: {
+                            color: '#ffffff',
+                        },
+                    },
+                    data: right3.monthList,
+                },
+                yAxis: {
+                    type: 'value',
+                    name: '单位（次）',
+                    axisLabel: {
+                        show: true,
+                        textStyle: {
+                            color: '#ffffff',
+                        },
+                    },
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'shadow',
+                    },
+                },
+                grid: {
+                    top: 40,
+                    right: 70,
+                    bottom: 50,
+                },
+                series: [
+                    {
+                        itemStyle: {
+                            color: '#ba7f86',
+                        },
+                        data: right3.data,
+                        type: 'bar',
+                    },
+                ],
             },
-          },
-          data: right3.monthList,
-        },
-        yAxis: {
-          type: "value",
-          name: "单位（次）",
-          axisLabel: {
-            show: true,
-            textStyle: {
-              color: "#ffffff",
-            },
-          },
-        },
-        tooltip: {
-          trigger: "axis",
-          axisPointer: {
-            type: "shadow",
-          },
-        },
-        grid: {
-          top: 40,
-          right: 70,
-          bottom: 50,
-        },
-        series: [
-          {
-            itemStyle: {
-              color: '#ba7f86'
-            },
-            data: right3.data,
-            type: "bar",
-          },
-        ],
-      },
-    };
-  },
-  mounted() {
-    this.initCharts();
-  },
-  watch:{
-    data(val, old){
-      if(val){
-        this.option.xAxis.data = val.monthList
-        this.option.series[0].data = val.data
-        this.initCharts()
-      }
-    }
-  },
-  methods: {
-    initCharts() {
-      this.echarts = this.$echarts.init(this.$refs.echarts);
-      this.echarts.setOption(this.option);
+        };
     },
-  },
+    mounted() {
+        this.initCharts();
+    },
+    watch: {
+        data(val, old) {
+            if (val) {
+                this.option.xAxis.data = val.monthList;
+                this.option.series[0].data = val.data;
+                this.initCharts();
+            }
+        },
+    },
+    methods: {
+        initCharts() {
+            this.echarts = this.$echarts.init(this.$refs.echarts);
+            this.echarts.setOption(this.option);
+        },
+    },
 };
 </script>
 
 <style lang="less" scoped>
 .content {
-  h2 {
-    padding-left: 0.6em;
-    text-align: left;
-  }
+    h2 {
+        padding-left: 0.6em;
+        text-align: left;
+    }
 }
 </style>
