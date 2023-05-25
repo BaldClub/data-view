@@ -1,8 +1,7 @@
-import request from "@/utils/request";
-
+import request from '@/utils/request';
 
 export const production = () =>
-  request({
-    url: `/api/custom/production`,
-    method: "get",
-  });
+    request({
+        url: `/api/custom/production`,
+        method: 'get',
+    });

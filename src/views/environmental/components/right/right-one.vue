@@ -2,8 +2,13 @@
     <div class="content">
         <h2>菇房环境数据</h2>
         <div class="list">
-            <div class="item" :class="[`color-${index + 1}`]" v-for="item, index in data" :key="item.name"
-                :style="{ padding: `${maxHeight * 0.055}px 0px` }">
+            <div
+                class="item"
+                :class="[`color-${index + 1}`]"
+                v-for="(item, index) in data"
+                :key="item.name"
+                :style="{ padding: `${maxHeight * 0.055}px 0px` }"
+            >
                 <p>{{ item.value }}</p>
                 <span>{{ item.name }}</span>
             </div>
@@ -16,25 +21,25 @@ import { randomData } from '../../../../utils/';
 import { right1 } from '../../../../data/environmental';
 
 export default {
-    props: ["maxHeight", "apiData"],
+    props: ['maxHeight', 'apiData'],
     data() {
         return {
             data: right1.data,
-            ms: 0
-        }
+            ms: 0,
+        };
     },
-    watch:{
-        apiData(val, old){
-            if(val){
-                this.data = val.data
-                this.ms = val.data.ms
+    watch: {
+        apiData(val, old) {
+            if (val) {
+                this.data = val.data;
+                this.ms = val.data.ms;
                 randomData(this, this.ms);
             }
-        }
+        },
     },
     mounted() {
         randomData(this, right1.ms);
-    }
+    },
 };
 </script>
 

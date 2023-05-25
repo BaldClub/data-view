@@ -1,8 +1,7 @@
-import request from "@/utils/request";
-
+import request from '@/utils/request';
 
 export const farmWork = () =>
-  request({
-    url: `/api/custom/farm-work`,
-    method: "get",
-  });
+    request({
+        url: `/api/custom/farm-work`,
+        method: 'get',
+    });

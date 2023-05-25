@@ -5,28 +5,24 @@
             <h1>食用菌生产全程可视化管理系统</h1>
             <div class="item">
                 <label class="let-spa-2">账号</label>
-                <el-input placeholder="请输入账号" v-model="loginFrom.username" clearable>
-                </el-input>
+                <el-input placeholder="请输入账号" v-model="loginFrom.username" clearable> </el-input>
             </div>
             <div class="item">
                 <label class="let-spa-3">手机号 </label>
-                <el-input placeholder="请输入手机号" v-model="loginFrom.phone" clearable>
-                </el-input>
+                <el-input placeholder="请输入手机号" v-model="loginFrom.phone" clearable> </el-input>
             </div>
             <div class="item">
                 <label class="let-spa-3">验证码 </label>
                 <div class="code">
-                    <el-input placeholder="请输入验证码" v-model="loginFrom.code" clearable>
-                    </el-input>
+                    <el-input placeholder="请输入验证码" v-model="loginFrom.code" clearable> </el-input>
                     <div class="code-img" @click="changCode()">
-                        <img :src="codeUrl" alt="">
+                        <img :src="codeUrl" alt="" />
                     </div>
                 </div>
             </div>
             <div class="item">
                 <label class="let-spa-2">密码</label>
-                <el-input placeholder="请输入密码" type="password" v-model="loginFrom.password" clearable>
-                </el-input>
+                <el-input placeholder="请输入密码" type="password" v-model="loginFrom.password" clearable> </el-input>
             </div>
             <div class="item">
                 <label>确认密码</label>
@@ -36,9 +32,7 @@
             <div class="btu">
                 <button class="mr-30" @click="changeStatus(false)">邮箱修改</button>
                 <button>
-                    <RouterLink to="/login" style="color: #fff">
-                        返回登录
-                    </RouterLink>
+                    <RouterLink to="/login" style="color: #fff"> 返回登录 </RouterLink>
                 </button>
             </div>
         </div>
@@ -46,28 +40,24 @@
             <h1>食用菌生产全程可视化管理系统</h1>
             <div class="item">
                 <label class="let-spa-2">账号</label>
-                <el-input placeholder="请输入账号" v-model="loginFrom.username" clearable>
-                </el-input>
+                <el-input placeholder="请输入账号" v-model="loginFrom.username" clearable> </el-input>
             </div>
             <div class="item">
                 <label class="let-spa-2">邮箱 </label>
-                <el-input placeholder="请输入邮箱" v-model="loginFrom.phone" clearable>
-                </el-input>
+                <el-input placeholder="请输入邮箱" v-model="loginFrom.phone" clearable> </el-input>
             </div>
             <div class="item">
                 <label class="let-spa-3">验证码 </label>
                 <div class="code">
-                    <el-input placeholder="请输入验证码" v-model="loginFrom.code" clearable>
-                    </el-input>
+                    <el-input placeholder="请输入验证码" v-model="loginFrom.code" clearable> </el-input>
                     <div class="code-img" @click="changCode()">
-                        <img :src="codeUrl" alt="">
+                        <img :src="codeUrl" alt="" />
                     </div>
                 </div>
             </div>
             <div class="item">
                 <label class="let-spa-2">密码</label>
-                <el-input placeholder="请输入密码" type="password" v-model="loginFrom.password" clearable>
-                </el-input>
+                <el-input placeholder="请输入密码" type="password" v-model="loginFrom.password" clearable> </el-input>
             </div>
             <div class="item">
                 <label>确认密码</label>
@@ -78,33 +68,31 @@
             <div class="btu">
                 <button class="mr-30" @click="changeStatus(true)">手机号修改</button>
                 <button>
-                    <RouterLink to="/login" style="color: #fff">
-                        返回登录
-                    </RouterLink>
+                    <RouterLink to="/login" style="color: #fff"> 返回登录 </RouterLink>
                 </button>
             </div>
         </div>
     </div>
 </template>
-  
+
 <script>
 import router from '@/router';
 import { RouterLink } from 'vue-router';
 
 export default {
-    name: "login",
+    name: 'login',
     data() {
         return {
             status: true,
             loginFrom: {
-                username: "",
-                password: "",
-                passwordTo:"",
-                code: "",
-                phone: "",
-                email: ""
+                username: '',
+                password: '',
+                passwordTo: '',
+                code: '',
+                phone: '',
+                email: '',
             },
-            codeUrl: "https://back.data.metaverse-yuanyuzhou.top/system/captcha/generate"
+            codeUrl: 'https://back.data.metaverse-yuanyuzhou.top/system/captcha/generate',
         };
     },
     mounted() {
@@ -116,7 +104,7 @@ export default {
         },
         initCharts() {
             VANTA.NET({
-                el: "#your-element-selector",
+                el: '#your-element-selector',
                 mouseControls: true,
                 touchControls: true,
                 gyroControls: false,
@@ -130,13 +118,14 @@ export default {
             });
         },
         changCode() {
-            this.codeUrl = "https://back.data.metaverse-yuanyuzhou.top/system/captcha/generate?time=" + new Date().getTime();
-        }
+            this.codeUrl =
+                'https://back.data.metaverse-yuanyuzhou.top/system/captcha/generate?time=' + new Date().getTime();
+        },
     },
-    components: { RouterLink }
+    components: { RouterLink },
 };
 </script>
-  
+
 <style lang="less" scoped>
 .bg {
     width: 100%;
@@ -217,4 +206,3 @@ export default {
     }
 }
 </style>
-  
